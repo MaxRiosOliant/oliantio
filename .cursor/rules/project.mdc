@@ -1,0 +1,11 @@
+---
+description: Oliant.io site conventions
+alwaysApply: true
+---
+- Next.js App Router, TypeScript strict, Tailwind. Server Components by default; "use client" only when needed.
+- All page content lives in /content as MDX. Never hardcode marketing copy in components.
+- Every content type has a schema; new fields must be added to the schema first.
+- Pages are composed only from /components/sections. If a new section is needed, create it there, reusable and prop-driven.
+- Every page exports metadata via lib/seo.ts (title, description, canonical, OG).
+- Never change an existing URL slug without adding a 301 in config/redirects.ts.
+- Images go in /public/images/<type>/<slug>/ and always use next/image with alt text.
