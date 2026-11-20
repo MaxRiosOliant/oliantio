@@ -1,0 +1,159 @@
+0">
+</div>
+</section>
+<section data-wf--section-work--style-theme="inherit" class="work_wrap">
+<div data-wf--global-section-space--section-space="large" class="g_section_space w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3">
+</div>
+<div class="work_contain u-container">
+<h2 class="work_title u-text-style-h2 u-mb-8">Why work with us<br/>
+</h2>
+<div class="work_layout u-grid-autofit">
+<div class="work_card u-alignment-vertical u-gap-4 radius-1">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 1</h3>
+</div>
+<div class="work_card_text u-text-style-main">We are a company founded by IT experts who have worked for 20-30 years on projects of varying sizes in several industries.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+<div class="work_card u-alignment-vertical u-gap-4 radius-2">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 2</h3>
+</div>
+<div class="work_card_text u-text-style-main">We optimize processes and delivery to maximize our clients’ benefits and ensure rapid ROI.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+<div class="work_card u-alignment-vertical u-gap-4 radius-3">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 3</h3>
+</div>
+<div class="work_card_text u-text-style-main">We manage clients and projects from different locations. Our headquarters are in Central Time, but we can deliver from different time zones worldwide.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+<div class="work_card u-alignment-vertical u-gap-4 radius-4">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 4</h3>
+</div>
+<div class="work_card_text u-text-style-main">We love what we do and want our clients to experience our passion for high-quality results by having the best professionals in each technology.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490">
+</div>
+<div class="work_background g_visual_background u-cover-absolute">
+</div>
+</section>
+<section data-wf--section-process--style-theme="inherit" class="process_wrap">
+<div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490">
+</div>
+<div class="u-container">
+<div class="process_layout u-grid-autofit u-gap-8">
+<div class="process_visual_wrap u-vflex-right-bottom u-gap-6">
+<div class="process_title_wrap">
+<h2 class="process_title u-text-style-h2 u-mb-6">Our Process</h2>
+<div class="process_subhead u-text-style-large u-mb-4">Our process is simple and proven across multiple industries</div>
+</div>
+<div class="process_img_wrap u-visual-wrap">
+<div class="g_visual_wrap u-cover-absolute">
+<div class="g_visual_background u-cover-absolute">
+</div>
+<img src="https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1d083d44d8582c074e0cc_Our_process_img.avif" loading="lazy" alt="" sizes="100vw" srcset="https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1d083d44d8582c074e0cc_Our_process_img-p-500.avif 500w, https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1d083d44d8582c074e0cc_Our_process_img-p-800.avif 800w, https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1d083d44d8582c074e0cc_Our_process_img.avif 824w" class="g_visual_img u-cover-absolute"/>
+</div>
+</div>
+<div data-wf--btn-main--style="primary" class="btn_main_wrap">
+<div class="g_clickable_wrap">
+<a target="" href="/schedule-a-call" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">Schedule a Call</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">Schedule a Call</span>
+</button>
+</div>
+<div aria-hidden="true" class="btn_main_text u-text-style-large">Schedule a Call</div>
+</div>
+</div>
+<div class="process_timeline">
+<div class="w-layout-vflex process_timeline_wrap">
+<div class="process_timeline_column">
+<div class="process_timeline_square">
+</div>
+<div class="process_timeline_divider">
+</div>
+<div class="process_timeline_square">
+</div>
+<div class="process_timeline_divider _2nd-divider">
+</div>
+<div class="process_timeline_square">
+</div>
+<div class="process_timeline_divider _3rd-divider">
+</div>
+<div class="process_timeline_square">
+</div>
+</div>
+<div class="process_steps_wrap">
+<div class="process_steps-text-wrap">
+<h3 class="process_step_title u-text-style-h3">Step 1: Initial Call</h3>
+<p class="process_step-text u-text-style-large">An exploratory meeting to understand your problems.</p>
+</div>
+<div class="process_steps-text-wrap">
+<h3 class="process_step_title u-text-style-h3">Step 2: Pre-meeting research</h3>
+<p class="process_step-text u-text-style-large">Additional research about the company, issues, and potential solutions.</p>
+</div>
+<div class="process_steps-text-wrap">
+<h3 class="process_step_title u-text-style-h3">Step 3: Review meeting</h3>
+<p class="process_step-text u-text-style-large">Review our findings and approach. Define metrics for success.</p>
+</div>
+<div class="process_steps-text-wrap">
+<h3 class="process_step_title u-text-style-h3">Step 4: Agreement &amp; Follow-up</h3>
+<p class="process_step-text u-text-style-large">Process review and agreement sign-up. Presentation of the follow-up process.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490">
+</div>
+</section>
+<section data-wf--section-blog-home--style-theme="inherit" class="bloghome_wrap u-theme-dark">
+<div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02

@@ -1,0 +1,146 @@
+</section>
+<section data-wf--section-home-services--style-theme="inherit" class="home-services_wrap">
+<div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490">
+</div>
+<div class="u-container">
+<h2 class="home-services_title u-text-style-h2 u-mb-6">We excel in the following<br/>services</h2>
+<div class="home-services_layout u-grid-autofit">
+<div class="home-cards-border-styles w-embed">
+</div>
+<div class="home-services_card_border">
+<div class="home-services_card_wrap u-alignment-vertical u-gap-5">
+<div class="home-services_card_icon_wrap">[svg]</div>
+<h3 class="home-services_card_title u-text-style-h3">Web Development</h3>
+<div class="home-services_card_text u-text-style-main">We help you create and maintain diverse websites, including e-commerce, SaaS solutions, content management platforms, and custom solutions in several technologies.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="home-services_card_border">
+<div class="home-services_card_wrap u-alignment-vertical u-gap-5">
+<div class="home-services_card_icon_wrap">[svg]</div>
+<h3 class="home-services_card_title u-text-style-h3">QA &amp; Testing</h3>
+<div class="home-services_card_text u-text-style-main">We help you implement best practices for manual and automated testing, extend your teams, or work on a project basis. Our QA professionals align with diverse time zones.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="home-services_card_border">
+<div class="home-services_card_wrap u-alignment-vertical u-gap-5">
+<div class="home-services_card_icon_wrap">[svg]</div>
+<h3 class="home-services_card_title u-text-style-h3">Digital Marketing &amp; SEO</h3>
+<div class="home-services_card_text u-text-style-main">We help you improve your website rankings, increase organic traffic, maximize your digital presence, and drive leads through pay-per-click ads, on-page SEO, and marketing campaigns.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="home-services_card_border">
+<div class="home-services_card_wrap u-alignment-vertical u-gap-5">
+<div class="home-services_card_icon_wrap">[svg]</div>
+<h3 class="home-services_card_title u-text-style-h3">Staff Augmentation</h3>
+<div class="home-services_card_text u-text-style-main">We help you scale your team efficiently with highly qualified vetted professionals with specialized skills managed by experts in diverse IT areas.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490">
+</div>
+</section>
+<section data-wf--section-work--style-theme="inherit" class="work_wrap">
+<div data-wf--global-section-space--section-space="large" class="g_section_space w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3">
+</div>
+<div class="work_contain u-container">
+<h2 class="work_title u-text-style-h2 u-mb-8">Why work with us<br/>
+</h2>
+<div class="work_layout u-grid-autofit">
+<div class="work_card u-alignment-vertical u-gap-4 radius-1">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 1</h3>
+</div>
+<div class="work_card_text u-text-style-main">We are a company founded by IT experts who have worked for 20-30 years on projects of varying sizes in several industries.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+<div class="work_card u-alignment-vertical u-gap-4 radius-2">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 2</h3>
+</div>
+<div class="work_card_text u-text-style-main">We optimize processes and delivery to maximize our clients’ benefits and ensure rapid ROI.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+<div class="work_card u-alignment-vertical u-gap-4 radius-3">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 3</h3>
+</div>
+<div class="work_card_text u-text-style-main">We manage clients and projects from different locations. Our headquarters are in Central Time, but we can deliver from different time zones worldwide.</div>
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">
+</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">
+</span>
+</button>
+</div>
+</div>
+<div class="work_card u-alignment-vertical u-gap-4 radius-4">
+<div class="work_title_wrap u-alignment-horizontal u-gap-4">
+<div class="work_icon_wrap">[svg]</div>
+<h3 class="work_title u-text-style-h3">Reason 4</h3>
+</div>
+<div class="work_card_text 

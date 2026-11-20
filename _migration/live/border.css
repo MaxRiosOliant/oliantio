@@ -1,0 +1,52 @@
+.home-services_card_border {
+  background: linear-gradient(90deg, #45AB34, #00B6FF);
+  padding: 2.4px;
+  border-radius: var(--radius--main);
+}
+
+.home-services_card_wrap {
+  border-radius: 0.8rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  transition: box-shadow 0.7s ease;
+}
+
+/* Pseudo-element for gradient */
+.home-services_card_wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--swatch--brand-green-1), var(--swatch--brand-green-2), var(--swatch--brand-green-3), var(--swatch--brand-green-4), var(--swatch--brand-green-5));
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  z-index: 0;
+
+}
+
+.home-services_card_wrap:hover::before {
+  opacity: 1;
+}
+/* Ensure card content is visible */
+.home-services_card_wrap > * {
+  position: relative;
+  z-index: 1;
+}
+/* Move all inside card wrapper down on hover*/
+.home-services_card_wrap > * {
+  transition: transform 0.5s ease;
+}
+.home-services_card_wrap:hover {
+  box-shadow: 0 6px 10px 4px hsla(0, 0.00%, 0.00%, 0.15), 0 2px 3px 0 hsla(0, 0.00%, 0.00%, 0.30);
+}
+.home-services_card_wrap:hover > * {
+  transform: translateY(0.3rem);
+}
+
+</style></div><div class="home-services_card_border"><div class="home-services_card_wrap u-alignment-vertical u-gap-5"><div class="home-services_card_icon_wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 48 48

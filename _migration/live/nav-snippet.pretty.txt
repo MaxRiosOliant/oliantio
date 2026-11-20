@@ -1,0 +1,124 @@
+ext u-text-style-small">Skip to main content</div>
+</a>
+<div role="banner" class="nav_wrap is-desktop">
+<div class="nav_contain u-container">
+<a aria-label="Home Page" href="/" aria-current="page" class="nav_logo_wrap w-inline-block w--current">[svg]</a>
+<nav role="navigation" class="nav_desktop_layout">
+<div class="nav_links_component is-desktop">
+<ul role="list" class="nav_links_wrap w-list-unstyled is-desktop">
+<li class="nav_links_item">
+<div data-delay="400" data-hover="true" class="nav_dropdown_component w-dropdown">
+<div class="nav_links_link w-dropdown-toggle is-desktop">
+<div class="nav_links_text">Our Services</div>[svg]</div>
+<nav class="nav_dropdown_mega_wrap w-dropdown-list is-desktop">
+<div class="nav_dropdown_mega_content is-desktop">
+<div data-lenis-prevent="" class="nav_dropdown_mega_scroll is-desktop">
+<div class="nav_dropdown_mega_contain is-desktop">
+<div class="nav_dropdown_mega_layout is-desktop">
+<ul role="list" class="nav_dropdown_list">
+<li class="nav_dropdown_item is-green">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Enterprise Solutions</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="/services/web" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Web Development<br/>
+</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="/services/staff-augmentation" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Staff Augmentation</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Custom Development</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="/services/mvp-development" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">MVP Development</div>
+</a>
+</li>
+</ul>
+<ul role="list" class="nav_dropdown_list">
+<li class="nav_dropdown_item is-green">
+<a href="/services/qa" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">QA Testing &amp; Automation</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="/services/qa" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Manual Testing</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="/services/qa" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Automation<br/>
+</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="/services/qa" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Performance Testing<br/>
+</div>
+</a>
+</li>
+</ul>
+<ul role="list" class="nav_dropdown_list">
+<li class="nav_dropdown_item is-green">
+<a href="/services/digital-marketing-seo" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Digital Marketing &amp; SEO</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">SEO Optimization</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Content Marketing</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Social Media Marketing</div>
+</a>
+</li>
+</ul>
+<ul role="list" class="nav_dropdown_list">
+<li class="nav_dropdown_item is-green">
+<a href="/services/digital-marketing-seo" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Partners</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Google Cloud Partner</div>
+</a>
+</li>
+<li class="nav_dropdown_item">
+<a href="#" class="nav_dropdown_link is-desktop w-inline-block">
+<div class="nav_dropdown_text">Odoo</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</li>
+<li class="nav_links_item">
+<div data-delay="400" data-hover="true" class="nav_dropdown_component w-dropdown">
+<div class="nav_links_link w-dropdown-toggle is-desktop">
+<div class="nav_links_text">Technologies</div>[svg]</div>
+<nav class="nav_dropdown_mega_wrap w-dropdown-list is-desktop">
+<div class="nav_dropdown_mega_content is-desktop">
+<div data-lenis-prevent="" class="nav_dropdown_mega_scroll is-desktop">
+<div class="nav_dropdown_mega_contain is-desktop">
+<div class="nav_dropdo

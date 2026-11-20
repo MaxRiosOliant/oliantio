@@ -1,0 +1,160 @@
+</section>
+</main>
+<section data-wf--section-footer--style-theme="inherit" class="footer_wrap u-theme-dark">
+<div data-wf--global-section-space--section-space="none" class="g_section_space">
+</div>
+<div class="u-container">
+<div class="footer_layout u-grid-autofit">
+<div class="footer_content u-alignment-vertical u-gap-6">
+<a href="/" aria-current="page" class="footer_logo_wrap w-inline-block w--current">[svg]</a>
+<nav class="footer_nav u-grid-autofit">
+<div class="footer_nav_group">
+<h4 class="footer_nav_head u-text-style-h5 u-mb-text">Discover Oliant</h4>
+<ul role="list" class="footer_1_group_list u-gap-4 w-list-unstyled">
+<li class="footer_1_group_item">
+<a href="/services/web" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Web Development</div>
+</a>
+</li>
+<li class="footer_1_group_item">
+<a href="/services/qa" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">QA Testing &amp; Automation</div>
+</a>
+</li>
+<li class="footer_1_group_item">
+<a href="/services/digital-marketing-seo" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Digital Marketing &amp; SEO</div>
+</a>
+</li>
+<li class="footer_1_group_item">
+<a href="/schedule-a-call" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Products Partnership</div>
+</a>
+</li>
+</ul>
+</div>
+<div class="footer_nav_group">
+<h4 class="footer_nav_head u-text-style-h5 u-mb-text">Resources</h4>
+<ul role="list" class="footer_1_group_list u-gap-4 w-list-unstyled">
+<li class="footer_1_group_item">
+<a href="/blog" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Blog</div>
+</a>
+</li>
+</ul>
+</div>
+<div class="footer_nav_group">
+<h4 class="footer_nav_head u-text-style-h5 u-mb-text">Oliant</h4>
+<ul role="list" class="footer_1_group_list u-gap-4 w-list-unstyled">
+<li class="footer_1_group_item">
+<a href="/about-us" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">About Us</div>
+</a>
+</li>
+<li class="footer_1_group_item">
+<a href="/contact-us" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Contact Us</div>
+</a>
+</li>
+<li class="footer_1_group_item">
+<a href="https://oliant.factorialhr.com/" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Job Opportunities</div>
+</a>
+</li>
+<li class="footer_1_group_item">
+<a href="/privacy-policy" class="footer_1_link_wrap w-inline-block">
+<div class="footer_1_link_text u-text-style-main">Privacy Policy</div>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="footer_nav_img_wrap">
+<img src="https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif" loading="lazy" alt=""/>
+</div>
+</div>
+<div class="footer_form_wrap u-theme-light">
+<h3 class="footer_form_title u-text-style-h3 u-mb-text">Get in touch</h3>
+<div class="footer_form_text u-text-style-large">Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO</div>
+<div class="u-btn-group">
+<div data-wf--btn-main--style="secondary" class="btn_main_wrap w-variant-e85564cd-af30-a478-692b-71732aefb3ab">
+<div class="g_clickable_wrap">
+<a target="" href="/contact-us" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">Contact Us</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">Contact Us</span>
+</button>
+</div>
+<div aria-hidden="true" class="btn_main_text u-text-style-large">Contact Us</div>
+</div>
+<div data-wf--btn-main--style="primary" class="btn_main_wrap">
+<div class="g_clickable_wrap">
+<a target="" href="/schedule-a-call" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">Schedule a Call</span>
+</a>
+<button type="button" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">Schedule a Call</span>
+</button>
+</div>
+<div aria-hidden="true" class="btn_main_text u-text-style-large">Schedule a Call</div>
+</div>
+<div class="u-display-contents">
+</div>
+</div>
+<div class="footer_form_call_wrap u-alignment-horizontal u-gap-2 u-mt-4">
+<div class="footer_form_call_icon">[svg]</div>
+<a href="#" class="footer_form_call_text u-text-style-large">+1-224-238-3800</a>
+</div>
+<div class="footer_form_block w-form">
+<form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer_form u-alignment-vertical u-gap-4" data-wf-page-id="67acdc2e43fd0a75670a1553" data-wf-element-id="5e6e509d-6107-f7f8-1419-f855388dffbe">
+<label for="email" class="footer_form_label u-text-style-large">Your email address</label>
+<input class="footer_form_field w-input" maxlength="256" name="email" data-name="Email" placeholder="" title="Please enter a valid email" type="email" id="email" patern="^[A-Z0-9a-z._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,63}$" required=""/>
+<label class="w-checkbox form_main_option_item">
+<div class="w-checkbox-input w-checkbox-input--inputType-custom form_main_option_link">
+</div>
+<input type="checkbox" name="Checkbox" id="Checkbox" data-name="Checkbox" required="" style="opacity:0;position:absolute;z-index:-1"/>
+<span class="form_main_label w-form-label" for="Checkbox">Terms and Conditions</span>
+</label>
+<div class="w-form-formrecaptcha captcha g-recaptcha g-recaptcha-error g-recaptcha-disabled g-recaptcha-invalid-key">
+</div>
+<div data-wf--btn-main--style="secondary" class="btn_main_wrap w-variant-e85564cd-af30-a478-692b-71732aefb3ab">
+<div class="g_clickable_wrap">
+<a target="" href="#" class="g_clickable_link w-inline-block">
+<span class="g_clickable_text u-sr-only">Subscribe</span>
+</a>
+<button type="submit" class="g_clickable_btn">
+<span class="g_clickable_text u-sr-only">Subscribe</span>
+</button>
+</div>
+<div aria-hidden="true" class="btn_main_text u-text-style-large">Subscribe</div>
+</div>
+</form>
+<div class="w-form-done">
+<div>Thank you! Your submission has been received!</div>
+</div>
+<div class="w-form-fail">
+<div>Oops! Something went wrong while submitting the form.</div>
+</div>
+</div>
+<div class="footer_social_wrap">
+<h5 class="footer_social_title">Follow Us</h5>
+<div class="footer_social-inline_wrap">
+<a href="https://www.facebook.com/profile.php?id=61563344463128" target="_blank" class="footer_social-link w-inline-block">[svg]</a>
+<a href="https://www.instagram.com/oliantllc/" target="_blank" class="footer_social-link w-inline-block">[svg]</a>
+<a href="https://www.linkedin.com/company/oliant" target="_blank" class="footer_social-link w-inline-block">[svg]</a>
+<a href="https://x.com/OliantGlobal" target="_blank" class="footer_social-link w-inline-block">[svg]</a>
+<a href="https://www.youtube.com/@Oliant-Orbit" target="_blank" class="footer_social-link w-inline-block">[svg]</a>
+</div>
+</div>
+</div>
+</div>
+<div class="footer_bg">
+</div>
+</div>
+<div class="w-embed">
+</div>
+</section>
+</div>
+</body>
+</html>

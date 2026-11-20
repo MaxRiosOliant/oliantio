@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  // Redirects are applied in proxy.ts so the destination drops the request query.
   turbopack: {
     rules: {
       "*.css": {
