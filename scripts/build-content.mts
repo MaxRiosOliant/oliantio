@@ -102,6 +102,103 @@ function normalizeValue(value: unknown): unknown {
   return value
 }
 
+const placeholderPhrases = [
+  "lorem ipsum",
+  "norem ipsum",
+  "dolor sit amet",
+  "this is some text inside of a div block",
+  "tagline maximum two lines",
+]
+
+function walkContentFiles(directory: string, files: string[]) {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const absolute = path.join(directory, entry.name)
+    if (entry.isDirectory()) {
+      walkContentFiles(absolute, files)
+      continue
+    }
+    if (!entry.isFile() || entry.name === ".gitkeep") {
+      continue
+    }
+    files.push(absolute)
+  }
+}
+
+function findPhrase(text: string, phrase: string) {
+  const lower = text.toLowerCase()
+  const matches: string[] = []
+  let from = 0
+  while (from < lower.length) {
+    const at = lower.indexOf(phrase, from)
+    if (at === -1) {
+      break
+    }
+    matches.push(text.slice(at, at + phrase.length))
+    from = at + phrase.length
+  }
+  return matches
+}
+
+function headingText(value: string) {
+  return value
+    .replace(/<[^>]+>/g, "")
+    .replace(/!\[[^\]]*]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)]\([^)]*\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+function isPlaceholderHeading(value: string) {
+  return headingText(value).toLowerCase() === "heading"
+}
+
+function checkPlaceholders(errors: FileError[]) {
+  const contentDir = path.join(root, "content")
+  if (!existsSync(contentDir)) {
+    return
+  }
+
+  const files: string[] = []
+  walkContentFiles(contentDir, files)
+
+  for (const absolute of files) {
+    const file = path.relative(root, absolute).split(path.sep).join("/")
+    const text = readFileSync(absolute, "utf8")
+
+    for (const phrase of placeholderPhrases) {
+      for (const match of findPhrase(text, phrase)) {
+        errors.push({
+          file,
+          message: `placeholder: "${match}"`,
+        })
+      }
+    }
+
+    const headings = [
+      ...text.matchAll(/^ {0,3}#{1,6}[ \t]+(.+?)[ \t]*#*[ \t]*$/gm),
+      ...text.matchAll(/<h[1-6]\b[^>]*>([\s\S]*?)<\/h[1-6]>/gi),
+      ...text.matchAll(
+        /\b(?:title|heading)\s*=\s*(?:"([^"]*)"|'([^']*)'|\{"([^"]*)"\}|\{'([^']*)'\})/g,
+      ),
+      ...text.matchAll(
+        /^[ \t]*(?:title|heading):[ \t]*(?:"([^"]*)"|'([^']*)'|([^\n#]+?))[ \t]*$/gim,
+      ),
+    ]
+
+    for (const match of headings) {
+      const value = match.slice(1).find((part) => part !== undefined) ?? ""
+      if (!isPlaceholderHeading(value)) {
+        continue
+      }
+      errors.push({
+        file,
+        message: `placeholder: "${value.trim()}"`,
+      })
+    }
+  }
+}
+
 function report(errors: FileError[]) {
   if (errors.length === 0) {
     return true
@@ -567,6 +664,7 @@ function writeBodyFile(collection: string, slug: string, code: string) {
 
 async function buildContent() {
   const errors: FileError[] = []
+  checkPlaceholders(errors)
   const articlesRead = readCollection("content/articles")
   const authorsRead = readCollection("content/authors")
   const categoriesRead = readCollection("content/categories")

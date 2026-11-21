@@ -14,13 +14,12 @@ export function buttonClassName({
   className = "",
 }: Omit<ButtonLinkProps, "href" | "children">) {
   const shape =
-    "inline-flex items-center justify-center rounded-2xl py-5 text-xl leading-none font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-  const padding = variant === "secondary" ? "px-8" : "px-10"
+    "inline-flex h-[55px] items-center justify-center rounded-2xl py-0 text-xl leading-none font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+  const padding =
+    variant === "secondary" ? "px-[var(--size-2rem)]" : "px-[var(--size-2-5rem)]"
   const color =
     variant === "primary"
-      ? tone === "onLight"
-        ? "bg-linear-to-r from-brand via-brand-3 to-brand-5 text-ink hover:from-ink hover:via-ink hover:to-ink hover:text-paper"
-        : "bg-linear-to-r from-brand via-brand-3 to-brand-5 text-ink hover:from-paper hover:via-paper hover:to-paper"
+      ? "bg-[linear-gradient(90deg,#9fc418,#87bd1f_25%,#71b726_50%,#5ab12d_75%,#45ab34)] text-ink hover:bg-[linear-gradient(-90deg,#9fc418,#87bd1f_25%,#71b726_50%,#5ab12d_75%,#45ab34)]"
       : tone === "onLight"
         ? "border border-ink text-ink hover:bg-ink hover:text-paper"
         : "border border-paper text-paper hover:bg-paper hover:text-ink"

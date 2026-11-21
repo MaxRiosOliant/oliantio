@@ -19,7 +19,7 @@ export function WhyWorkWithUs() {
         className="pointer-events-none absolute inset-0 bg-[url('/images/home/wordmark.svg')] bg-left-top bg-no-repeat"
       />
       <div className="site-container relative">
-        <h2 className="mb-16 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em]">
+        <h2 className="trim-text mb-16 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em]">
           {reasons.title}
         </h2>
         <div className="grid gap-8 desk:grid-cols-2 desk:gap-[5.5rem]">
@@ -37,11 +37,11 @@ export function WhyWorkWithUs() {
                   unoptimized
                   className="h-9 w-auto shrink-0"
                 />
-                <h3 className="text-[clamp(1.75rem,1.678571rem+0.357143vw,2rem)] leading-[1.1] font-black tracking-[-0.03em]">
+                <h3 className="trim-text text-[clamp(1.75rem,1.678571rem+0.357143vw,2rem)] leading-[1.1] font-black tracking-[-0.03em]">
                   {item.title}
                 </h3>
               </div>
-              <p className="text-base leading-6">{item.text}</p>
+              <p className="trim-text text-base leading-6">{item.text}</p>
             </article>
           ))}
         </div>

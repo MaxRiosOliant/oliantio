@@ -1,3 +1,5 @@
+import { site } from "@/config/site"
+
 export const home = {
   header: {
     cta: "Schedule a Call",
@@ -10,7 +12,7 @@ export const home = {
     cta: "Schedule a call",
     ctaHref: "/schedule-a-call",
     image: {
-      src: "/images/home/hero.svg",
+      src: "/images/home/hero-homepage.svg",
       alt: "",
       width: 657,
       height: 626,
@@ -99,55 +101,6 @@ export const home = {
     text: "Dive into OLIANT's thought leadership, highlighting the trends, innovations, and insights that shape the ever-evolving tech landscape.",
     cta: "View All Posts",
     ctaHref: "/blog",
-    featured: {
-      category: "Software Development",
-      title: "The Hidden Burden of Building the First Startup Team",
-      href: "/articles/the-hidden-burden-of-building-the-first-startup-team",
-      author: "Max Rios",
-      date: "November 5, 2025",
-      image: "/images/home/article-startup.png",
-      avatar: "/images/home/author-max.jpg",
-    },
-    posts: [
-      {
-        category: "Technology",
-        title: " Privacy, Security, and the Blockchain Debate in 2025",
-        href: "/articles/blockchain-privacy-2025",
-        author: "Oliant Editorial",
-        date: "August 22, 2025",
-        image: "/images/home/article-blockchain.png",
-        avatar: "/images/home/author-oliant.png",
-      },
-      {
-        category: "Software Development",
-        title: "Mobile App Development: What Languages Should You Use?",
-        href: "/articles/mobile-app-top-proggraming-languages",
-        author: "Oliant Editorial",
-        date: "August 15, 2025",
-        image: "/images/home/article-mobile.png",
-        avatar: "/images/home/author-oliant.png",
-      },
-    ],
-    mobilePosts: [
-      {
-        category: "This is some text inside of a div block.",
-        title: "What Makes a Strong Software Team?",
-        href: "#",
-        author: "Heading",
-        date: "February 11, 2025",
-        image: "/images/home/article-placeholder.avif",
-        avatar: "/images/home/avatar-placeholder.svg",
-      },
-      {
-        category: "This is some text inside of a div block.",
-        title: "What Makes a Strong Software Team?",
-        href: "#",
-        author: "Heading",
-        date: "February 11, 2025",
-        image: "/images/home/article-placeholder.avif",
-        avatar: "/images/home/avatar-placeholder.svg",
-      },
-    ],
   },
   footer: {
     columns: [
@@ -169,6 +122,7 @@ export const home = {
         links: [
           { label: "About Us", href: "/about-us" },
           { label: "Contact Us", href: "/contact-us" },
+          { label: "Job Opportunities", href: site.careersUrl },
           { label: "Privacy Policy", href: "/privacy-policy" },
         ],
       },
@@ -176,6 +130,8 @@ export const home = {
     badge: {
       src: "/images/home/badge.avif",
       alt: "",
+      width: 366,
+      height: 95,
     },
     formTitle: "Get in touch",
     formText:

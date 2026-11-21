@@ -2,6 +2,7 @@ import type { ComponentType } from "react"
 
 import { ClosingCta } from "@/components/sections/ClosingCta"
 import { CtaBand } from "@/components/sections/CtaBand"
+import { FaqSection } from "@/components/sections/FaqSection"
 import { PageIntro } from "@/components/sections/PageIntro"
 import { ReasonColumns } from "@/components/sections/ReasonColumns"
 import { ServiceCatalog } from "@/components/sections/ServiceCatalog"
@@ -13,6 +14,7 @@ export const mdxComponents = {
   ServiceCatalog,
   CtaBand,
   ReasonColumns,
+  FaqSection,
   ClosingCta,
 }
 

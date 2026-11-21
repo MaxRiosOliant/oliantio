@@ -11,7 +11,7 @@ export function NewsletterForm() {
 
   return (
     <form
-      className="mt-8 flex flex-col items-start gap-4"
+      className="flex flex-col items-start gap-4 py-[var(--size-2rem)]"
       onSubmit={(event) => {
         event.preventDefault()
         setSubmitted(true)

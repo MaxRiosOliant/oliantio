@@ -14,7 +14,7 @@ export default function SiteLayout({ children }: LayoutProps<"/">) {
       <main
         id="main"
         tabIndex={-1}
-        className="flex-1 pt-[5.125rem] outline-none has-[.home-hero]:pt-0"
+        className="flex-1 pt-[5.125rem] outline-none has-[.home-hero]:pt-0 has-[.service-hero]:pt-0"
       >
         {children}
       </main>

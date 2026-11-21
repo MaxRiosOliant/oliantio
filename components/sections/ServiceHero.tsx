@@ -3,7 +3,7 @@ import Image from "next/image"
 import { ButtonLink } from "@/components/ui/ButtonLink"
 
 type ServiceHeroProps = {
-  eyebrow: string
+  eyebrow?: string
   title: string
   text: string
   cta: string
@@ -23,17 +23,19 @@ export function ServiceHero({
   image,
 }: ServiceHeroProps) {
   return (
-    <section className="bg-paper py-[clamp(3rem,2.428571rem+2.857143vw,5rem)] text-ink">
+    <section className="service-hero bg-paper pt-[6.5rem] pb-[clamp(3rem,2.428571rem+2.857143vw,5rem)] text-ink">
       <div className="site-container">
         <div className="grid items-center gap-4 [grid-template-columns:repeat(auto-fit,minmax(min(100%,25rem),1fr))]">
           <div className="flex flex-col items-start">
-            <p className="mb-6 text-sm leading-5 font-semibold tracking-[0.2em] text-neutral-3 uppercase">
-              {eyebrow}
-            </p>
-            <h1 className="mb-8 text-[clamp(2.375rem,2.053571rem+1.607143vw,3.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
+            {eyebrow ? (
+              <p className="trim-text mb-6 text-sm leading-5 font-semibold tracking-[0.2em] text-neutral-3 uppercase">
+                {eyebrow}
+              </p>
+            ) : null}
+            <h1 className="trim-text mb-8 text-[clamp(2.375rem,2.053571rem+1.607143vw,3.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
               {title}
             </h1>
-            <p className="text-xl leading-normal font-medium">{text}</p>
+            <p className="trim-text text-xl leading-normal font-medium">{text}</p>
             <div className="mt-8">
               <ButtonLink href={ctaHref} tone="onLight">
                 {cta}

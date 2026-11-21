@@ -11,7 +11,8 @@ const footer = home.footer
 const phoneHref = `tel:${site.phone.replace(/[^\d+]/g, "")}`
 
 function FooterLink({ href, children }: { href: string; children: string }) {
-  const className = "text-base leading-6 hover:underline"
+  const className =
+    "inline-block py-2 text-base leading-6 tracking-[0em] hover:text-[#9fc418] hover:underline"
   if (href.startsWith("http")) {
     return (
       <a href={href} className={className} target="_blank" rel="noopener noreferrer">
@@ -30,20 +31,23 @@ function FooterLink({ href, children }: { href: string; children: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[linear-gradient(#45ab34,#142314)] text-paper">
-      <div className="site-container py-16 desk:py-24">
-        <div className="grid gap-12 desk:grid-cols-2 desk:gap-10">
-          <div className="flex flex-col gap-8">
+    <footer className="bg-[linear-gradient(180deg,#45ab34,#142314)] text-paper">
+      <div className="site-container relative">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,30rem),1fr))] gap-4">
+          <div className="relative z-[1] flex flex-col gap-[var(--size-2rem)]">
             <Logo variant="footer" />
-            <nav aria-label="Footer" className="grid gap-8 sm:grid-cols-3">
+            <nav
+              aria-label="Footer"
+              className="grid w-full grid-cols-[repeat(auto-fit,minmax(min(100%,11rem),1fr))] gap-4"
+            >
               {footer.columns.map((column) => (
                 <div key={column.title}>
-                  <h4 className="mb-4 text-xl leading-normal font-black tracking-[-0.03em]">
+                  <h4 className="trim-text mb-6 text-[1.25rem] leading-[1.1] font-extrabold tracking-[0em]">
                     {column.title}
                   </h4>
                   <ul className="flex flex-col gap-4">
                     {column.links.map((link) => (
-                      <li key={link.label}>
+                      <li key={link.label} className="whitespace-nowrap">
                         <FooterLink href={link.href}>{link.label}</FooterLink>
                       </li>
                     ))}
@@ -51,20 +55,22 @@ export function Footer() {
                 </div>
               ))}
             </nav>
-            <Image
-              src={footer.badge.src}
-              alt={footer.badge.alt}
-              width={220}
-              height={80}
-              className="h-16 w-auto"
-            />
+            <div className="w-[20rem] max-w-full">
+              <Image
+                src={footer.badge.src}
+                alt={footer.badge.alt}
+                width={footer.badge.width}
+                height={footer.badge.height}
+                className="h-auto w-full"
+              />
+            </div>
           </div>
-          <div className="rounded-tl-[3rem] bg-paper/90 p-8 text-ink desk:px-12 desk:py-24">
-            <h3 className="text-[clamp(1.75rem,1.678571rem+0.357143vw,2rem)] leading-[1.1] font-black tracking-[-0.03em]">
+          <div className="relative z-[1] rounded-tl-[3rem] bg-[#e1e3e1] px-12 py-24 text-ink max-[991px]:rounded-tr-[3rem] max-[991px]:p-12 max-[767px]:p-8">
+            <h3 className="trim-text mb-6 text-[length:var(--size-2rem)] leading-[1.1] font-black tracking-[-0.03em]">
               {footer.formTitle}
             </h3>
-            <p className="mt-4 text-xl leading-normal">{footer.formText}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <p className="trim-text text-[1.25rem] leading-[1.5] tracking-[0em]">{footer.formText}</p>
+            <div className="mt-[var(--size-2rem)] flex flex-wrap items-center gap-2">
               <ButtonLink href={footer.contactHref} variant="secondary" tone="onLight">
                 {footer.contact}
               </ButtonLink>
@@ -72,7 +78,7 @@ export function Footer() {
                 {footer.schedule}
               </ButtonLink>
             </div>
-            <p className="mt-6 flex items-center gap-2 text-xl leading-normal">
+            <p className="mt-4 flex items-center gap-2 text-[1.25rem] leading-[1.5]">
               <Image
                 src="/images/home/icon-phone.svg"
                 alt=""
@@ -84,12 +90,18 @@ export function Footer() {
               <a href={phoneHref}>{site.phone}</a>
             </p>
             <NewsletterForm />
-            <div className="mt-8 flex flex-col gap-2.5">
-              <h5 className="text-lg leading-[25px] font-extrabold">{footer.socialTitle}</h5>
-              <ul className="flex w-48 items-center gap-2">
+            <div className="flex flex-col gap-2.5">
+              <h5 className="text-[18px] leading-[25px] font-extrabold">{footer.socialTitle}</h5>
+              <ul className="flex w-[192px] items-center gap-2">
                 {footer.social.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.label}
+                      className="flex size-8 items-center justify-center"
+                    >
                       <Image src={item.icon} alt="" width={32} height={32} unoptimized className="size-8" />
                       <span className="sr-only"> (opens in a new tab)</span>
                     </a>
@@ -99,6 +111,10 @@ export function Footer() {
             </div>
           </div>
         </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 left-[55%] z-0 bg-[#e1e3e1] max-[1050px]:hidden"
+        />
       </div>
     </footer>
   )

@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --site-margin: clamp(1rem, 0.428571rem + 2.857143vw, 3rem);
+  --site-margin: clamp(1rem, 0.42857142857142855rem + 2.857142857142857vw, 3rem);
+  --size-2rem: clamp(1.75rem, 1.6785714285714286rem + 0.35714285714285715vw, 2rem);
+  --size-2-5rem: clamp(2rem, 1.8571428571428572rem + 0.7142857142857143vw, 2.5rem);
+  --size-3rem: clamp(2.25rem, 2.0357142857142856rem + 1.0714285714285714vw, 3rem);
+  --size-3-5rem: clamp(2.375rem, 2.0535714285714284rem + 1.607142857142857vw, 3.5rem);
+  --size-4rem: clamp(2.5rem, 2.0714285714285716rem + 2.142857142857143vw, 4rem);
+  --size-7rem: clamp(4rem, 3.142857142857143rem + 4.285714285714286vw, 7rem);
+  --size-10rem: clamp(5.5rem, 4.214285714285714rem + 6.428571428571428vw, 10rem);
+  --size-14rem: clamp(7rem, 5rem + 10vw, 14rem);
   --background: #ffffff;
   --foreground: #201e28;
 }
@@ -41,10 +49,200 @@
   -webkit-text-stroke: 0.6px #ffffff;
 }
 
+/* Montserrat cap-height trim. Same 0.39em / 0.36em values the live site uses for headings and body copy. */
+@utility trim-text {
+  display: flow-root;
+  &::before {
+    content: "";
+    display: table;
+    margin-bottom: calc(-0.5lh + 0.39em);
+  }
+  &::after {
+    content: "";
+    display: table;
+    margin-bottom: calc(-0.5lh + 0.36em);
+  }
+}
+
+/* Raleway cap-height trim, used by the outline display titles. */
+@utility trim-display {
+  display: flow-root;
+  &::before {
+    content: "";
+    display: table;
+    margin-bottom: calc(-0.5lh + 0.37em);
+  }
+  &::after {
+    content: "";
+    display: table;
+    margin-bottom: calc(-0.5lh + 0.36em);
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat), Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.nav-mega-item {
+  display: flex;
+  border-bottom: 0.094rem solid #201e28e6;
+  padding: 1rem calc(var(--size-2rem) / 2);
+}
+
+.nav-mega a.nav-mega-item:hover {
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-mega:has(a:hover) a.nav-mega-item:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+.nav-mega .is-green {
+  color: #87bd1f;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.process-divider {
+  width: 1.2px;
+  background-color: #201e28;
+}
+
+.process-divider-1 {
+  height: 5.4rem;
+}
+
+.process-divider-2 {
+  height: 5.2rem;
+}
+
+.process-divider-3 {
+  height: 5.3rem;
+}
+
+.process-steps {
+  max-width: 28rem;
+}
+
+.process-step-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #201e28;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 34px;
+  letter-spacing: -0.3px;
+}
+
+.process-step-text {
+  margin-bottom: 0;
+  color: #142314;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+@media screen and (min-width: 1440px) {
+  .process-divider-1 {
+    height: 5.5rem;
+  }
+
+  .process-divider-2,
+  .process-divider-3 {
+    height: 5.3rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .process-divider-1 {
+    height: 5.5rem;
+  }
+
+  .process-divider-2 {
+    height: 5.2rem;
+  }
+
+  .process-divider-3 {
+    height: 5.4rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .process-steps {
+    max-width: none;
+  }
+
+  .process-divider-1 {
+    height: 3.4rem;
+  }
+
+  .process-divider-2 {
+    height: 3.3rem;
+  }
+
+  .process-divider-3 {
+    height: 3.2rem;
+  }
+
+  .process-step-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .process-steps {
+    max-width: 24rem;
+  }
+
+  .process-divider-1 {
+    height: 4.9rem;
+  }
+
+  .process-divider-2 {
+    height: 6.9rem;
+  }
+
+  .process-divider-3 {
+    height: 4.7rem;
+  }
+
+  .process-step-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .process-steps {
+    max-width: 24rem;
+  }
+
+  .process-step-copy {
+    max-width: 267px;
+  }
+
+  .process-divider-1 {
+    height: 4.3rem;
+  }
+
+  .process-divider-2 {
+    height: 7.2rem;
+  }
+
+  .process-divider-3 {
+    height: 6.1rem;
+  }
+
+  .process-step-title {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+  }
 }

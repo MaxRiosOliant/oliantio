@@ -9,3 +9,6 @@ alwaysApply: true
 - Every page exports metadata via lib/seo.ts (title, description, canonical, OG).
 - Never change an existing URL slug without adding a 301 in config/redirects.ts.
 - Images go in /public/images/<type>/<slug>/ and always use next/image with alt text.
+- Dynamic routes must render content as complete static HTML: await params in the page component, list all paths in generateStaticParams, use ensureStatic = "navigation". Never wrap page content in <Suspense> to silence the dev "params outside Suspense" diagnostic; it moves content out of <main> in the initial HTML.
+- Verify SEO-critical changes against raw HTML from `npm start`, not the dev server.
+- Never migrate placeholder content (lorem ipsum, ‘Heading’, Webflow default text, empty accordions) even when copying a live page word for word. Report it instead.

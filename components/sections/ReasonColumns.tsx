@@ -23,10 +23,10 @@ export function ReasonColumns({ title, text, image, items }: ReasonColumnsProps)
         <div className="grid items-stretch gap-4 [grid-template-columns:repeat(auto-fit,minmax(min(100%,28rem),1fr))] min-[62rem]:gap-28">
           <div className="flex h-full flex-col justify-between gap-8">
             <div>
-              <h2 className="mb-6 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
+              <h2 className="trim-text mb-6 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
                 {title}
               </h2>
-              <p className="text-base leading-6">{text}</p>
+              <p className="trim-text text-base leading-6">{text}</p>
             </div>
             <div className="relative hidden aspect-square overflow-hidden rounded-2xl min-[62rem]:block">
               <Image
@@ -54,10 +54,10 @@ export function ReasonColumns({ title, text, image, items }: ReasonColumnsProps)
                     unoptimized
                     className="mb-6 h-8 w-8"
                   />
-                  <h4 className="mb-6 text-2xl leading-[1.1] font-extrabold text-balance">
+                  <h4 className="trim-text mb-6 text-2xl leading-[1.1] font-extrabold text-balance">
                     {item.title}
                   </h4>
-                  <p className="text-base leading-6">{item.text}</p>
+                  <p className="trim-text text-base leading-6">{item.text}</p>
                 </div>
               </li>
             ))}

@@ -4,7 +4,18 @@ import { Process } from "@/components/sections/Process"
 import { ServiceGrid } from "@/components/sections/ServiceGrid"
 import { WhyWorkWithUs } from "@/components/sections/WhyWorkWithUs"
 import { site } from "@/config/site"
+import { publishedArticles } from "@/lib/content"
 import { buildMetadata } from "@/lib/seo"
+
+const newestArticles = [...publishedArticles]
+  .sort((a, b) => {
+    if (a.date === b.date) {
+      return a.slug < b.slug ? -1 : 1
+    }
+
+    return a.date < b.date ? 1 : -1
+  })
+  .slice(0, 3)
 
 export const metadata = buildMetadata({
   title: "Home",
@@ -21,7 +32,7 @@ export default function HomePage() {
       <ServiceGrid />
       <WhyWorkWithUs />
       <Process />
-      <Insights />
+      <Insights articles={newestArticles} />
     </>
   )
 }

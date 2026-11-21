@@ -20,6 +20,21 @@ function isCurrent(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`)
 }
 
+function destination(href: string | undefined) {
+  if (!href || href === "#") {
+    return undefined
+  }
+
+  return href
+}
+
+function plainClassName(className: string) {
+  return className
+    .split(/\s+/)
+    .filter((token) => token && !token.startsWith("hover:") && !token.startsWith("aria-"))
+    .join(" ")
+}
+
 function menuKey(item: { href?: string; label: string }) {
   return `${item.href ?? "group"}::${item.label}`
 }
@@ -39,14 +54,17 @@ function NavAnchor({
   onNavigate: () => void
   className: string
 }) {
-  if (!item.href) {
-    return <span className={className}>{item.label}</span>
+  const href = destination(item.href)
+
+  if (!href) {
+    const Tag = "links" in item ? "p" : "span"
+    return <Tag className={plainClassName(className)}>{item.label}</Tag>
   }
 
-  if (isExternal(item.href)) {
+  if (isExternal(href)) {
     return (
       <a
-        href={item.href}
+        href={href}
         target="_blank"
         rel="noopener noreferrer"
         onClick={onNavigate}
@@ -60,8 +78,8 @@ function NavAnchor({
 
   return (
     <Link
-      href={item.href}
-      aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
+      href={href}
+      aria-current={isCurrent(pathname, href) ? "page" : undefined}
       onClick={onNavigate}
       className={className}
     >
@@ -70,7 +88,25 @@ function NavAnchor({
   )
 }
 
-function GroupColumn({
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 47 24"
+      aria-hidden="true"
+      className={`w-4 shrink-0 transition-transform ${open ? "-rotate-180" : ""}`}
+    >
+      <path
+        d="M1 1L23.5 23L46 1"
+        fill="none"
+        stroke="currentColor"
+        vectorEffect="non-scaling-stroke"
+        strokeWidth="1.5"
+      />
+    </svg>
+  )
+}
+
+function MegaColumn({
   group,
   pathname,
   onNavigate,
@@ -80,28 +116,26 @@ function GroupColumn({
   onNavigate: () => void
 }) {
   return (
-    <div className="min-w-56">
-      <NavAnchor
-        item={group}
-        pathname={pathname}
-        onNavigate={onNavigate}
-        className="block px-3 py-2 text-base font-semibold text-brand-5"
-      />
-      {group.links.length ? (
-        <ul>
-          {group.links.map((link) => (
-            <li key={menuKey(link)}>
-              <NavAnchor
-                item={link}
-                pathname={pathname}
-                onNavigate={onNavigate}
-                className="block rounded-lg px-3 py-2 text-ink hover:bg-neutral-1 aria-[current=page]:font-semibold"
-              />
-            </li>
-          ))}
-        </ul>
-      ) : null}
-    </div>
+    <ul>
+      <li>
+        <NavAnchor
+          item={group}
+          pathname={pathname}
+          onNavigate={onNavigate}
+          className="nav-mega-item is-green"
+        />
+      </li>
+      {group.links.map((link) => (
+        <li key={menuKey(link)}>
+          <NavAnchor
+            item={link}
+            pathname={pathname}
+            onNavigate={onNavigate}
+            className="nav-mega-item"
+          />
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -122,7 +156,7 @@ function MobileGroups({
             item={group}
             pathname={pathname}
             onNavigate={onNavigate}
-            className="block px-4 py-2 text-base font-semibold text-brand"
+            className="block px-4 py-2 text-[1.25rem] font-semibold text-[#87bd1f]"
           />
           {group.links.length ? (
             <ul>
@@ -141,18 +175,6 @@ function MobileGroups({
         </li>
       ))}
     </ul>
-  )
-}
-
-function Chevron({ open }: { open: boolean }) {
-  return (
-    <svg
-      viewBox="0 0 12 8"
-      aria-hidden="true"
-      className={`size-3 transition-transform ${open ? "rotate-180" : ""}`}
-    >
-      <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
-    </svg>
   )
 }
 
@@ -205,11 +227,11 @@ export function Nav({ items, cta }: NavProps) {
   }, [mobileOpen, openMenu])
 
   const linkClass =
-    "inline-flex items-center gap-1.5 py-4 text-base text-paper aria-[current=page]:font-semibold"
+    "relative z-20 inline-flex h-full items-center gap-2 px-[calc(var(--size-2rem)/2)] text-base whitespace-nowrap text-paper hover:text-[#9fc418] aria-[current=page]:font-semibold"
 
   return (
-    <nav aria-label="Primary" className="h-full min-w-0">
-      <ul className="hidden h-full items-center gap-7 desk:flex">
+    <nav aria-label="Primary" className="flex h-full min-w-0 flex-1 items-center">
+      <ul className="hidden h-full min-w-0 flex-1 items-stretch justify-center desk:flex">
         {items.map((item) => {
           const key = menuKey(item)
           const groups = item.groups ?? []
@@ -265,12 +287,12 @@ export function Nav({ items, cta }: NavProps) {
                 <div
                   id={panelId}
                   hidden={!isOpen}
-                  className="absolute inset-x-0 top-full z-30"
+                  className="fixed inset-x-0 top-0 z-0 bg-[#201e28] pt-[5.125rem] text-paper"
                 >
-                  <div className="flex justify-end">
-                    <div className="flex max-w-full flex-wrap justify-end gap-x-8 gap-y-6 rounded-b-2xl bg-paper px-8 py-6 text-ink shadow-lg">
+                  <div className="site-container pt-[var(--size-3rem)] pb-[var(--size-4rem)]">
+                    <div className="nav-mega grid grid-cols-[repeat(auto-fit,minmax(min(100%,10rem),1fr))] gap-x-4 gap-y-[var(--size-2rem)]">
                       {groups.map((group) => (
-                        <GroupColumn
+                        <MegaColumn
                           key={menuKey(group)}
                           group={group}
                           pathname={pathname}
@@ -289,7 +311,7 @@ export function Nav({ items, cta }: NavProps) {
       <button
         ref={menuButtonRef}
         type="button"
-        className="inline-flex size-10 flex-col items-center justify-center gap-1.5 desk:hidden"
+        className="relative z-10 ml-auto inline-flex size-10 flex-col items-center justify-center gap-1.5 desk:hidden"
         aria-expanded={mobileOpen}
         aria-controls={mobileId}
         onClick={() => setMobileOpen((open) => !open)}

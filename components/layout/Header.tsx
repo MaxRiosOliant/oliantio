@@ -11,39 +11,39 @@ import { home } from "@/content/home"
 
 export function Header() {
   const pathname = usePathname()
-  const [solid, setSolid] = useState(pathname !== "/")
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      const hero = document.querySelector(".home-hero")
-      const covered =
-        hero instanceof HTMLElement &&
-        hero.getBoundingClientRect().bottom > 82
-      setSolid(pathname !== "/" || !covered)
-    }
+    const onScroll = () => setScrolled(window.scrollY > 30)
 
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
-  }, [pathname])
+  }, [])
+
+  const onHome = pathname === "/"
+  const barClass =
+    onHome && !scrolled
+      ? "bg-transparent"
+      : scrolled
+        ? "bg-[#201e28e6] backdrop-blur-[2px]"
+        : "bg-ink"
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 text-paper transition-colors ${
-        solid ? "bg-ink" : "bg-transparent"
-      }`}
-    >
-      <div className="site-container relative flex h-[5.125rem] items-center justify-between gap-6">
-        <Logo />
-        <div className="flex items-center gap-6">
-          <Nav
-            items={primaryNav}
-            cta={{ href: home.header.ctaHref, label: home.header.cta }}
-          />
-          <div className="hidden desk:block">
-            <ButtonLink href={home.header.ctaHref} variant="secondary">
-              {home.header.cta}
-            </ButtonLink>
+    <header className="fixed inset-x-0 top-0 z-40 text-paper">
+      <div className={`relative z-20 transition-colors ${barClass}`}>
+        <div className="site-container flex h-[5.125rem] items-center gap-3">
+          <Logo />
+          <div className="flex h-full min-w-0 flex-1 items-stretch gap-3">
+            <Nav
+              items={primaryNav}
+              cta={{ href: home.header.ctaHref, label: home.header.cta }}
+            />
+            <div className="relative z-20 hidden items-center desk:flex">
+              <ButtonLink href={home.header.ctaHref} variant="secondary">
+                {home.header.cta}
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </div>

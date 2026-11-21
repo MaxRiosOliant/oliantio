@@ -1,10 +1,12 @@
 import { site } from "@/config/site"
 
+/** Omit `href` to render the label as text instead of a link. */
 export type NavLink = {
   label: string
-  href: string
+  href?: string
 }
 
+/** Omit `href` to render the column label as a heading instead of a link. */
 export type NavGroup = {
   label: string
   href?: string
@@ -26,6 +28,7 @@ export const primaryNav: NavItem[] = [
         links: [
           { label: "Web Development", href: "/services/web" },
           { label: "Staff Augmentation", href: "/services/staff-augmentation" },
+          { label: "Custom Development", href: "/services/web" },
           { label: "MVP Development", href: "/services/mvp-development" },
         ],
       },
@@ -33,20 +36,26 @@ export const primaryNav: NavItem[] = [
         label: "QA Testing & Automation",
         href: "/services/qa",
         links: [
-          { label: "Manual Testing", href: "/services/qa" },
-          { label: "Automation", href: "/services/qa" },
-          { label: "Performance Testing", href: "/services/qa" },
+          { label: "Manual Testing", href: "/services/qa#manual-testing" },
+          { label: "Automation", href: "/services/qa#automation" },
+          { label: "Performance Testing", href: "/services/qa#performance-testing" },
         ],
       },
       {
         label: "Digital Marketing & SEO",
         href: "/services/digital-marketing-seo",
-        links: [],
+        links: [
+          { label: "SEO Optimization", href: "/services/digital-marketing-seo#seo-optimization" },
+          { label: "Content Marketing", href: "/services/digital-marketing-seo#content-marketing" },
+          { label: "Social Media Marketing", href: "/services/digital-marketing-seo#social-media-marketing" },
+        ],
       },
       {
         label: "Partners",
-        href: "/services/digital-marketing-seo",
-        links: [],
+        links: [
+          { label: "Google Cloud Partner" },
+          { label: "Odoo" },
+        ],
       },
     ],
   },
@@ -55,7 +64,12 @@ export const primaryNav: NavItem[] = [
     groups: [
       {
         label: "Languages",
-        links: [{ label: ".Net / C#", href: "/services/development/net" }],
+        links: [
+          { label: ".Net / C#", href: "/services/development/net" },
+          { label: "Java" },
+          { label: "Node" },
+          { label: "Python" },
+        ],
       },
       {
         label: "Frameworks",
@@ -64,8 +78,25 @@ export const primaryNav: NavItem[] = [
           { label: "Angular", href: "/services/development/angular" },
         ],
       },
+      {
+        label: "No Code",
+        links: [
+          { label: "WebFlow", href: "/services/web" },
+          { label: "WordPress", href: "/services/web" },
+        ],
+      },
+      {
+        label: "Cloud",
+        links: [
+          { label: "Google Cloud Platform" },
+          { label: "AWS" },
+          { label: "Microsoft Azure" },
+        ],
+      },
     ],
   },
   { label: "Blog", href: "/blog" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact Us", href: "/contact-us" },
   { label: "Careers", href: site.careersUrl },
 ]
