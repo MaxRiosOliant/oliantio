@@ -1,0 +1,106 @@
+<section.breadcrumb_wrap>
+      A(empty).breadcrumb_home-icon.w-inline-block -> /
+        A.breadcrumb_link.u-text-style-small: Blog -> /blog
+      DIV.breadcrumb_text.u-text-style-small: Biz & Tech
+      A.nav_skip_wrap.w-inline-block: Skip to main content -> /#main
+          A(empty).nav_logo_wrap.w-inline-block -> /
+          <nav.nav_desktop_layout>
+                LI.nav_links_item: Our Services  LINKS [](#) [](/services/web) [](/services/staff-augmentation) [](#) [](/services/mvp-development) [](/services/qa) [](/services/qa) [](/services/qa) [](/services/qa) [](/services/digital-marketing-seo) [](#) [](#) [](#) [](/services/digital-marketing-seo) [](#) [](#)
+                LI.nav_links_item: Technologies  LINKS [](#) [](/services/development/net) [](#) [](#) [](#) [](#) [](/services/development/react) [](/services/development/angular) [](#) [](#) [](#) [](#) [](#) [](#) [](#)
+                LI.nav_links_item: Blog  LINKS [Blog](/blog)
+                LI.nav_links_item: About Us  LINKS [About Us](#)
+                LI.nav_links_item: Contact Us  LINKS [Contact Us](#)
+                LI.nav_links_item: Careers  LINKS [Careers](https://oliant.factorialhr.com/)
+                LI.nav_buttons_item: Schedule a Call ⏎ Schedule a Call  LINKS [Schedule a Call](/schedule-a-call)
+    <section.blog_category_section>
+            <form>
+                  DIV.blog_all_category_cms_item.w-dyn-item: Software Development  LINKS [Software Development](/categories/software-development)
+                  DIV.blog_all_category_cms_item.w-dyn-item: Technology  LINKS [Technology](/categories/technology)
+                  DIV.blog_all_category_cms_item.w-dyn-item: Talent  LINKS [Talent](/categories/talent)
+                  DIV.blog_all_category_cms_item.w-dyn-item: Biz & Tech  LINKS [Biz & Tech](/categories/biz-tech)
+                  DIV.blog_all_category_cms_item.w-dyn-item: Innovation  LINKS [Innovation](/categories/innovation)
+    <section.breadcrumb_wrap>
+          A(empty).breadcrumb_home-icon.w-inline-block -> /
+            A.breadcrumb_link.u-text-style-small: Blog -> /blog
+          DIV.breadcrumb_text.u-text-style-small: Biz & Tech
+    <section.blog-posts_wrap>
+            H4.blog_all_heading.u-text-style-h2: Biz & Tech
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/687fb3d0ca5f8708c691bb31_DataAnalytics_Cover-p-1080.png alt="" 437x225
+                      DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/getting-started-with-data-analytics-what-you-need-to-know)
+                      H3.blog_card_title.u-text-style-h5: Getting Started with Data Analytics: What You Need to Know
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                        DIV.blog_card_small_author_date.u-text-style-small: July 18, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /articles/getting-started-with-data-analytics-what-you-need-to-know
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68435e9b68f9bd6725fbad52_CD%20Offshore-p-1080.png alt="" 437x225
+                      DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/continuous-delivery-offshore-teams)
+                      H3.blog_card_title.u-text-style-h5: Continuous Delivery: The Role of Offshore Teams
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Max Rios
+                        DIV.blog_card_small_author_date.u-text-style-small: June 6, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /articles/continuous-delivery-offshore-teams
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67fd49088901ef276dfbc0f6_OKR%20vs%20KPI%20cover-p-1080.png alt="" 437x225
+                      DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/okr-vs-kpi)
+                      H3.blog_card_title.u-text-style-h5: OKR vs KPI: Navigating Performance Metrics with Confidence
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67eed406d440431d583c20d6_MarianoGomez%202.jpeg alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Mariano Gomez
+                        DIV.blog_card_small_author_date.u-text-style-small: April 11, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /articles/okr-vs-kpi
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67db0fb8c676af1116b7d84b_RACI%20Blog%20Cover-p-1080.png alt="" 437x225
+                      DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/what-is-raci-matrix)
+                      H3.blog_card_title.u-text-style-h5: RACI Matrix: Your New Favorite Project Blueprint
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67eed406d440431d583c20d6_MarianoGomez%202.jpeg alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Mariano Gomez
+                        DIV.blog_card_small_author_date.u-text-style-small: March 14, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /articles/what-is-raci-matrix
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68123800cea6dfc4dcf0812b_ProgramvsProjectManager_cover-p-1080.png alt="" 437x225
+                      DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/program-manager-vs-project-manager)
+                      H3.blog_card_title.u-text-style-h5: Program Manager or Project Manager: What Does Your Team Need?
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67eed406d440431d583c20d6_MarianoGomez%202.jpeg alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Mariano Gomez
+                        DIV.blog_card_small_author_date.u-text-style-small: January 9, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /articles/program-manager-vs-project-manager
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67b73132efb1e31d860ff8b5_66fda9f63501f27b0f100c04_Oliant%252016(1).avif alt="" 437x225
+                      DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/project-outsourcing-guide)
+                      H3.blog_card_title.u-text-style-h5: Outsourcing 101: Boosting With the Right Strategy
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                        DIV.blog_card_small_author_date.u-text-style-small: October 3, 2024
+                    A(empty).g_clickable_link.w-inline-block -> /articles/project-outsourcing-guide
+              DIV.pagination_wrap: 1 ⏎ 2  LINKS [1](?b8050073_page=1) [2](?b8050073_page=2)
+              A(empty).w-pagination-next.pagination_btn -> ?b8050073_page=2
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit

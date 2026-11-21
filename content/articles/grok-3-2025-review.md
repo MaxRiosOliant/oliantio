@@ -9,6 +9,22 @@ coverImage:
   src: /images/articles/grok-3-2025-review/cover.png
   alt: Grok 3 2025 Review
 draft: false
+relatedServices:
+  - title: Custom Web Solutions
+    href: /services/web
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: "Race to the AI throne: Where do ChatGPT Competitors Stand?"
+    href: /articles/chatgpt-alternatives
+  - title: How DeepSeek Can Reshape AI
+    href: /articles/what-is-deepseek-ai
+  - title: Salesforce AI’s Secret Weapon for Predictive Data
+    href: /articles/salesforce-ai-predictive-analytics
+  - title: "How Data Science, AI, and Analytics Will Evolve by 2025"
+    href: /articles/data-science-vs-data-analytics-2025
+  - title: "DATA & AI: The Heartbeat of your Company"
+    href: /articles/data-ai-the-heartbeat-of-your-company-data
 seo:
   title: "Grok 3 vs GPT-4o: What’s the Smartest AI? 2025 Review"
   description: "Is Grok AI the smartest AI in 2025? Pros & Cons, benchmarks, compute scale, and Deep Research mode in this expert review comparing Grok 3 to GPT-4o and Gemini."
@@ -43,7 +59,7 @@ Now that Grok 3 has been available for several months, practical feedback and us
 
 It seems to me that these characteristics place Grok firmly in the “high-performing but imperfect” category. It’s a competitive general-purpose LLM, but it has yet to demonstrate a clear lead over its closest rivals.
 
-###### \[Also check out: [What are the Top ChatGPT Competitors?](https://www.oliant.io/articles/chatgpt-alternatives) \]
+###### \[Also check out: [What are the Top ChatGPT Competitors?](https://www.oliant.io/articles/chatgpt-alternatives)\]
 
 ## The xAI Infrastructure and Hardware
 
@@ -83,7 +99,7 @@ Perhaps Grok’s most compelling feature is its accessibility. It remains free t
 
 Without Anthropic's tight limits, [DeepSeek's](https://www.oliant.io/articles/what-is-deepseek-ai) outages, or OpenAI's paid tiers, it should be no surprise that Grok sits consistently near the top of the [Chatbot Arena](https://chatbotarena.com/) leaderboard.
 
-###### \[Also check out: [What is DeepSeek AI?](https://www.oliant.io/articles/what-is-deepseek-ai) \]
+###### \[Also check out: [What is DeepSeek AI?](https://www.oliant.io/articles/what-is-deepseek-ai)\]
 
 ## Grok 3 Cons
 

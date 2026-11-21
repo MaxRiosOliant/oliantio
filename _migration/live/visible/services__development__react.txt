@@ -1,0 +1,109 @@
+<section.breadcrumb_wrap>
+      A(empty).breadcrumb_home-icon.w-inline-block -> /
+        A.breadcrumb_link.u-text-style-small: Services -> #
+        A.breadcrumb_link.u-text-style-small: Website Development -> /services/web
+      DIV.breadcrumb_text.u-text-style-small: React Development
+<main.page_main>
+  <section.services_hero_wrap>
+              DIV.g_eyebrow_text.u-text-style-small: REACT DEVELOPMENT
+            H1.services_hero_head.u-text-style-h1: Deliver high quality and modern UI
+            P.services_hero_paragraph.u-text-style-large: Our team delivered several solutions using the most modern UX/UI techniques for different markets and industries.
+                A.g_clickable_link.w-inline-block: Start your React journey -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Start your React journey
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67d06c065fe6429ef96d0e5b_software_react_resized.svg alt="" 664x817
+  <section.services_wrap>
+        H2.services_head.u-text-style-h2: React Development
+        P.services_head-paragraph.u-text-style-main: React is one of the best front-end frameworks in the world. But leveraging its potential requires a group of skilled developers with high expertise on user experience and moder user interfaces that perform across multiple platforms, such as tablets, desktops, different browsers, and mobile devices. We know how to architect React solutions that fits your company’s requirements.
+              H3.services_card_title.u-text-style-h5: Next.Js
+                P: React Native is an extraordinary framework, but Next.Js has substantially improved time-to-market and code simplicity. Powered by Vercel and fully open-source, we ensure Next.Js will be around for a long time. The Vercel Cloud might be an easy option to deploy applications, but its popularity has yielded other solutions, such as Coolify, Netlify, and Render.
+                P: Our teams have delivered Next.Js solutions for the insurance industry, car dealerships, financial institutions, content management systems, and custom solutions for specific needs, as a few examples of the diversity of solutions that Next.Js allows. We fully integrated front-ends with different backends and solutions transparently.
+                P: ‍
+              H3.services_card_title.u-text-style-h5: React Native
+                P: There are several reasons to use React Native without other frameworks. In many cases, your React application has been in the market for some years without other options. Still, React Native is a fast, reliable, and portable solution that can solve the majority of your front-end needs.
+                P: Our teams maintain, enhance, increase performance, apply security principles, and migrate React apps if required. We have a group of React experts who can ensure your React application runs smoothly and that you are up-to-date in every aspect of front-end architecture and development.
+                P: ‍
+              H3.services_card_title.u-text-style-h5: React Expo
+                P: React Expo is an open-source framework built on top of React that gained popularity because it simplifies the process of developing cross-platform solutions. If your company needs to leverage deep support for mobile devices, React Expo offers pre-built components specifically designed for iOS and Android.
+                P: Our teams have maintained and created Expo applications. We have extensive knowledge of how to maximize the potential of your mobile apps, leveraging push notifications, camera access, and more native functionality. We maintain several active Apple Developer licenses to deploy to the Apple Store and set up Android and iOS pipelines.
+              H3.services_card_title.u-text-style-h5: Custom React Development
+                P: React provides a good set of components and functionality. However, it is not unusual to find complex requirements that don’t fit into any external library. Also, for security reasons, we assist companies in developing their components in case external libraries are not an option for regulatory or security reasons.
+                P: Our developers can create custom components that integrate with other libraries and provide tools that help your company grow. We follow the best practices and patterns of React development, including Unit Tests, data quality, state management, Redux patterns, etc.
+              H3.services_card_title.u-text-style-h5: SaaS React Integration
+                P: We live in a world where SaaS solutions are more common than ever. In this environment, React is a perfect framework to integrate components and functionality into existing SaaS applications, as external tools, or fully embedded into the development team building the SaaS platform.
+                P: We have extensive experience working with SaaS solutions to extend, improve, or entirely build dashboards and components that provide an extraordinary UI/UX experience. Depending on how content and data are served to the front end, we leverage regular APIs and GraphQL style.
+  <section.cta_wrap.u-theme-dark>
+          H2.cta_title.u-text-style-h2: Embrace the power of an outstanding UI/UX service
+          DIV.cta_text.u-text-style-main: Our expert React team can help you maintain, build, or extend current applications while enhancing UI/UX and code simplicity.
+              A.g_clickable_link.w-inline-block: Let’s schedule a call -> /schedule-a-call
+            DIV.btn_main_text.u-text-style-large: Let’s schedule a call
+  <section.why-oliant_wrap>
+            H2.why-oliant_head.u-text-style-h2: Why Choose OLIANT
+            P.why-oliant_text.u-text-style-main: OLIANT provides end-to-end digital and software solutions with expert care worldwide.
+              IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67c7226d53252c33b87cd28e_software_qa_why_oliant_resized.svg alt="" 616x616
+              H4.reason_card_head.u-text-style-h4: Extensive React knowledge
+              P.reason_card_text.u-text-style-main: We merge extensive knowledge of architecture, user experience, and industry expertise into teams that understand your market, suggest solutions, and build applications end-to-end.
+              H4.reason_card_head.u-text-style-h4: React Continuous Delivery
+              P.reason_card_text.u-text-style-main: If you already have a cloud provider or Enterprise solution or need help deploying to different host providers, our teams master React Continuous Delivery, ensuring your code goes live without issues, is thoroughly tested, and runs smoothly.
+              H4.reason_card_head.u-text-style-h4: Technical Experts
+              P.reason_card_text.u-text-style-main: We can deliver React applications, but we master software development. We are technical professionals who have delivered hundreds of solutions and have learned to improve scalability, security, performance, maintainability and simplicity.
+  <section.faq_wrap>
+        H2.faq_title.u-text-style-h2: Frequently Asked Questions
+        P.faq_paragraph.u-text-style-main: We compiled a list of frequent questions that we receive from our clients.
+              H6.faq_question.u-text-style-h6: Is React the same as Angular?
+              H6.faq_question.u-text-style-h6: Should I use React for my next project?
+              H6.faq_question.u-text-style-h6: What are the best use cases to build React applications?
+              H6.faq_question.u-text-style-h6: What is the best way to build a React development team?
+              H6.faq_question.u-text-style-h6: Is React a good option for mobile development?
+                  P: React Native works seamlessly with mobile devices, but there are other frameworks built on top of React that enhance mobile development. The most famous is React Expo, which has specific components for iOS and Android and native mobile functionality.
+  <section.cta-full_wrap.u-theme-dark>
+          H2.cta-full_head.u-text-style-h2: Let us help your company grow
+          P.cta-full_text.u-text-style-main: An expert software partner lets you focus on the core of your business, increasing revenue, service quality, and time-to-market.
+                A.g_clickable_link.w-inline-block: Let’s get in touch -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Let’s get in touch
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67c7258a283ba29004f5ab67_shutterstock_2279184929_resized.svg alt="" 664x474
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit
+
+FAQ 1: Is React the same as Angular?
+    => React and Angular are both Javascript frameworks, but they are completely different. They are both outstanding solutions for building web applications, but their differences are numerous. React also has more frameworks built on top of it that leverage React Native, adding functionality and components for specific cases.
+FAQ 2: Should I use React for my next project?
+    => It depends on the nature of your project. While React is an extraordinary framework, every business must consider several other factors, such as existing technologies and teams, transitioning to a new technology, building skills internally, etc.
+FAQ 3: What are the best use cases to build React applications?
+    => React is so versatile that it has permeated numerous industries and types of solutions. Meta still uses the framework to build its applications, but hundreds of famous solutions, such as Netflix, WhatsApp, Salesforce, or Dropbox, use React.
+FAQ 4: What is the best way to build a React development team?
+    => There are different strategies for building a React development team, such as adding one or two members using Agile methodologies to increase delivery while merging into the current teams. You can also rely on an expert partner like us to help you extend, deliver the entire project, or ramp up your delivery.
+FAQ 5: Is React a good option for mobile development?
+    => React Native works seamlessly with mobile devices, but there are other frameworks built on top of React that enhance mobile development. The most famous is React Expo, which has specific components for iOS and Android and native mobile functionality.

@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
-
 import { Logo } from "@/components/layout/Logo"
 import { Nav } from "@/components/layout/Nav"
 import { ButtonLink } from "@/components/ui/ButtonLink"
@@ -10,7 +8,6 @@ import { primaryNav } from "@/config/navigation"
 import { home } from "@/content/home"
 
 export function Header() {
-  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -21,13 +18,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const onHome = pathname === "/"
-  const barClass =
-    onHome && !scrolled
-      ? "bg-transparent"
-      : scrolled
-        ? "bg-[#201e28e6] backdrop-blur-[2px]"
-        : "bg-ink"
+  const barClass = scrolled
+    ? "bg-[#201e28e6] backdrop-blur-[2px]"
+    : "bg-ink in-[body:has(.dark-hero)]:bg-transparent"
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 text-paper">

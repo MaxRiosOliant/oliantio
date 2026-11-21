@@ -47,22 +47,18 @@ export const home = {
     title: "Why work with us",
     items: [
       {
-        title: "Reason 1",
         text: "We are a company founded by IT experts who have worked for 20-30 years on projects of varying sizes in several industries.",
         icon: "/images/home/reason-1.svg",
       },
       {
-        title: "Reason 2",
         text: "We optimize processes and delivery to maximize our clients’ benefits and ensure rapid ROI.",
         icon: "/images/home/reason-2.svg",
       },
       {
-        title: "Reason 3",
         text: "We manage clients and projects from different locations. Our headquarters are in Central Time, but we can deliver from different time zones worldwide.",
         icon: "/images/home/reason-3.svg",
       },
       {
-        title: "Reason 4",
         text: "We love what we do and want our clients to experience our passion for high-quality results by having the best professionals in each technology.",
         icon: "/images/home/reason-4.svg",
       },

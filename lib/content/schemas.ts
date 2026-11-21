@@ -60,6 +60,24 @@ export const authorSchema = z
     }
   })
 
+const relatedLinkSchema = z.object({
+  title: z.string().min(1),
+  href: z.string().regex(/^(\/|https:\/\/)/, "Must be a site path or https URL"),
+})
+
+const faqSchema = z.object({
+  title: z.string().min(1),
+  text: z.string().min(1).optional(),
+  items: z
+    .array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      }),
+    )
+    .min(1),
+})
+
 export const articleSchema = z
   .object({
     title: z.string().min(1),
@@ -75,6 +93,9 @@ export const articleSchema = z
       alt: z.string().min(1),
     }),
     draft: z.boolean().default(false),
+    relatedServices: z.array(relatedLinkSchema).default([]),
+    relatedArticles: z.array(relatedLinkSchema).default([]),
+    faq: faqSchema.optional(),
     seo: seoSchema,
   })
   .superRefine((article, ctx) => {
@@ -111,5 +132,6 @@ export const pageSchema = z.object({
   title: z.string().min(1),
   slug: slugSchema,
   heading: z.string().min(1).optional(),
+  layout: z.enum(["document", "landing", "standalone"]).optional(),
   seo: seoSchema,
 })

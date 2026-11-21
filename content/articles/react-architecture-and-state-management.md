@@ -9,6 +9,22 @@ coverImage:
   src: /images/articles/react-architecture-and-state-management/cover.png
   alt: React Architecture and State Management for Scaling Web Apps
 draft: false
+relatedServices:
+  - title: React Web Development
+    href: /services/development/react
+  - title: Custom Software Development
+    href: /services/web
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: How to Build a No-Code Website
+    href: /articles/no-code-web-development-2025
+  - title: "Choosing a JavaScript Framework? Here’s What You Need to Know"
+    href: /articles/javascript-framework-2025
+  - title: "What’s Next for JavaScript? 2025 Trends and Predictions"
+    href: /articles/javascript-trends-predictions-2025
+  - title: "GitLab vs. GitHub: What’s the Difference?"
+    href: /articles/gitlab-vs-github-difference
 seo:
   title: React Architecture and State Management for Scaling Web Apps
   description: "How to build scalable React Web Applications in 2025. Tips, insights and strategies for React state management with useState, Context API Redux, and more"
@@ -48,6 +64,15 @@ A clear directory structure is foundational for maintainability. Group files and
 
 **Example structure:**
 
+```javascript
+/src
+ ├── /components
+ ├── /hooks
+ ├── /pages
+ ├── /utils
+ ├── /services
+```
+
 This approach prevents component sprawl and simplifies onboarding new team members.
 
 ### Focus on Common Modules and Reusability
@@ -72,9 +97,26 @@ Utility or helper files contain common JavaScript logic that can be used through
 
 By default, React projects use relative imports, which can become confusing with deeply nested folders:
 
+```javascript
+import Button from '../../components/Button';
+```
+
 Using absolute imports improves readability:
 
+```javascript
+import Button from 'components/Button';
+```
+
 To enable this, configure jsconfig.json:
+
+```javascript
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
 
 This small change simplifies navigation and refactoring.
 
@@ -97,7 +139,7 @@ Keep your UI components focused on rendering. Extract business logic into custom
 -   UI components live in /pages or /views.
 -   Data fetching logic can use hooks like useFetchData or libraries like React Query.
 
-###### \[Also check out: [A Guide to Custom Software Development](https://www.oliant.io/articles/what-is-custom-software-development) \]
+###### \[Also check out: [A Guide to Custom Software Development](https://www.oliant.io/articles/what-is-custom-software-development)\]
 
 ![](/images/articles/react-architecture-and-state-management/685edcfd81c04f7880561a7b-react-js-2.png)
 
@@ -108,6 +150,21 @@ As your React application grows, managing state across components becomes a key 
 ### Local State with useState
 
 The simplest form of state management is React’s built-in useState hook, ideal for local, isolated state inside a component.
+
+```javascript
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </>
+  );
+}
+```
 
 **When to use:**
 
@@ -121,6 +178,31 @@ When multiple components need shared data, the Context API allows you to avoid p
 
 **Example: Theme switching**
 
+```javascript
+import React, { createContext, useState, useContext } from 'react';
+
+const ThemeContext = createContext();
+
+export function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemedButton() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Current Theme: {theme}
+    </button>
+  );
+}
+```
+
 **When to use:**
 
 -   App-wide themes
@@ -132,6 +214,51 @@ When multiple components need shared data, the Context API allows you to avoid p
 For large applications with complex state transitions and deeply nested components, Redux still remains a popular choice. It provides a centralized store and predictable state updates.
 
 **Example: Redux Toolkit**
+
+```javascript
+npm install @reduxjs/toolkit react-redux
+
+// store.js
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { value: 0 },
+  reducers: {
+    increment: (state) => { state.value += 1; },
+    decrement: (state) => { state.value -= 1; },
+  },
+});
+
+export const { increment, decrement } = counterSlice.actions;
+
+export const store = configureStore({ reducer: { counter: counterSlice.reducer } });
+
+// App.js
+import { Provider, useSelector, useDispatch } from 'react-redux';
+import { store, increment, decrement } from './store';
+
+function Counter() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={() => dispatch(increment())}>+</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Counter />
+    </Provider>
+  );
+}
+```
 
 **When to use:**
 
@@ -145,13 +272,34 @@ Redux can be verbose and complex for medium-sized projects. Libraries like Zusta
 
 **Example using Zustand:**
 
+```javascript
+npm install zustand
+
+import create from 'zustand';
+
+const useStore = create((set) => ({
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+}));
+
+function Counter() {
+  const { count, increment } = useStore();
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={increment}>+</button>
+    </>
+  );
+}
+```
+
 **When to use:**
 
 -   Medium-sized apps
 -   Preference for simplicity
 -   Performance-critical apps (Zustand supports lazy slices)
 
-###### \[Also check out: [The Top 5 Web Development Languages](https://www.oliant.io/articles/web-development-languages-2025) \]
+###### \[Also check out: [The Top 5 Web Development Languages](https://www.oliant.io/articles/web-development-languages-2025)\]
 
 ## Additional Tips for Scaling React Apps
 
@@ -168,6 +316,20 @@ Avoid unnecessary re-renders by:
 ### Use Lazy Loading and Code Splitting
 
 Implement lazy loading to load components only when needed, improving initial load times.
+
+```javascript
+import React, { lazy, Suspense } from 'react';
+
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>
+  );
+}
+```
 
 ### Enforce Code Quality
 

@@ -1,0 +1,69 @@
+<main.page_main>
+  <section.section_top_wrap.u-theme-dark>
+            H1: Your privacy is important to us
+            P.policy_paragraph: How we collect, use, and protect your information.
+              A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+            DIV.btn_main_text.u-text-style-large: Contact Us
+  <section.policy_wrap>
+      H2.policy_head.u-text-style-h2: Privacy Policy by Oliant
+      DIV.policy_revised.u-text-style-main: Last revised: July 2024
+        P.policy_paragraph: Thank you for visiting OLIANT. Your privacy is important to us, and we are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, and protect your information when you register for our event.
+        P.policy_paragraph: This Privacy Policy applies to OLIANT LLC. Website located at www.oliant.io/, headquarters locatedat 25 S Grove Ave, Elgin, IL. By accessing and using this Website, you shall be deemed to have accepted and agreed to the terms here after set forth (the “Privacy Terms”). If you do not agree to these Privacy Terms, please do not use this Website.‍
+        H3.u-text-style-h4.u-mb-text: Information Collection and Use
+        P: When you visit the Website, use the functionality contained therein, communicate with us viaemail, social media, or feedback or contact forms located on the Website, we may ask for personalinformation. This information will be used for purposes set out in these Privacy Terms. ⏎ The information collected and used through communications, social media referral or forms caninclude the following: ⏎ - Name. ⏎ - Job Title. ⏎ - Company name & Size ⏎ - Email address ⏎ - Social media URL ⏎ - Other publicly available information from your social media profile. ⏎ ‍ ⏎ Some information is also automatically collected, such as your Internet Protocol ("IP") address, your operating system, the browser type, the address of a referring website, your user preferences, and your activity on the Website. ⏎ We treat this information as personal information if we combine it with or link it to any of the identifying personal information mentioned above. ⏎ By providing personal information to us, you consent to the collection, use, and disclosure of such personal information as specified in these Privacy Terms. ⏎ Without limiting the foregoing, we may occasionally ask you to consent when we collect, use, or disclose your personal information in specific circumstances. Sometimes your consent will be implied through your conduct with us if the purpose of the collection, use, or disclosure is obviousand you voluntarily provide the information. ⏎ We do not knowingly collect the personal information from anyone under the major age of consent in the jurisdiction of residence of the individual, or determined based on the address of such an individual. ⏎ We may store and process personal information in the United States and other countries. We may use your personal or account information for the following purposes: ⏎ ‍ ⏎ - For our internal business purposes, such as to analyze trends and statistics, to understand our audience and build a consumer profile; ⏎ - With your consent when required, to communicate with you and to send you information by email, postal mail, telephone, text message, or other means with relevant information related to products, services with OLIANT; ⏎ - To contact you if necessary regarding your transactions with us, changes to our terms, conditions, and policies and/or for other administrative purposes; ⏎ - To help us address problems with and improve the Website, and/or our products and services; ⏎ - To request feedback and otherwise contact you about your use of the Website and/or ourproducts and services; ⏎ - To protect the security or integrity of our websites, our products and services, and ourbusiness; to prevent, detect and investigate activity and transactions that are suspicious,fraudulent, or violate our Website Terms and Conditions. ⏎ ‍
+        H3.u-text-style-h4.u-mb-text: Information Sharing and Disclosure
+        P.policy_paragraph: We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. Your information will only be used privately by OLIANT and its partners. We may share your information with trusted third parties and service providers who assist us in Website maintenance, communications, transactions, etc. When we engage Service Providers who manage customer information on our behalf and/or perform services on our behalf, such as conducting surveys, sending communications or helping prevent fraudulent transactions, we may share your personal information with such Service Providers. Under the requirement that such personal information is used only to provide services to us.
+        H3.u-text-style-h4.u-mb-text: Rights to Your Information
+        P.policy_paragraph: We strive to ensure that any personal information we retain and use is accurate, complete, and up-to-date as necessary for the purposes for which we will use it. If our records regarding your personal information are inaccurate or incomplete, we will amend that information at your request.
+        H3.u-text-style-h4.u-mb-text: Aggregated Data
+        P.policy_paragraph: We may also use your personal information and Website usage statistics to generate Aggregated Data for internal use and for sharing with others on a selective basis. “Aggregated Data” means records which have been stripped of information potentially identifying customers or users, and which have been manipulated or combined to provide generalized, anonymous information. Your identity and personal information will be kept anonymous in Aggregated Data.
+        H3.u-text-style-h4.u-mb-text: Data Security
+        P.policy_paragraph: We implement various security measures to maintain the safety of your personal information. Your information is stored in secure environments and is only accessible by a limited number of persons who have special access rights to such systems and are required to keep the information confidential. Please remember that you control what personal information you provide while using the Website. Ultimately, you are responsible for maintaining the secrecy of any personal information provided in connection with the use of the Website.
+        H3.u-text-style-h4.u-mb-text: Cookies and Log Files
+        P.policy_paragraph: We may use cookies and log files to track user information. Cookies are small amounts of data that are transferred to your web browser by a web server and are stored on your computer’s hard drive. We use cookies to track which page variant a visitor has seen, to track if a visitor has clicked on a page variant, to monitor traffic patterns, and to gauge the popularity of website pages and options. We will use this information to deliver relevant content and services to you. Most Web browsers are set to accept cookies by default. If you prefer, you may choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or functionality of our Website.
+        H3.u-text-style-h4.u-mb-text: Links
+        P.policy_paragraph: The Website may contain links to other websites. These Privacy Terms do not apply to other websites, and we are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policy of linked websites prior to providing them with personal information. Their privacy policies and practices may differ significantly from our policies and practices.
+        H3.u-text-style-h4.u-mb-text: Changes to Our Privacy Policy
+        P.policy_paragraph: We may update our Privacy Policy from time to time. Any changes will be posted on this page, and we encourage you to review this policy periodically.
+        H3.u-text-style-h4.u-mb-text: Contact Us
+        P: If you require any further assistance about this Privacy Policy, please contact us by email at:hellochicago@oliant.io or by phone at (224) 238-3800.  LINKS [hellochicago@oliant.io](mailto:hellochicago@oliant.io?subject=Info%20Request)
+  <section.cta_wrap.u-theme-dark>
+          H2.cta_title.u-text-style-h2: Bridging IT Ambitions with Expertise. ⏎ Connect Today.
+          DIV.cta_text.u-text-style-main: Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success.
+              A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+            DIV.btn_main_text.u-text-style-large: Schedule a Call
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit

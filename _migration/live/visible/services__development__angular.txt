@@ -1,0 +1,101 @@
+<section.breadcrumb_wrap>
+      A(empty).breadcrumb_home-icon.w-inline-block -> /
+        A.breadcrumb_link.u-text-style-small: Services -> #
+        A.breadcrumb_link.u-text-style-small: Development -> /services/web
+      DIV.breadcrumb_text.u-text-style-small: Angular Development
+<main.page_main>
+  <section.services_hero_wrap>
+              DIV.g_eyebrow_text.u-text-style-small: ANGULAR DEVELOPMENT
+            H1.services_hero_head.u-text-style-h1: Deliver high-quality and modern UI
+            P.services_hero_paragraph.u-text-style-large: Our team delivered several solutions using the most modern UX/UI techniques for different markets and industries.
+                A.g_clickable_link.w-inline-block: Accelerate your development -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Accelerate your development
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67ce44d601d349412dab41e6_software_dotnet_resized.svg alt="" 664x817
+  <section.services_wrap>
+        H2.services_head.u-text-style-h2: Angular Development
+        P.services_head-paragraph.u-text-style-main: Angular is a robust, open-source web application framework. Google developed Angular to build complex, single-page applications (SPAs) that leverage dynamic interactions with users. However, to take advantage of the potential, you need a highly specialized team that can architect Angular solutions correctly and deliver the most value.
+              H3.services_card_title.u-text-style-h5: Single-Page Applications (SPAs)
+                P: Single-page applications are the cornerstone of Angular development. SPAs provide a dynamic, smooth, and interactive experience with laser-focus updates that eliminate the need for constant page refresh.
+                P: Our teams delivered several Angular applications using the best practices in the market, such as Reactive Programming (RxJS), correct component structures, and using Typescript (recommended) or Javascript.
+              H3.services_card_title.u-text-style-h5: Progressive Web Applications (PWAs)
+                P: Progressive Web Applications are extraordinary solutions that provide a native-UI experience for diverse devices. Users can install the application on their devices and enjoy the most advanced features.
+                P: Our teams are highly experienced in web technologies that can be used in PWAs seamlessly, maximizing the capabilities of your application to leverage extraordinary user experience and interactions.
+              H3.services_card_title.u-text-style-h5: End-to-end UI/UX
+                P: User Interfaces are essential, but User Experience (UX) is critical in modern web applications. Layouts must accommodate different devices, the design must follow modern visualization principles, and speed is essential.
+                P: We deliver solutions by applying advanced visual techniques to engage users and create smooth experiences. We work with UI designers and UX experts to create attractive, user-friendly interfaces.
+              H3.services_card_title.u-text-style-h5: Maintenance and modernization
+                P: Angular approaches a decade of existence. The number of solutions implemented in Angular grew steadily year over year. Many companies need to maintain and modernize older versions.
+                P: We have a large team of professionals with experience in most versions of Angular. We maintain older versions and modernize existing applications in several industries, avoiding disruption while improving their solutions.
+  <section.cta_wrap.u-theme-dark>
+          H2.cta_title.u-text-style-h2: Build powerful and robust web solutions with Angular
+          DIV.cta_text.u-text-style-main: Our expert team can build, maintain, and modernize Angular applications by fixing bugs, shipping new features, enhancing user experience, and more.
+              A.g_clickable_link.w-inline-block: Let’s schedule a call -> /schedule-a-call
+            DIV.btn_main_text.u-text-style-large: Let’s schedule a call
+  <section.why-oliant_wrap>
+            H2.why-oliant_head.u-text-style-h2: Why Choose OLIANT
+            P.why-oliant_text.u-text-style-main: OLIANT provides end-to-end digital and software solutions with expert care worldwide.
+              IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67c7226d53252c33b87cd28e_software_qa_why_oliant_resized.svg alt="" 616x616
+              H4.reason_card_head.u-text-style-h4: Extensive Angular knowledge
+              P.reason_card_text.u-text-style-main: We merge extensive knowledge of architecture, user experience, and industry expertise into teams that understand your market, suggest solutions, and build applications end to end.
+              H4.reason_card_head.u-text-style-h4: Angular Continuous Delivery
+              P.reason_card_text.u-text-style-main: If you already have a cloud provider or Enterprise solution or need help deploying to different host providers, our teams master Continuous Delivery, ensuring your code goes live without issues, is thoroughly tested, and runs smoothly.
+              H4.reason_card_head.u-text-style-h4: Extensive knowledge of Angular versions
+              P.reason_card_text.u-text-style-main: We can maintain and modernize most angular versions. Our teams acquired extensive knowledge of Angular in the last decade, providing guidance, maintenance, support, and version upgrades.
+  <section.faq_wrap>
+        H2.faq_title.u-text-style-h2: Frequently Asked Questions
+        P.faq_paragraph.u-text-style-main: We compiled a list of frequent questions that we receive from our clients.
+              H6.faq_question.u-text-style-h6: What language is used in Angular?
+              H6.faq_question.u-text-style-h6: Is Angular becoming obsolete?
+              H6.faq_question.u-text-style-h6: Is Angular backend or frontend?
+              H6.faq_question.u-text-style-h6: Is Angular the same as React?
+                  P: React and Angular are both Javascript frameworks, but they are entirely different. They are both outstanding solutions for building web applications, but their differences are numerous. Angular is a fully functional framework used in several industries and solutions.
+  <section.cta-full_wrap.u-theme-dark>
+          H2.cta-full_head.u-text-style-h2: Trust an expert Angular company
+          P.cta-full_text.u-text-style-main: An expert software partner lets you focus on your business's core, increasing revenue, service quality, and time to market.
+                A.g_clickable_link.w-inline-block: Let’s discuss your goals -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Let’s discuss your goals
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67c7258a283ba29004f5ab67_shutterstock_2279184929_resized.svg alt="" 664x474
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit
+
+FAQ 1: What language is used in Angular?
+    => Angular's primary language is Typescript, a superset of Javascript, which is used to build single-page applications (SPAs). Angular also extensively uses HTML.
+FAQ 2: Is Angular becoming obsolete?
+    => Google actively supports Angular. Many of Google’s products use Angular as the primary framework. That strong argument indicates that Angular is a good option for developing solutions.
+FAQ 3: Is Angular backend or frontend?
+    => Angular is designed and primarily used for front-end development. Angular framework aims to build dynamic and interactive user interfaces.
+FAQ 4: Is Angular the same as React?
+    => React and Angular are both Javascript frameworks, but they are entirely different. They are both outstanding solutions for building web applications, but their differences are numerous. Angular is a fully functional framework used in several industries and solutions.

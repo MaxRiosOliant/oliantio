@@ -10,6 +10,15 @@ coverImage:
   src: /images/articles/blockchain-privacy-2025/cover.png
   alt: Blockchain Security 2025
 draft: false
+relatedArticles:
+  - title: "Is Your Digital Security Strategy Up To Date?"
+    href: /articles/digital-security-strategy-2025
+  - title: "Meet Nova Act, Amazon’s Powerful New AI Agent SDK"
+    href: /articles/nova-act-ai-agent-sdk
+  - title: "Race to the AI throne: Where do ChatGPT Competitors Stand?"
+    href: /articles/chatgpt-alternatives
+  - title: A Dev’s Guide to Free VM Hosting
+    href: /articles/free-vm-hosting-2025
 seo:
   title: "Privacy vs. Security in 2025: Blockchain, AI & Digital Risk"
   description: "Blockchain, AI, and privacy. How to handle the digital security landscape in 2025: online safety regulations are reshaping technology blockchain technology."
@@ -64,7 +73,7 @@ No discussion of digital security in 2025 is complete without addressing artific
 
 On one hand, it enhances cybersecurity by detecting anomalies in real time, predicting breaches before they happen, and automating incident response. Companies like Microsoft and Google are heavily investing in AI-driven cybersecurity platforms that can scan billions of events per second.
 
-###### \[Also check out our [Grok 3 Review](https://www.oliant.io/articles/grok-3-2025-review) \]
+###### \[Also check out our [Grok 3 Review](https://www.oliant.io/articles/grok-3-2025-review)\]
 
 On the other hand, AI introduces new privacy risks. AI surveillance systems can analyze biometric data, track online behavior, and even infer sensitive information from seemingly harmless metadata. The rise of generative AI also raises concerns about deepfakes, misinformation and identity fraud. Can society harness AI’s potential for digital security without creating an infrastructure of mass surveillance?
 

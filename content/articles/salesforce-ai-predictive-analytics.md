@@ -28,7 +28,7 @@ So, how do you make the most of it?
 
 For most organizations, predictive analytics used to be unreachable. However, recent advances in technologies like machine learning (ML) and [AI](https://www.oliant.io/articles/ai-initiatives-the-significance-of-a-robust-proof-of-concept) (ML/AI) have made it more accessible than ever.
 
-Currently, Salesforce holds a 33% market share in the CRM space, making it the largest CRM provider globally, surpassing competitors like Microsoft Dynamics (22%) and Oracle (11%) .
+Currently, Salesforce holds a 33% market share in the CRM space, making it the largest CRM provider globally, surpassing competitors like Microsoft Dynamics (22%) and Oracle (11%).
 
 The Salesforce Analytics Studio dashboard—part of the CRM analytics suite—is a powerful toolkit for profound data and predictive analysis. It allows companies to broaden their big data exploration, leading to more precise forecasting and advanced data visualization.
 

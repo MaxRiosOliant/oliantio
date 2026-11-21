@@ -16,7 +16,7 @@ seo:
   noindex: false
 ---
 
-Global software development teams are perhaps the biggest example of the benefits that have come with modern communication**.** Today they are a vital component in the modern, digitized landscape, offering businesses a continuous and dynamic approach to project development.
+Global software development teams are perhaps the biggest example of the benefits that have come with modern communication. Today they are a vital component in the modern, digitized landscape, offering businesses a continuous and dynamic approach to project development.
 
 By distributed development teams members across different time zones and cultural backgrounds, companies can unlock new levels of efficiency and creativity. Despite the complexities of managing such teams, the benefits are significant.
 

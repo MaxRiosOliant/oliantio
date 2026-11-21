@@ -1,0 +1,57 @@
+<main.page_main>
+  <section.section_top_wrap.u-theme-dark>
+            H2: Thank you for your interest in Oliant
+            P: We’d like to ask you a few questions to better understand your current needs and prepare to help you.
+  <section.schedule_wrap>
+            <form.form_main_list>
+              LABEL.form_main_field_wrap: Name
+              LABEL.form_main_field_wrap: Email Address
+              LABEL.form_main_field_wrap: How can I help you?
+                LABEL.form_main_option_item.w-radio: Web Development
+                LABEL.form_main_option_item.w-radio: QA & Testing
+                LABEL.form_main_option_item.w-radio: Digital Marketing
+                LABEL.form_main_option_item.w-radio: Staff Augmentation
+                LABEL.form_main_option_item.w-radio: Other
+                  BUTTON.g_clickable_btn: Schedule a Call
+                DIV.btn_main_text.u-text-style-large: Schedule a Call
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1e53f5b3e0e9c63a5f2f4_post1.avif alt="" 592x563
+  <section.cta_wrap.u-theme-dark>
+          H2.cta_title.u-text-style-h2: Bridging IT Ambitions with Expertise. ⏎ Connect Today.
+          DIV.cta_text.u-text-style-main: Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success.
+              A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+            DIV.btn_main_text.u-text-style-large: Schedule a Call
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit

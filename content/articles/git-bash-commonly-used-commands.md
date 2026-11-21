@@ -10,6 +10,32 @@ coverImage:
   src: /images/articles/git-bash-commonly-used-commands/cover.png
   alt: "Git Bash & GUI: Guide to Git Commands and Installation"
 draft: false
+relatedServices:
+  - title: Custom Web Development
+    href: /services/web
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: "Vibe Coding: A New Frontier or Just a Hype Cycle?"
+    href: /articles/vibe-coding
+  - title: "Coding Your Way: 5 Must-Know Languages for Web Development"
+    href: /articles/web-development-languages-2025
+  - title: "GitLab vs. GitHub: What’s the Difference?"
+    href: /articles/gitlab-vs-github-difference
+  - title: "Choosing a JavaScript Framework? Here’s What You Need to Know"
+    href: /articles/javascript-framework-2025
+faq:
+  title: GitBash Frequently Asked Questions (FAQ)
+  text: "Here are some of our most common questions related to GitBash and GitBash commands. Don't see yours here? Get in touch, we can help!"
+  items:
+    - question: "What are bash commands?"
+      answer: "Bash commands are Unix-style commands that allow users to navigate folders, manage files, and display information."
+    - question: "What is the command for git bash?"
+      answer: "The most used commands are \"ls -a\" to list files in the current directory, \"pwd\" to display the current directory, \"rm\" to remove files and folders, \"cp\" to copy files, and \"exit\" to leave the terminal."
+    - question: "What are Git's basic commands?"
+      answer: "Several top commands are listed below: init, status, add, commit, clone, checkout, stash, and switch."
+    - question: "What is the difference between git and git bash?"
+      answer: "Git is the version control system, and Git Bash is a command-line terminal that allows users to use Git commands."
 seo:
   title: "Git Bash & GUI: Guide to Git Commands and Installation"
   description: "Git Guide: A complete guide to Git version control, Git Bash, GIT alternatives, GUI tools, installation, repository management, and essential Git commands."

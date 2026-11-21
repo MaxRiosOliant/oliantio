@@ -12,3 +12,4 @@ alwaysApply: true
 - Dynamic routes must render content as complete static HTML: await params in the page component, list all paths in generateStaticParams, use ensureStatic = "navigation". Never wrap page content in <Suspense> to silence the dev "params outside Suspense" diagnostic; it moves content out of <main> in the initial HTML.
 - Verify SEO-critical changes against raw HTML from `npm start`, not the dev server.
 - Never migrate placeholder content (lorem ipsum, ‘Heading’, Webflow default text, empty accordions) even when copying a live page word for word. Report it instead.
+- Migrate only content that is visible on the rendered live page. Check computed visibility, not just the HTML.

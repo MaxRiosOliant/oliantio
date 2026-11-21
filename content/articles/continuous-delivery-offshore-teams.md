@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/continuous-delivery-offshore-teams/cover.png
   alt: Continuous Delivery with Offshore Teams
 draft: false
+relatedServices:
+  - title: Custom Software Development
+    href: /services/web
+  - title: Offshore Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: "Building a CI/CD Pipeline: What You'll Need to Know"
+    href: /articles/what-is-ci-cd
+  - title: "Onshore, Nearshore, or Offshore: Which Outsourcing Fits You?"
+    href: /articles/onshore-nearshore-offshore
+  - title: "Staff Augmentation: Pros, Cons & Mitigations"
+    href: /articles/staff-augmentation-pros-cons
+  - title: "In Sync: Using QA and Software Testing Services"
+    href: /articles/team-synergy-seamlessly-integrating-in-house-and-augmented-qa-professionals
 seo:
   title: How to Improve Continuous Delivery with Offshore Teams
   description: "How to use Continuous Delivery and CI/CD practices for software development in 2025. Create CI/CD pipelines with offshore teams to boost speed, and efficiency."
@@ -75,7 +89,7 @@ I know automation can be overwhelming, but try starting small, perhaps by buildi
 
 Explore available options if you have not started yet. There is no perfect tool, it will depend on your company's environment, regulations, familiarity with cloud platforms, security concerns, and, above all, [a team that can support it](https://www.oliant.io/services/web).
 
-###### \[Also check out: [GitLab vs. GitHub: What’s the Difference?](https://www.oliant.io/articles/gitlab-vs-github-difference) \]
+###### \[Also check out: [GitLab vs. GitHub: What’s the Difference?](https://www.oliant.io/articles/gitlab-vs-github-difference)\]
 
 ### Frequent and Reliable Releases
 
@@ -105,7 +119,7 @@ These operational responsibilities reduce velocity and introduce inefficiencies.
 
 A cost-effective solution is to delegate these tasks to offshore support teams. Offshore developers or DevOps professionals can manage secondary but essential tasks like maintaining environments, updating configurations, or setting up demo-ready databases. Their support frees up core developers to focus solely on value-generating work.
 
-###### \[Also check out: [What is Staff Augmentation?](https://www.oliant.io/articles/staff-augmentation-guide) \]
+###### \[Also check out: [What is Staff Augmentation?](https://www.oliant.io/articles/staff-augmentation-guide)\]
 
 ## Why Offshore Teams Are Key in Continuous Delivery
 

@@ -25,23 +25,18 @@ export function WhyWorkWithUs() {
         <div className="grid gap-8 desk:grid-cols-2 desk:gap-[5.5rem]">
           {reasons.items.map((item, index) => (
             <article
-              key={item.title}
-              className={`flex flex-col gap-4 bg-paper px-8 py-10 desk:px-[6.5rem] desk:py-12 ${corners[index]}`}
+              key={item.icon}
+              className={`flex items-start gap-4 bg-paper px-8 py-10 desk:px-[6.5rem] desk:py-12 ${corners[index]}`}
             >
-              <div className="flex items-center gap-4">
-                <Image
-                  src={item.icon}
-                  alt=""
-                  width={36}
-                  height={37}
-                  unoptimized
-                  className="h-9 w-auto shrink-0"
-                />
-                <h3 className="trim-text text-[clamp(1.75rem,1.678571rem+0.357143vw,2rem)] leading-[1.1] font-black tracking-[-0.03em]">
-                  {item.title}
-                </h3>
-              </div>
-              <p className="trim-text text-base leading-6">{item.text}</p>
+              <Image
+                src={item.icon}
+                alt=""
+                width={36}
+                height={37}
+                unoptimized
+                className="h-9 w-auto shrink-0"
+              />
+              <p className="text-base leading-6">{item.text}</p>
             </article>
           ))}
         </div>

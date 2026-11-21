@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/personalized-app-onboarding/cover.png
   alt: Personalized App Onboarding
 draft: false
+relatedServices:
+  - title: "App & Web Development"
+    href: /services/web
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: Building a CI/CD Pipeline
+    href: /articles/what-is-ci-cd
+  - title: "Make the Most out of AI, Data Science and Analytics"
+    href: /articles/data-science-vs-data-analytics-2025
+  - title: "Should you Go Serverless? Pros, Cons and What to Expect"
+    href: /articles/what-is-serverless-computing
+  - title: A Guide to Custom Software Development
+    href: /articles/what-is-custom-software-development
 seo:
   title: How to use Personalized App Onboarding for SaaS Growth
   description: "How Personalized Onboarding increases user retention by 86%. Use AI Onboarding tools to improve user experience, flow, and engagement for SaaS growth."
@@ -46,7 +60,7 @@ AI onboarding flows can detect patterns in how users interact with an app and ad
 
 Behind every smart onboarding experience is a lot of [data science development](https://www.oliant.io/articles/data-science-vs-data-analytics-2025). By collecting and analyzing user behavior across sessions, platforms can train AI models to understand common paths, pain points, and success triggers.
 
-###### \[Also check out: [How to build a CI/CD Pipeline](https://www.oliant.io/articles/what-is-devops-best-practices) \]
+###### \[Also check out: [How to build a CI/CD Pipeline](https://www.oliant.io/articles/what-is-devops-best-practices)\]
 
 ## Using AI to Personalize User Onboarding
 
@@ -90,7 +104,7 @@ Using machine learning user onboarding models, AI can detect the best moments to
 
 For example, if a user pauses on a feature they haven’t used before, AI can trigger a micro-guide or quick demo. If a user skips a key step during setup, the platform can offer help before they hit a roadblock. It’s all about delivering personalized app onboarding content that feels helpful rather than forced.
 
-###### \[Also check out: [Getting the most out of AI & Data](https://www.oliant.io/articles/data-ai-the-heartbeat-of-your-company-data) \]
+###### \[Also check out: [Getting the most out of AI & Data](https://www.oliant.io/articles/data-ai-the-heartbeat-of-your-company-data)\]
 
 ## Personalized App Onboarding: Key Metrics You Need
 

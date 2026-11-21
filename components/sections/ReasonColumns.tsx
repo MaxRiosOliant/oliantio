@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 type ReasonItem = {
-  title: string
+  title?: string
   text: string
   icon: string
 }
@@ -42,7 +42,7 @@ export function ReasonColumns({ title, text, image, items }: ReasonColumnsProps)
           <ul className="flex list-none flex-col gap-6">
             {items.map((item) => (
               <li
-                key={item.title}
+                key={item.title ?? item.text}
                 className="rounded-2xl bg-linear-to-r from-brand-5 to-sky p-[2.4px]"
               >
                 <div className="h-full rounded-[0.8rem] bg-paper p-[clamp(1.75rem,1.678571rem+0.357143vw,2rem)]">
@@ -54,9 +54,11 @@ export function ReasonColumns({ title, text, image, items }: ReasonColumnsProps)
                     unoptimized
                     className="mb-6 h-8 w-8"
                   />
-                  <h4 className="trim-text mb-6 text-2xl leading-[1.1] font-extrabold text-balance">
-                    {item.title}
-                  </h4>
+                  {item.title ? (
+                    <h4 className="trim-text mb-6 text-2xl leading-[1.1] font-extrabold text-balance">
+                      {item.title}
+                    </h4>
+                  ) : null}
                   <p className="trim-text text-base leading-6">{item.text}</p>
                 </div>
               </li>

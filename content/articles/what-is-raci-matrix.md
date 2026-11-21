@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/what-is-raci-matrix/cover.png
   alt: "What is RACI?"
 draft: false
+relatedServices:
+  - title: Staff Augmentation Solutions
+    href: /services/staff-augmentation
+  - title: Custom Web Development
+    href: /services/web
+relatedArticles:
+  - title: "Program Manager or Project Manager: What Does Your Team Need?"
+    href: /articles/program-manager-vs-project-manager
+  - title: "Continuous Delivery: The Role of Offshore Teams"
+    href: /articles/continuous-delivery-offshore-teams
+  - title: "OKR vs KPI: Navigating Performance Metrics with Confidence"
+    href: /articles/okr-vs-kpi
+  - title: "What Makes a Strong Software Team?"
+    href: /articles/high-performance-devops-team
 seo:
   title: "RACI Guide: How to Use a RACI Chart for Project Management"
   description: "What is a RACI matrix? How to create and use a RACI chart, clarify roles, prevent delays, and keep teams aligned with this project management strategy."

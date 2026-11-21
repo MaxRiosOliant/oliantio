@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/remote-vs-in-office/cover.png
   alt: Remote work vs. in-office
 draft: false
+relatedServices:
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+  - title: Custom Web Solutions
+    href: /services/web
+relatedArticles:
+  - title: "Burnout and Quiet Quitting: Why Employees Check Out"
+    href: /articles/what-is-quiet-quitting
+  - title: "Mentorship Programs: A Guide to and From Mentors"
+    href: /articles/mentorship-programs-2025-guide
+  - title: "Staff Augmentation: Pros, Cons & Mitigations"
+    href: /articles/staff-augmentation-pros-cons
+  - title: "Digital Onboarding: How to Make Your Life (and HR) Easier"
+    href: /articles/digital-onboarding-remote-work
 seo:
   title: "Future of Work: Remote, Hybrid, or In-Office Explained"
   description: "Is remote work better than in-office? Do hybrid models work? The real effects of remote, hybrid, and in-office models on productivity, burnout, and well-being."

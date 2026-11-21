@@ -66,7 +66,7 @@ With great popularity, of course, come security challenges. However, the communi
 
 Some popular JavaScript security tools include Node Security Platform, CloudFare, AWS WAF, OAuth 2.0 & OpenID Connect.
 
-##### \[Also check: [Top JavaScript Frameworks and How to Use Them](https://www.oliant.io/articles/javascript-framework-2025) \]
+##### \[Also check: [Top JavaScript Frameworks and How to Use Them](https://www.oliant.io/articles/javascript-framework-2025)\]
 
 ## Future Trends for JavaScript
 
@@ -112,7 +112,7 @@ With its solid tooling, autocompletion, and refactoring, it should be no surpris
 
 As the year goes on, we can expect more and more organizations to start to adopt TypeScript into their own JavaScript projects.
 
-##### \[Also check: [Java Vs. C#](https://www.oliant.io/articles/java-vs-c-sharp) \]
+##### \[Also check: [Java Vs. C#](https://www.oliant.io/articles/java-vs-c-sharp)\]
 
 ## Gemini 2.0 & Jules: A New Tool for JavaScript?
 

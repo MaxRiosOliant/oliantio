@@ -92,7 +92,7 @@ Because program managers have a broader focus than project managers, they should
 
 There are several projects and program management software tools that are a must to accurately allocate resources, track progress, and measure success. Content management systems and using tools, such as a [RACI charts](https://www.oliant.io/articles/what-is-raci-matrix) and user stories, are also extremely useful.
 
-##### \[Also check: Staff Augmentation: [Pros, Cons and Mitigations](https://www.oliant.io/articles/staff-augmentation-pros-cons) \]
+##### \[Also check: Staff Augmentation: [Pros, Cons and Mitigations](https://www.oliant.io/articles/staff-augmentation-pros-cons)\]
 
 ## How do program managers and project managers collaborate?
 

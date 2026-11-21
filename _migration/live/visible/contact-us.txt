@@ -1,0 +1,55 @@
+<main.page_main>
+  <section.section_top_wrap.u-theme-dark>
+            H1: Bridging IT Ambitions with Expertise. ⏎ Connect Today.
+            P: Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success.
+  <section.contact_wrap>
+        H2.offices_head.u-text-style-h2: Come and visit our offices around the world
+                IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b70e4f45e919d5b1c75361_Chicago-p-500.webp alt="" 437x288
+              H3.offices_card_head.u-text-style-h4: Chicago, United States
+              DIV.offices_card_address.u-text-style-main: 25 S Grove Ave, Elgin, IL ⏎ ‍(224) 238-3800 ⏎ hellochicago@oliant.io
+                IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b70e4f8e5a8b1e1e3440b1_Sofia-p-500.webp alt="" 437x288
+              H3.offices_card_head.u-text-style-h4: Sofia, Bulgaria
+              DIV.offices_card_address.u-text-style-main: 25 Petar Dertliev, ⏎ ‍Sofia(+30) 2810-300345 ⏎ hellosofia@oliant.io
+                IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b70e4fce21dbf3a2e10880_BuenosAires-p-500.webp alt="" 437x288
+              H3.offices_card_head.u-text-style-h4: Buenos Aires, Argentina
+              DIV.offices_card_address.u-text-style-main: Av. del Libertador 1000, Bs.As. ⏎ ‍(54) 11-5320-5503 ⏎ holabuenosaires@oliant.io
+  <section.cta_wrap.u-theme-dark>
+          H2.cta_title.u-text-style-h2: Bridging IT Ambitions with Expertise. ⏎ Connect Today.
+          DIV.cta_text.u-text-style-main: Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success.
+              A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+            DIV.btn_main_text.u-text-style-large: Schedule a Call
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit

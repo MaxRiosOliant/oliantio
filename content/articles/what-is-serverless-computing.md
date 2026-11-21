@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/what-is-serverless-computing/cover.png
   alt: "What is serverless computing?"
 draft: false
+relatedServices:
+  - title: Custom Web Development
+    href: /services/web
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: "A Dev's Guide to VM Hosting"
+    href: /articles/free-vm-hosting-2025
+  - title: How to Build a No-Code Website
+    href: /articles/no-code-web-development-2025
+  - title: "Understanding Version Control Systems: A Guide"
+    href: /articles/version-control-systems-vcs
+  - title: "Mastering Virtual Machines: Top Solutions for IT"
+    href: /articles/top-virtual-machines-2025
 seo:
   title: "What is Serverless Computing: Pros, Cons & Best Features"
   description: "Serverless architecture guide: What is serverless computing? Pros, cons, scalability and performance. Serverless computing vs. Cloud computing: Key differences."
@@ -40,7 +54,7 @@ The serverless model operates by allowing developers to write small, event-drive
 
 Once triggered, the cloud provider runs the function, dynamically allocating resources as needed. If another function is required within the same context, the system efficiently reuses existing resources, ensuring smooth execution. The result is then displayed to the end user, creating a seamless experience.
 
-###### \[Also check out our [Version Control System Guide](https://www.oliant.io/articles/version-control-systems-vcs) \]
+###### \[Also check out our [Version Control System Guide](https://www.oliant.io/articles/version-control-systems-vcs)\]
 
 ### Key Components of Serverless Architecture
 
@@ -116,7 +130,7 @@ The key difference with serverless computing is that cloud computing gives busin
 -   **Ongoing Costs:** Cloud services can become expensive over time.
 -   **Not Always Serverless:** Some cloud models still require businesses to manage their own servers.
 
-###### \[Also check out: [How to Maintain your PHP Health](https://www.oliant.io/articles/php-health-2024) \]
+###### \[Also check out: [How to Maintain your PHP Health](https://www.oliant.io/articles/php-health-2024)\]
 
 ### Serverless Computing vs. Cloud Computing: Which One is Better?
 

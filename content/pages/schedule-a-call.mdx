@@ -1,8 +1,33 @@
 ---
 title: Schedule a Call
 slug: schedule-a-call
+layout: landing
 seo:
   title: Schedule a Call
 ---
 
-Thank you for your interest in Oliant.
+<PageHero
+  title="Thank you for your interest in Oliant"
+  text="We’d like to ask you a few questions to better understand your current needs and prepare to help you."
+/>
+
+<ScheduleForm
+  nameLabel="Name"
+  namePlaceholder="John Smith"
+  emailLabel="Email Address"
+  emailPlaceholder="email@gmail.com"
+  messageLabel="How can I help you?"
+  messagePlaceholder="Please describe briefly anything relevant to prepare for the first call"
+  topicLabel="What service are you interested in?"
+  topics={["Web Development", "QA & Testing", "Digital Marketing", "Staff Augmentation", "Other"]}
+  submit="Schedule a Call"
+  image={{ src: "/images/pages/schedule-a-call/schedule.avif", alt: "Two developers working at computers in a neon-lit office" }}
+/>
+
+<CtaBand
+  layout="centered"
+  title={"Bridging IT Ambitions with Expertise.\nConnect Today."}
+  text="Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success."
+  cta="Schedule a Call"
+  ctaHref="/schedule-a-call"
+/>

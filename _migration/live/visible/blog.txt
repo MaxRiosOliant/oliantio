@@ -1,0 +1,161 @@
+<main.page_main>
+  <section.blog_top>
+            DIV.blog_all_category_cms_item.w-dyn-item: Software Development  LINKS [Software Development](/categories/software-development)
+            DIV.blog_all_category_cms_item.w-dyn-item: Technology  LINKS [Technology](/categories/technology)
+            DIV.blog_all_category_cms_item.w-dyn-item: Talent  LINKS [Talent](/categories/talent)
+            DIV.blog_all_category_cms_item.w-dyn-item: Biz & Tech  LINKS [Biz & Tech](/categories/biz-tech)
+            DIV.blog_all_category_cms_item.w-dyn-item: Innovation  LINKS [Innovation](/categories/innovation)
+                DIV.blog_card_big_category.u-text-style-small: SOFTWARE DEVELOPMENT
+                  H1.blog_card_big_head.u-text-style-h2: The Hidden Burden of Building the First Startup Team
+                  P: Every startup begins with energy, vision, and the conviction that an idea can change a market. But between that idea and the first working MVP lies the hardest step of all — finding and forming the right team
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/690b4e425d7f4bfbf6b2fc0e_MVP%20development%20team-p-1080.png alt="" 664x332
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 80x80
+                      DIV.blog_card_big_author_name.u-text-style-main: Max Rios
+                      P.blog_card_big_author_desc.u-text-style-small: OLIANT's CEO. 30 years in tech, from developer to data scientist. Exploring how tech reshapes our world.
+                      DIV.blog_card_big_author_date.u-text-style-small: November 5, 2025
+                  A.btn_gradient.w-inline-block: Read more -> /articles/the-hidden-burden-of-building-the-first-startup-team
+                  A(empty).g_clickable_link.w-inline-block -> /articles/the-hidden-burden-of-building-the-first-startup-team
+          H2.blog_all_head.u-text-style-h3: Latest blog posts
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68b098e8d23ef407d892172c_BlockchainSafety_Cover-p-1080.png alt="" 231x174
+                    A.btn_gradient.w-inline-block: Technology -> /categories/technology
+                    H3.blog_card_small_head: Privacy, Security, and the Blockchain Debate in 2025
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                        DIV.blog_card_small_author_date.u-text-style-small: August 22, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /categories/technology
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68a638615bf9687aceec0ffc_MobileApps-p-1080.png alt="" 231x174
+                    A.btn_gradient.w-inline-block: Software Development -> /categories/software-development
+                    H3.blog_card_small_head: Mobile App Development: What Languages Should You Use?
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                        DIV.blog_card_small_author_date.u-text-style-small: August 15, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /categories/software-development
+                      IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68939f54fe1db06891d8ddfa_Employee%20Engagement-p-1080.png alt="" 231x174
+                    A.btn_gradient.w-inline-block: Talent -> /categories/talent
+                    H3.blog_card_small_head: Employee Retention: How to Actually Keep Your Team Around
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67d30ef2dc8387ed20d26da1_1725885563063.jpg alt="" 56x56
+                        DIV.blog_card_small_author_name.u-text-style-small: Yoanna Marinova
+                        DIV.blog_card_small_author_date.u-text-style-small: August 1, 2025
+                    A(empty).g_clickable_link.w-inline-block -> /categories/talent
+  <section.blog_category>
+          H4.blog_all_heading.u-text-style-small: SOFTWARE DEVELOPMENT
+          A.btn_gradient.w-inline-block: All Software development Articles -> /categories/software-development
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/690b4e425d7f4bfbf6b2fc0e_MVP%20development%20team-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Software Development  LINKS [Software Development](/articles/the-hidden-burden-of-building-the-first-startup-team)
+                    H3.blog_card_title.u-text-style-h5: The Hidden Burden of Building the First Startup Team
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Max Rios
+                      DIV.blog_card_small_author_date.u-text-style-small: November 5, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/the-hidden-burden-of-building-the-first-startup-team
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68a638615bf9687aceec0ffc_MobileApps-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Software Development  LINKS [Software Development](/articles/mobile-app-top-proggraming-languages)
+                    H3.blog_card_title.u-text-style-h5: Mobile App Development: What Languages Should You Use?
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                      DIV.blog_card_small_author_date.u-text-style-small: August 15, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/mobile-app-top-proggraming-languages
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/685edaab581ba3a7506f611d_React%20JS-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Software Development  LINKS [Software Development](/articles/react-architecture-and-state-management)
+                    H3.blog_card_title.u-text-style-h5: Building React Architecture and State Management the Right Way
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                      DIV.blog_card_small_author_date.u-text-style-small: June 27, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/react-architecture-and-state-management
+  <section.blog_category>
+          H4.blog_all_heading.u-text-style-small: TECHNOLOGY
+          A.btn_gradient.w-inline-block: All Technology Articles -> /categories/technology
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68b098e8d23ef407d892172c_BlockchainSafety_Cover-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Technology  LINKS [Technology](/articles/blockchain-privacy-2025)
+                    H3.blog_card_title.u-text-style-h5: Privacy, Security, and the Blockchain Debate in 2025
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                      DIV.blog_card_small_author_date.u-text-style-small: August 22, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/blockchain-privacy-2025
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/687550051da59065af4d80ea_NovaAct_Cover-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Technology  LINKS [Technology](/articles/nova-act-ai-agent-sdk)
+                    H3.blog_card_title.u-text-style-h5: Meet Nova Act, Amazon’s Powerful New AI Agent SDK
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Max Rios
+                      DIV.blog_card_small_author_date.u-text-style-small: July 11, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/nova-act-ai-agent-sdk
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/684aeeb3d4ee055ce6b1b040_Grok%20Review-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Technology  LINKS [Technology](/articles/grok-3-2025-review)
+                    H3.blog_card_title.u-text-style-h5: How Smart is Grok 3 Really? A Review
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Max Rios
+                      DIV.blog_card_small_author_date.u-text-style-small: June 13, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/grok-3-2025-review
+  <section.blog_category>
+          H4.blog_all_heading.u-text-style-small: TALENT
+          A.btn_gradient.w-inline-block: All Talent Articles -> /categories/talent
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68939f54fe1db06891d8ddfa_Employee%20Engagement-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Talent  LINKS [Talent](/articles/employee-retention-strategies-2025)
+                    H3.blog_card_title.u-text-style-h5: Employee Retention: How to Actually Keep Your Team Around
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67d30ef2dc8387ed20d26da1_1725885563063.jpg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Yoanna Marinova
+                      DIV.blog_card_small_author_date.u-text-style-small: August 1, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/employee-retention-strategies-2025
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/685b1da13cecef4e55ca88af_Remote%20Management-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Talent  LINKS [Talent](/articles/remote-team-management-2025)
+                    H3.blog_card_title.u-text-style-h5: How to Master Remote Teamwork: Tools, Tips, and Balance
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67d30ef2dc8387ed20d26da1_1725885563063.jpg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Yoanna Marinova
+                      DIV.blog_card_small_author_date.u-text-style-small: June 20, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/remote-team-management-2025
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/6839d27076c7ffc0f95e2538_Mentoriship-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Talent  LINKS [Talent](/articles/mentorship-programs-2025-guide)
+                    H3.blog_card_title.u-text-style-h5: Mentorship Programs: A Guide to and From Mentors
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67d30ef2dc8387ed20d26da1_1725885563063.jpg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Yoanna Marinova
+                      DIV.blog_card_small_author_date.u-text-style-small: May 30, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/mentorship-programs-2025-guide
+  <section.blog_category>
+          H4.blog_all_heading.u-text-style-small: BIZ & TECH
+          A.btn_gradient.w-inline-block: All Biz & Tech Articles -> /categories/biz-tech
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/687fb3d0ca5f8708c691bb31_DataAnalytics_Cover-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/getting-started-with-data-analytics-what-you-need-to-know)
+                    H3.blog_card_title.u-text-style-h5: Getting Started with Data Analytics: What You Need to Know
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                      DIV.blog_card_small_author_date.u-text-style-small: July 18, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/getting-started-with-data-analytics-what-you-need-to-know
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/68435e9b68f9bd6725fbad52_CD%20Offshore-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/continuous-delivery-offshore-teams)
+                    H3.blog_card_title.u-text-style-h5: Continuous Delivery: The Role of Offshore Teams
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Max Rios
+                      DIV.blog_card_small_author_date.u-text-style-small: June 6, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/continuous-delivery-offshore-teams
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67fd49088901ef276dfbc0f6_OKR%20vs%20KPI%20cover-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Biz & Tech  LINKS [Biz & Tech](/articles/okr-vs-kpi)
+                    H3.blog_card_title.u-text-style-h5: OKR vs KPI: Navigating Performance Metrics with Confidence
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67eed406d440431d583c20d6_MarianoGomez%202.jpeg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Mariano Gomez
+                      DIV.blog_card_small_author_date.u-text-style-small: April 11, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/okr-vs-kpi
+  <section.blog_category>
+          H4.blog_all_heading.u-text-style-small: INNOVATION
+          A.btn_gradient.w-inline-block: All Innovation Articles -> /categories/innovation
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/686818052a7d4e3ea2fdcb67_DIGITAL-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Innovation  LINKS [Innovation](/articles/digital-security-strategy-2025)
+                    H3.blog_card_title.u-text-style-h5: Is Your Digital Security Strategy Up To Date?
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                      DIV.blog_card_small_author_date.u-text-style-small: July 4, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/digital-security-strategy-2025
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/6824b813c18ebf0c0942d02f_AIAppOnboarding_Cover-p-1080.png alt="" 437x225
+                    DIV.card_tag_wrap: Innovation  LINKS [Innovation](/articles/personalized-app-onboarding)
+                    H3.blog_card_title.u-text-style-h5: App Onboarding: Hooking Users from Day One
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Max Rios
+                      DIV.blog_card_small_author_date.u-text-style-small: May 9, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/personalized-app-onboarding
+                    IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67b835f1412758bb78f02208_DevOps.avif alt="" 437x225
+                    DIV.card_tag_wrap: Innovation  LINKS [Innovation](/articles/what-is-devops-best-practices)
+                    H3.blog_card_title.u-text-style-h5: What Is DevOps? Key Concepts, Benefits, and Best Practices
+                        IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67e42ce8877da009e75db867_5%20VARIABLE%204%20Isotype%20verde%20-%20Desaturation%20300x300.png alt="" 56x56
+                      DIV.blog_card_small_author_name.u-text-style-small: Oliant Editorial
+                      DIV.blog_card_small_author_date.u-text-style-small: February 14, 2025
+                  A(empty).g_clickable_link.w-inline-block -> /articles/what-is-devops-best-practices
+            A.g_clickable_link.w-inline-block: See All Articles -> /all-articles
+          DIV.btn_main_text.u-text-style-large: See All Articles

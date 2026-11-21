@@ -12,9 +12,11 @@ function Category({ href, children }: { href: string; children: string }) {
   return (
     <Link
       href={href}
-      className="relative z-10 inline-flex rounded-full bg-paper px-3 py-1 text-sm leading-5 font-medium text-ink"
+      className="relative z-10 inline-block rounded-[0.5rem] bg-[linear-gradient(90deg,#d4a5ff,#45ab34)] p-px max-[767px]:hidden"
     >
-      {children}
+      <span className="block rounded-[0.5rem] bg-white px-3 py-1 text-[1rem] leading-[1.5] font-normal text-[#333]">
+        {children}
+      </span>
     </Link>
   )
 }
@@ -23,18 +25,18 @@ function Author({ article }: { article: ArticleMeta }) {
   const avatar = article.author.avatar ?? "/images/home/avatar-placeholder.svg"
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex w-full items-center gap-3">
       <Image
         src={avatar}
         alt=""
-        width={40}
-        height={40}
+        width={56}
+        height={56}
         unoptimized={avatar.endsWith(".svg")}
-        className="size-10 rounded-full object-cover"
+        className="size-14 shrink-0 rounded-full object-cover"
       />
-      <div>
-        <p className="trim-text text-sm leading-5 font-medium">{article.author.name}</p>
-        <p className="trim-text text-sm leading-5 text-brand">
+      <div className="flex flex-col items-start gap-2">
+        <p className="trim-text text-[0.875rem] leading-[1.5] font-medium">{article.author.name}</p>
+        <p className="trim-text text-[0.875rem] leading-[1.5] text-brand-4">
           <time dateTime={article.date}>{formatContentDate(article.date)}</time>
         </p>
       </div>
@@ -42,54 +44,62 @@ function Author({ article }: { article: ArticleMeta }) {
   )
 }
 
-function Featured({ article }: { article: ArticleMeta }) {
+function CardBody({ article }: { article: ArticleMeta }) {
   return (
-    <article className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-ink text-paper">
-      <div className="relative aspect-[7/3.6]">
-        <Image
-          src={article.coverImage.src}
-          alt=""
-          fill
-          sizes="(min-width: 73rem) 40rem, 100vw"
-          className="object-cover"
-        />
-      </div>
-      <div className="flex flex-1 flex-col items-start gap-5 p-6">
+    <div className="flex min-w-0 flex-1 flex-col items-start justify-between gap-6 p-[var(--size-2rem)]">
+      <div className="flex w-full flex-col items-start gap-4">
         <Category href={article.category.path}>{article.category.name}</Category>
-        <h3 className="text-xl leading-snug font-bold">
+        <h3 className="trim-text w-full text-[1.25rem] leading-[1.1] font-semibold tracking-[0em] text-balance group-hover:underline">
           <Link href={article.path} className="before:absolute before:inset-0">
             {article.heading}
           </Link>
         </h3>
-        <Author article={article} />
       </div>
+      <Author article={article} />
+    </div>
+  )
+}
+
+function Cover({
+  article,
+  className,
+  sizes,
+}: {
+  article: ArticleMeta
+  className: string
+  sizes: string
+}) {
+  return (
+    <div
+      className={`relative overflow-hidden transition-[filter] duration-300 ease-[ease] group-hover:brightness-[0.7] ${className}`}
+    >
+      <Image src={article.coverImage.src} alt="" fill sizes={sizes} className="object-cover" />
+    </div>
+  )
+}
+
+function Featured({ article }: { article: ArticleMeta }) {
+  return (
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[1rem] bg-ink text-paper">
+      <Cover
+        article={article}
+        className="aspect-[7/3.6]"
+        sizes="(min-width: 73rem) 40rem, 100vw"
+      />
+      <CardBody article={article} />
     </article>
   )
 }
 
 function Compact({ article }: { article: ArticleMeta }) {
   return (
-    <article className="relative flex flex-col overflow-hidden rounded-2xl bg-ink text-paper desk:flex-row">
-      <div className="relative aspect-[7/3.6] desk:aspect-[2/3.2] desk:w-40 desk:shrink-0">
-        <Image
-          src={article.coverImage.src}
-          alt=""
-          fill
-          sizes="(min-width: 73rem) 10rem, 100vw"
-          className="object-cover"
-        />
-      </div>
-      <div className="flex flex-1 flex-col justify-between gap-4 p-5">
-        <div className="flex flex-col items-start gap-3">
-          <Category href={article.category.path}>{article.category.name}</Category>
-          <h3 className="text-xl leading-snug font-bold">
-            <Link href={article.path} className="before:absolute before:inset-0">
-              {article.heading}
-            </Link>
-          </h3>
-        </div>
-        <Author article={article} />
-      </div>
+    <article className="group relative flex overflow-hidden rounded-[1rem] bg-ink text-paper">
+      <Cover
+        article={article}
+        className="aspect-[2/3.2] w-40 shrink-0"
+        sizes="10rem"
+      />
+      <CardBody article={article} />
     </article>
   )
 }
@@ -112,9 +122,11 @@ export function Insights({ articles }: { articles: readonly ArticleMeta[] }) {
         </div>
         <div className="mt-8 mb-8 grid grid-cols-[repeat(auto-fit,minmax(min(100%,28rem),1fr))] gap-4">
           <Featured article={featured} />
-          <div className="hidden flex-col gap-4 min-[768px]:flex">
+          <div className="hidden min-[768px]:block">
             {rest.map((article) => (
-              <Compact key={article.path} article={article} />
+              <div key={article.path} className="mb-4">
+                <Compact article={article} />
+              </div>
             ))}
           </div>
           <div className="flex flex-col gap-4 min-[768px]:hidden">

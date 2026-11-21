@@ -8,17 +8,15 @@ type ArticleCoverProps = {
 
 export function ArticleCover({ article }: ArticleCoverProps) {
   return (
-    <section className="mx-auto w-full max-w-5xl px-4">
-      <div className="relative aspect-video overflow-hidden rounded-md">
-        <Image
-          src={article.coverImage.src}
-          alt={article.coverImage.alt}
-          fill
-          sizes="(min-width: 1024px) 960px, 100vw"
-          className="object-cover"
-          preload
-        />
-      </div>
-    </section>
+    <div className="relative my-2 aspect-[791/400] overflow-hidden rounded-[0.5rem]">
+      <Image
+        src={article.coverImage.src}
+        alt={article.coverImage.alt}
+        fill
+        sizes="(min-width: 73rem) 50rem, 100vw"
+        className="object-cover"
+        preload
+      />
+    </div>
   )
 }

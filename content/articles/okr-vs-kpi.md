@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/okr-vs-kpi/cover.png
   alt: OKRs vs. KPIs Differences Explained
 draft: false
+relatedServices:
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+  - title: Custom Software Solutions
+    href: /services/web
+relatedArticles:
+  - title: "RACI Matrix: Your New Favorite Project Blueprint"
+    href: /articles/what-is-raci-matrix
+  - title: "Program Manager or Project Manager: What Does Your Team Need?"
+    href: /articles/what-is-raci-matrix
+  - title: "What Makes a Strong Software Team?"
+    href: /articles/high-performance-devops-team
+  - title: "Onshore, Nearshore, or Offshore: Which Outsourcing Fits You?"
+    href: /articles/onshore-nearshore-offshore
 seo:
   title: "OKRs vs. KPIs Differences Explained: How to Use Them"
   description: "OKR vs. KPI frameworks guide. Differences, best practices pros and cons and use cases for project management. How to archive effective goal setting, boost engag"

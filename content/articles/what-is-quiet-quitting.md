@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/what-is-quiet-quitting/cover.png
   alt: "What is quiet quitting?"
 draft: false
+relatedServices:
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+  - title: Content Management Development
+    href: /services/web
+relatedArticles:
+  - title: "Mentorship Programs: A Guide To and From Mentors"
+    href: /articles/mentorship-programs-2025-guide
+  - title: Why Remote Work Feels Freeing—But Also Kind of Lonely
+    href: /articles/remote-vs-in-office
+  - title: "Staff Augmentation: Pros, Cons & Mitigations"
+    href: /articles/staff-augmentation-pros-cons
+  - title: "Program Manager or Project Manager: What Does Your Team Need?"
+    href: /articles/program-manager-vs-project-manager
 seo:
   title: "Quiet Quitting: Signs, Causes, and How to Prevent It"
   description: "Is quiet quitting hurting your workplace? Learn why employees mentally disengage, how burnout plays a role, and what companies can do to retain top talent."
@@ -81,7 +95,7 @@ At the same time, remote work redefined expectations. Employees proved they coul
 
 So why does it come to this point? How can we spot a quiet quitter and what can be done?
 
-###### \[Also check: [What Makes a Strong Software Team?](https://www.oliant.io/articles/high-performance-devops-team) \]
+###### \[Also check: [What Makes a Strong Software Team?](https://www.oliant.io/articles/high-performance-devops-team)\]
 
 ## How can Companies Prevent Quiet Quitting?
 

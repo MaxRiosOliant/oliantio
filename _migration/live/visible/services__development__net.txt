@@ -1,0 +1,117 @@
+<section.breadcrumb_wrap>
+      A(empty).breadcrumb_home-icon.w-inline-block -> /
+        A.breadcrumb_link.u-text-style-small: Services -> #
+        A.breadcrumb_link.u-text-style-small: Development -> /services/web
+      DIV.breadcrumb_text.u-text-style-small: .Net Development
+<main.page_main>
+  <section.services_hero_wrap>
+              DIV.g_eyebrow_text.u-text-style-small: .NET DEVELOPMENT
+            H1.services_hero_head.u-text-style-h1: An expert .Net partner
+            P.services_hero_paragraph.u-text-style-large: We were born as a .Net Software Factory by building, maintaining, and modernizing .Net applications.
+                A.g_clickable_link.w-inline-block: Get started today -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Get started today
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67ce44d601d349412dab41e6_software_dotnet_resized.svg alt="" 664x817
+  <section.services_wrap>
+        H2.services_head.u-text-style-h2: .Net Development
+        P.services_head-paragraph.u-text-style-main: Oliant was born as a .Net Software Factory that expanded to different software solutions to complement end-to-end software projects. We still live and breathe our core expertise.
+              H3.services_card_title.u-text-style-h5: Cloud Native solutions
+                P: Modern architectures require a cloud-native approach to develop fast, scalable solutions. API-First, Microservices, and event-driven solutions shine when correctly designed and implemented.
+                P: Our teams have designed and implemented dozens of solutions in Azure, AWS, and the Google Cloud, using different orchestrations centered in Docker containers. We master serverless architecture by applying correct patterns, AWS Lambda or Azure Functions, Infrastructure as a Code, messaging services as SNS/SQS, and message brokers like RabbitMQ or Kafka.
+              H3.services_card_title.u-text-style-h5: Backend and API solutions
+                P: .Net has proved to be a robust framework for implementing APIs, integrations, and backend processes. Its versatility allows deployment in Linux and Windows environments, enabling containerization and different host options. The framework can transparently connect to every database type, SQL or no-SQL.
+                P: Our implementations range from integrations to SaaS platforms, batch processing, reporting, and other web development scenarios using RESTful APIs, Web API, Windows Communication Foundation, Blazor, and highly efficient daemon-style processes.
+              H3.services_card_title.u-text-style-h5: E-Commerce solutions
+                P: ASP.Net, Web API, and ASP.Net Core are solid foundations for e-commerce solutions, taking advantage of a vast ecosystem of e-commerce frameworks and payment gateways designed to be integrated into .Net.
+                P: Our teams have implemented solutions based on open-source technologies like nopCommerce or enterprise types like uCommerce, Sitecore, and similar solutions. We trust our expertise to guide you find the right solution for your business.
+              H3.services_card_title.u-text-style-h5: Custom development solutions
+                P: There are countless cases where a proven solution is less effective than building customized software for your enterprise. Luckily, .Net is a versatile framework that can solve many use cases.
+                P: We’ve built specific solutions from scratch and modernized applications in .Net for niche markets, complex use cases, and unique requirements that don’t fit into known enterprise software.
+              H3.services_card_title.u-text-style-h5: Legacy applications and modernization
+                P: Many businesses depend on applications built a decade or more ago. Time constraints and complexity might require your company to keep using old frameworks, and we are a partner to trust in maintaining legacy applications.
+                P: But our teams can also provide a path to modernizing those applications when the time comes, offering a zero-downtime strategy that applies proven patterns such as Planned Evolution, vertical slicing modernization, or assembly rewriting.
+  <section.cta_wrap.u-theme-dark>
+          H2.cta_title.u-text-style-h2: Trust a .Net expert
+          DIV.cta_text.u-text-style-main: We can help you achieve your goals using proven .Net patterns for new projects, modernization, or simply maintaining your legacy systems.
+              A.g_clickable_link.w-inline-block: Let’s schedule a call -> /schedule-a-call
+            DIV.btn_main_text.u-text-style-large: Let’s schedule a call
+  <section.why-oliant_wrap>
+            H2.why-oliant_head.u-text-style-h2: Why Choose OLIANT
+            P.why-oliant_text.u-text-style-main: OLIANT provides end-to-end digital and software solutions with expert care worldwide.
+              IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67c7226d53252c33b87cd28e_software_qa_why_oliant_resized.svg alt="" 616x616
+              H4.reason_card_head.u-text-style-h4: Born a .Net Software Factory
+              P.reason_card_text.u-text-style-main: Our team leads spent over twenty years building software in .Net, from the first framework until the last .Net Core version.
+              H4.reason_card_head.u-text-style-h4: Expertise in architecting.Net solutions
+              P.reason_card_text.u-text-style-main: Writing code is not the same as architecting great applications. We master the patterns to implement extraordinary .Net solutions.
+              H4.reason_card_head.u-text-style-h4: Industries diversity
+              P.reason_card_text.u-text-style-main: We established a team with extensive experience in diverse fields, such as finance, logistics, eCommerce, industrial automation, IoT platforms, and enterprise solutions.
+  <section.faq_wrap>
+        H2.faq_title.u-text-style-h2: Frequently Asked Questions
+        P.faq_paragraph.u-text-style-main: We compiled a list of frequent questions that we receive from our clients.
+              H6.faq_question.u-text-style-h6: Is .Net a good framework for my company?
+              H6.faq_question.u-text-style-h6: Is .Net a good option if I have a diverse ecosystem?
+              H6.faq_question.u-text-style-h6: Should I always migrate my legacy .Net applications?
+              H6.faq_question.u-text-style-h6: Is .Net a language?
+              H6.faq_question.u-text-style-h6: Does .Net support my cloud provider?
+              H6.faq_question.u-text-style-h6: What are the advantages of using .NET for development?
+              H6.faq_question.u-text-style-h6: Is the support for the .Net framework good?
+              H6.faq_question.u-text-style-h6: Is easy to find .Net developers?
+                  P: .Net is the 5th language in the TIOBE Index, and it’s estimated that six million developers exist worldwide. You can contact us to help you build or maintain your .Net projects.  LINKS [contact us to help you](/services/development/net)
+                  P: ‍
+  <section.cta-full_wrap.u-theme-dark>
+          H2.cta-full_head.u-text-style-h2: Start or continue your .Net journey
+          P.cta-full_text.u-text-style-main: Find out how we can maximize efficiency, deliver ROI, keeping your cost under control.
+                A.g_clickable_link.w-inline-block: Talk to a .Net Expert -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Talk to a .Net Expert
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67c7258a283ba29004f5ab67_shutterstock_2279184929_resized.svg alt="" 664x474
+  <section.footer_wrap.u-theme-dark>
+          A(empty).footer_logo_wrap.w-inline-block -> /
+          <nav.footer_nav.u-grid-autofit>
+              H4.footer_nav_head.u-text-style-h5: Discover Oliant
+                LI.footer_1_group_item: Web Development  LINKS [Web Development](/services/web)
+                LI.footer_1_group_item: QA Testing & Automation  LINKS [QA Testing & Automation](/services/qa)
+                LI.footer_1_group_item: Digital Marketing & SEO  LINKS [Digital Marketing & SEO](/services/digital-marketing-seo)
+                LI.footer_1_group_item: Products Partnership  LINKS [Products Partnership](/schedule-a-call)
+              H4.footer_nav_head.u-text-style-h5: Resources
+                LI.footer_1_group_item: Blog  LINKS [Blog](/blog)
+              H4.footer_nav_head.u-text-style-h5: Oliant
+                LI.footer_1_group_item: About Us  LINKS [About Us](/about-us)
+                LI.footer_1_group_item: Contact Us  LINKS [Contact Us](/contact-us)
+                LI.footer_1_group_item: Job Opportunities  LINKS [Job Opportunities](https://oliant.factorialhr.com/)
+                LI.footer_1_group_item: Privacy Policy  LINKS [Privacy Policy](/privacy-policy)
+            IMG https://cdn.prod.website-files.com/67acdc2e43fd0a75670a1516/67b1f1f04396ce2b1aa088c6_Empresa_validada%201.avif alt="" 320x83
+          H3.footer_form_title.u-text-style-h3: Get in touch
+          DIV.footer_form_text.u-text-style-large: Get insights from experts on building websites and increasing your visibility with Digital Marketing and SEO
+                A.g_clickable_link.w-inline-block: Contact Us -> /contact-us
+              DIV.btn_main_text.u-text-style-large: Contact Us
+                A.g_clickable_link.w-inline-block: Schedule a Call -> /schedule-a-call
+              DIV.btn_main_text.u-text-style-large: Schedule a Call
+            A.footer_form_call_text.u-text-style-large: +1-224-238-3800 -> #
+            <form.footer_form.u-alignment-vertical>
+              LABEL.footer_form_label.u-text-style-large: Your email address
+              INPUT type=email name=email id=email placeholder="" required=true
+              LABEL.w-checkbox.form_main_option_item: Terms and Conditions
+                  BUTTON.g_clickable_btn: Subscribe
+                DIV.btn_main_text.u-text-style-large: Subscribe
+            H5.footer_social_title: Follow Us
+              A(empty).footer_social-link.w-inline-block -> https://www.facebook.com/profile.php?id=61563344463128
+              A(empty).footer_social-link.w-inline-block -> https://www.instagram.com/oliantllc/
+              A(empty).footer_social-link.w-inline-block -> https://www.linkedin.com/company/oliant
+              A(empty).footer_social-link.w-inline-block -> https://x.com/OliantGlobal
+              A(empty).footer_social-link.w-inline-block -> https://www.youtube.com/@Oliant-Orbit
+
+FAQ 1: Is .Net a good framework for my company?
+    => .Net has undoubtedly become an excellent option for most companies, including financial institutions, large enterprises, e-commerce, content management, industrial automation, IoT, and more.
+FAQ 2: Is .Net a good option if I have a diverse ecosystem?
+    => Microsoft thought ahead when building .Net Core to offer a cross-platform that runs smoothly in Windows, Linux, and MacOS.
+FAQ 3: Should I always migrate my legacy .Net applications?
+    => We always recommend proceeding on a case-by-case basis when considering migrating legacy systems. Keeping your legacy systems running might be beneficial unless critical problems prevent your company from functioning correctly.
+FAQ 4: Is .Net a language?
+    => .Net is a framework that supports multiple languages, such as F#, Python.Net, of Visual Basic (VB.Net). However, C# is by far the most popular language.
+FAQ 5: Does .Net support my cloud provider?
+    => Using the .Net Framework in most popular cloud providers is not limited; its multiplatform nature makes it work perfectly in Azure, AWS, Oracle Cloud, Google Cloud Provider, and more.
+FAQ 6: What are the advantages of using .NET for development?
+    => The framework is highly efficient and multiplatform. It runs perfectly in a cloud environment or bare metal servers and has extensive library support for multiple purposes.
+FAQ 7: Is the support for the .Net framework good?
+    => Microsoft built the framework almost twenty-five years ago, and it has spread worldwide. Today, the framework is open source, maintained by a vibrant community, and actively supported by Microsoft.
+FAQ 8: Is easy to find .Net developers?
+    => .Net is the 5th language in the TIOBE Index, and it’s estimated that six million developers exist worldwide. You can contact us to help you build or maintain your .Net projects.  LINKS [contact us to help you](/services/development/net)

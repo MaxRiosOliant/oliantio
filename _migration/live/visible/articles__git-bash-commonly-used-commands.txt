@@ -1,0 +1,164 @@
+<section.breadcrumb_wrap>
+      A(empty).breadcrumb_home-icon.w-inline-block -> /
+        A.breadcrumb_link.u-text-style-small: Blog -> /blog
+        A.breadcrumb_link.u-text-style-small: Software Development -> /categories/software-development
+      DIV.breadcrumb_text.u-text-style-small: The Git Bash Commands you Need to Know
+<main.page_main>
+  <section.section_article-top_wrap>
+        DIV.section_article-top_category.u-text-style-small: SOFTWARE DEVELOPMENT
+        H1.section_article-top_head.u-text-style-h2: The Git Bash Commands you Need to Know
+        DIV.section_article-top_desc.u-text-style-large: New to Git? Here's our cheat sheet for the basics, setup, and must-know commands like commit, branch, merge and start up with a simple GUI.
+  <section.article_wrap>
+                IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 91x91
+                DIV.u-text-style-main.u-weight-bold: By
+                DIV.article_author_name.u-text-style-main: Max Rios
+              DIV.article_author_desc.u-text-style-small: OLIANT's CEO. 30 years in tech, from developer to data scientist. Exploring how tech reshapes our world.
+              DIV.article_date.u-text-style-small: April 2, 2025
+                A(empty).fb-share.w-inline-block -> https://www.facebook.com/sharer/sharer.php?caption=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation&u=https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                A(empty).whatsup-share.w-inline-block -> whatsapp://send?text=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation%20https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                A(empty).li-share.w-inline-block -> https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands&title=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation
+                A(empty).twitter-share.w-inline-block -> https://x.com/intent/tweet?text=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation&url=https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                A(empty).email-share.w-inline-block -> mailto:?subject=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation&body=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation%20https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67ee9e4519ea961bc2b6a3be_git%20bash%20cover-p-1080.png alt="" 791x400
+          <article.article_content.w-richtext>
+            H2: ‍What is Git?
+            P: Git is a distributed version control system that controls source code for software development. With Git, it is possible to track code changes efficiently.
+            H2: What are the advantages of using Git?
+            P: Before Git, there were several distributed control version systems. However, Git implemented a concept that maintains a copy of the entire local repository, history, changes, and version control.
+            P: Git provides features to manage synchronization to repositories that share history. The local copy makes it always available, even without a network connection. The synchronization capability makes it very powerful and flexible.
+            H2: What is Git Bash?
+            P: The Bash environment is a Windows command-line terminal. We remark Windows because Git emulates a Unix-style command line. Unix-based operating systems and Mac OS include this type of terminal.
+            P: Git still provides a Linux/Unix version and macOS as well.
+            H3: Is Git Bash the only way to use Git?
+            P: No. Several visual solutions provide Git capabilities, hiding the command's complexity. Many development environments have embedded capabilities or offer the same features as plugins.
+            P: The visual solution can include a visual tree representation or just menus with the most common operations. The way operations represent commands is very flexible. Some plugins or environments group more than one command into a single operation.
+            P: It is essential to understand that most plugins or environments only provide a small set of commands through a visual interface. The Git Bash command line is the only way to access all possible operations.
+            H2: Installing Git Bash in Windows
+            P: To install Git Bash in Windows, go to the official page and click the Windows option.
+            P: https://git-scm.com/downloads  LINKS [https://git-scm.com/downloads](https://git-scm.com/downloads)
+            P: The GUI clients section also lists the different GUI clients for other platforms. This section groups a comprehensive list of external tools recommended by Git.  LINKS [GUI clients section](http://Git Bash Commonly Used Commands  What is Git? Git is a distributed version control system that controls source code for software development. With Git, it is possible to track code changes efficiently.  What are the advantages of using Git? Before Git, there were several distributed control version systems. However, Git implemented a concept that maintains a copy of the entire local repository, history, changes, and version control.  Git provides features to manage synchronization to repositories that share history. The local copy makes it always available, even without a network connection. The synchronization capability makes it very powerful and flexible.  What is Git Bash? The Bash environment is a Windows command-line terminal. We remark Windows because Git emulates a Unix-style command line. Unix-based operating systems and Mac OS include this type of terminal. Git still provides a Linux/Unix version and macOS as well.  Is Git Bash the only way to use Git? No. Several visual solutions provide Git capabilities, hiding the command's complexity. Many development environments have embedded capabilities or offer the same features as plugins.  The visual solution can include a visual tree representation or just menus with the most common operations. The way operations represent commands is very flexible. Some plugins or environments group more than one command into a single operation. It is essential to understand that most plugins or environments only provide a small set of commands through a visual interface. The Git Bash command line is the only way to access all possible operations.  Installing Git Bash in Windows To install Git Bash in Windows, go to the official page and click the Windows option. https://git-scm.com/downloads The GUI clients section (https://git-scm.com/downloads/guis) also lists the different GUI clients for other platforms. This section groups a comprehensive list of external tools recommended by Git.  Select the default options if you are unsure what options to choose when installing the software.  Configuration commands Configuration commands are generally the first commands to use for new installations. These commands prepare the environment to use Git. For advanced scenarios where developers have multiple accounts for multiple projects, it is possible to use the configuration commands several times at the folder level. Set up your name. This command sets your display name. Remember that this name does not refer to security or login information. git config --global user.name "<Your.full.name>" You can also set up your name for a single repository. To achieve that, you must be inside the project folder in the terminal. Just remove the global option from the command. git config user.name "<Your.full.name>" Set up your email git config --global user.email "<youraddress@domain.com"> Display all configuration options This command is essential to verifying the configuration's correctness. It will display every configuration option. Most are rarely modified, but some are common in enterprise environments. git config --list In some common enterprise scenarios, HTTP and credential store options require modification.  Repository commands Initialize a repository This command initializes a Git repository in the current local folder.  git init Clone an existing repository. This command retrieves a repository from a URL and stores it locally.  git clone <url> Git supports protocols, and URLs might look different depending on the repository. ssh:// git:// http[s]:// ftp[s]:// We recommend visiting the official document for the clone command (https://git-scm.com/docs/git-clone) for more complex scenarios.  Check repository status. The status command displays all changes in the current repository branch.  git status Display branches The display branches command shows a list of branches in the local version of the repository. Suppose anybody updates the server copy after we download the repository. In that case, those branches will not appear in the local version. git branch or git branch --list Switch to another branch. A typical project contains more than one branch. This command switches to another branch. git checkout [another_branch] Delete a branch The delete branch command is uncommon, but if you need it, use the following command. git branch -d [branch_name] This command deletes the local branch. For more advanced cases, such as removing remote branches or eliminating branches with existing changes, we suggest you read the documentation. Commit commands Add files. The add files command lets developers control files to add to a commit. Suppose we modify several files in our project; we can commit all of them at once with the following command: git add . We can specify one file at a time, adding the file name at the end: git add [filename_including_path] Git also supports a list of files separated by commas: git add [filename1],[filename2],[filename3] Git allows the use of wildcards to commit similar files together: git add *.txt Remove files from commit. The RM command removes a file from committing to a repository. This command does not modify the file in any way; it excludes it from the commit to the repository. git rm --cached <filename_including_path> Commit files. When we add files to a commit, Git adds them to the 'staging section.' Once developers are ready to publish them, the commit command indicates that Git should save them in the repository. git commit The most common way to commit is by indicating a message for the changes. For example, let's assume we modified different files to fix a bug; the command will look like this: git commit -m "Bug A fixed" Show differences. The diff command shows the differences between the last commit and the current repository status. git diff Git displays a list of changes, additions, and files removed.   Stash and Pop commands Stash command We train our teams in Git, and one of the most critical functions we know from experience is Stashing and Restoring changes. Git does not allow you to switch branches unless you commit changes.  It is common to have work in progress that you must set aside while conducting other work. Another case to save state is if you have changes in your local environment that you don't want to push to the repository. For example, you add some files for testing purposes or to override a configuration, and you want to preserve those changes before switching to another branch. To stash your current changes, use the following command: git stash After running the command Git, reset the status to the last clean state before any changes and keep those changes in a separate place. To restore the changes to the current branch, use the following command git stash pop If you want to see what is in the stash area, use the command: git stash show You can also delete all the entries in the stash area with the following command: git stash clear Stash command considerations We suggest spending time using stash commands to understand how they work. It is one of the most influential and valuable commands but takes time to master. We observed developers stashing current changes to continue working on the current or another branch. Suppose a developer modifies any files stashed and tries to pop the changes. In that case, the operation leads to conflicts that are not always simple to fix.  Advanced commands Below is a simple list of advanced commands. These operations are complex to learn, and entire articles cover a small portion of each command. Merge command Merge a branch into the current branch. git merge [branch_you_want_to_merge] Erase commits command Reset changes to a specific commit git reset [commit_reference] Reset changes to the HEAD (soft) git reset --soft HEAD^ The reset command is very complex and admits different options to reset the current state to specific commits and heads and even force the elimination of committed files. We recommend reading the documentation and understanding the consequences of forcing resets or reset changes to a particular commit. If you are unsure how it works, this command can cause you to lose essential changes.)
+            P: Select the default options if you are unsure what options to choose when installing the software.
+            H2: Configuration commands
+            P: Configuration commands are generally the first commands to use for new installations. These commands prepare the environment to use Git. For advanced scenarios where developers have multiple accounts for multiple projects, it is possible to use the configuration commands several times at the folder level.
+            H3: Set up your name.
+            P: This command sets your display name. Remember that this name does not refer to security or login information.
+            PRE.w-code-block: git config --global user.name "<Your.full.name>"
+            P: You can also set up your name for a single repository. To achieve that, you must be inside the project folder in the terminal. Just remove the global option from the command.
+            PRE.w-code-block: git config user.name "<Your.full.name>"
+            H3: Set up your email
+            PRE.w-code-block: git config --global user.email "<youraddress@domain.com">
+            H3: Display all configuration options
+            P: This command is essential to verifying the configuration's correctness. It will display every configuration option. Most are rarely modified, but some are common in enterprise environments.
+            PRE.w-code-block: git config --list
+            P: In some common enterprise scenarios, HTTP and credential store options require modification.
+                IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/684b2edd7e5361d65ee69b7d_Git%20bash%20cover(2).png alt="" 791x396
+            H2: Repository commands
+            H3: Initialize a repository
+            P: This command initializes a Git repository in the current local folder.
+            PRE.w-code-block: git init
+            H3: Clone an existing repository
+            P: This command retrieves a repository from a URL and stores it locally.
+            PRE.w-code-block: git clone <url>
+            P: Git supports protocols, and URLs might look different depending on the repository.
+              LI: ssh://
+              LI: git://
+              LI: http[s]://
+              LI: ftp[s]://
+            P: We recommend visiting the official document for the clone command (https://git-scm.com/docs/git-clone) for more complex scenarios.
+            H3: Check repository status
+            P: The status command displays all changes in the current repository branch.
+            PRE.w-code-block: git status
+            H3: Display branches
+            P: The display branches command shows a list of branches in the local version of the repository. Suppose anybody updates the server copy after we download the repository. In that case, those branches will not appear in the local version.
+            PRE.w-code-block: git branch
+            P: or
+            PRE.w-code-block: git branch --list
+            H3: Switch to another branch
+            P: A typical project contains more than one branch. This command switches to another branch.
+            PRE.w-code-block: git checkout [another_branch]
+            H3: Delete a branch
+            P: The delete branch command is uncommon, but if you need it, use the following command.
+            PRE.w-code-block: git branch -d [branch_name]
+            P: This command deletes the local branch. For more advanced cases, such as removing remote branches or eliminating branches with existing changes, we suggest you read the documentation.
+            H2: Commit commands
+            H3: Add files
+            P: The add files command lets developers control files to add to a commit. Suppose we modify several files in our project; we can commit all of them at once with the following command:,
+            PRE.w-code-block: git add .
+            P: We can specify one file at a time, adding the file name at the end:
+            PRE.w-code-block: git add [filename_including_path]
+            P: Git also supports a list of files separated by commas:
+            PRE.w-code-block: git add [filename1],[filename2],[filename3]
+            P: Git allows the use of wildcards to commit similar files together:
+            PRE.w-code-block: git add *.txt
+            H3: Remove files from commit
+            P: The RM command removes a file from committing to a repository. This command does not modify the file in any way; it excludes it from the commit to the repository.
+            PRE.w-code-block: git rm --cached <filename_including_path>
+            H3: Commit files
+            P: When we add files to a commit, Git adds them to the 'staging section.' Once developers are ready to publish them, the commit command indicates that Git should save them in the repository.
+            PRE.w-code-block: git commit
+            P: The most common way to commit is by indicating a message for the changes. For example, let's assume we modified different files to fix a bug; the command will look like this:
+            PRE.w-code-block: git commit -m "Bug A fixed"
+            H3: Show differences
+            P: The diff command shows the differences between the last commit and the current repository status.
+            PRE.w-code-block: git diff
+            P: Git displays a list of changes, additions, and files removed.
+            H2: Stash and Pop commands
+            H3: Stash command
+            P: We train our teams in Git, and one of the most critical functions we know from experience is Stashing and Restoring changes. Git does not allow you to switch branches unless you commit changes.
+            P: It is common to have work in progress that you must set aside while conducting other work. Another case to save state is if you have changes in your local environment that you don't want to push to the repository. For example, you add some files for testing purposes or to override a configuration, and you want to preserve those changes before switching to another branch.
+            P: To stash your current changes, use the following command:
+            PRE.w-code-block: git stash
+            P: After running the command Git, reset the status to the last clean state before any changes and keep those changes in a separate place.
+            P: To restore the changes to the current branch, use the following command
+            PRE.w-code-block: git stash pop
+            P: If you want to see what is in the stash area, use the command:
+            PRE.w-code-block: git stash show
+            P: You can also delete all the entries in the stash area with the following command:
+            PRE.w-code-block: git stash clear
+            H4: Stash command considerations
+            P: We suggest spending time using stash commands to understand how they work. It is one of the most influential and valuable commands but takes time to master.
+            P: We observed developers stashing current changes to continue working on the current or another branch. Suppose a developer modifies any files stashed and tries to pop the changes. In that case, the operation leads to conflicts that are not always simple to fix.
+            H2: Advanced commands
+            P: Below is a simple list of advanced commands. These operations are complex to learn, and entire articles cover a small portion of each command.
+            H3: Merge command
+            P: Merge a branch into the current branch.
+            PRE.w-code-block: git merge [branch_you_want_to_merge]
+            H3: Erase commits command
+            P: Reset changes to a specific commit
+            PRE.w-code-block: git reset [commit_reference]
+            P: Reset changes to the HEAD (soft)
+            PRE.w-code-block: git reset --soft HEAD^
+            P: The reset command is very complex and admits different options to reset the current state to specific commits and heads and even force the elimination of committed files. We recommend reading the documentation and understanding the consequences of forcing resets or reset changes to a particular commit. If you are unsure how it works, this command can cause you to lose essential changes.
+                A(empty).fb-share.w-inline-block -> https://www.facebook.com/sharer/sharer.php?caption=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation&u=https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                A(empty).whatsup-share.w-inline-block -> whatsapp://send?text=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation%20https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                A(empty).li-share.w-inline-block -> https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands&title=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation
+                A(empty).twitter-share.w-inline-block -> https://x.com/intent/tweet?text=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation&url=https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                A(empty).email-share.w-inline-block -> mailto:?subject=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation&body=Git%20Bash%20%26%20GUI%3A%20Guide%20to%20Git%20Commands%20and%20Installation%20https%3A%2F%2Fwww.oliant.io%2Farticles%2Fgit-bash-commonly-used-commands
+                IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67bf5e2ca0a6690b752bc1b8_WhatsApp%20Image%202024-09-16%20at%203.15.39%20PM-p-1080.jpeg alt="" 91x91
+                DIV.u-text-style-main.u-weight-bold: By
+                DIV.article_author_name.u-text-style-main: Max Rios
+              DIV.article_author_desc.u-text-style-small: OLIANT's CEO. 30 years in tech, from developer to data scientist. Exploring how tech reshapes our world.
+              DIV.article_date.u-text-style-small: April 2, 2025
+                DIV.article_related_heading.u-text-style-large: Related Services
+                LI.article_related_list_item: Custom Web Development  LINKS [Custom Web Development](https://www.oliant.io/services/web)
+                LI.article_related_list_item: Staff Augmentation  LINKS [Staff Augmentation](https://www.oliant.io/services/staff-augmentation)
+                DIV.article_related_heading.u-text-style-large: Related Articles
+                LI.article_related_list_item: Vibe Coding: A New Frontier or Just a Hype Cycle?  LINKS [Vibe Coding: A New Frontier or Just a Hype Cycle?](https://www.oliant.io/articles/vibe-coding)
+                LI.article_related_list_item: Coding Your Way: 5 Must-Know Languages for Web Development  LINKS [Coding Your Way: 5 Must-Know Languages for Web Development](https://www.oliant.io/articles/web-development-languages-2025)
+                LI.article_related_list_item: GitLab vs. GitHub: What’s the Difference?  LINKS [GitLab vs. GitHub: What’s the Difference?](https://www.oliant.io/articles/gitlab-vs-github-difference)
+                LI.article_related_list_item: Choosing a JavaScript Framework? Here’s What You Need to Know  LINKS [Choosing a JavaScript Framework? Here’s What You Need to Know](https://www.oliant.io/articles/javascript-framework-2025)
+            DIV.article_btn_text: Previous Article
+            DIV.article_btn_text: Next Article
+              DIV.article_prev_card: Why Remote Work Feels Freeing—But Also Kind of Lonely  LINKS [Why Remote Work Feels Freeing—But Also Kind of Lonely](/articles/remote-vs-in-office)
+                IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67f40a7ec1975a50ad6e9203_Remote%20vs.%20in%20office-p-1080.png alt=""
+              DIV.article_prev_card: Python vs Rust: A Full Comparison  LINKS [Python vs Rust: A Full Comparison](/articles/python-vs-rust-differences)
+                IMG https://cdn.prod.website-files.com/67b7209df65e8ef314c74883/67eaec255a7dd969091d7928_Rust%20vs.%20Python%20-%20Blog%20cover(3)-p-1080.png alt=""
+  <section.faq_wrap>
+        H2.faq_title.u-text-style-h2: GitBash Frequently Asked Questions (FAQ)
+        P.faq_paragraph.u-text-style-main: Here are some of our most common questions related to GitBash and GitBash commands. Don't see yours here? Get in touch, we can help!
+              H6.faq_question.u-text-style-h6: What are bash commands?
+                  P: Bash commands are Unix-style commands that allow users to navigate folders, manage files, and display information.
+                  P: ‍
+              H6.faq_question.u-text-style-h6: What is the command for git bash?
+              H6.faq_question.u-text-style-h6: What are Git's basic commands?
+              H6.faq_question.u-text-style-h6: What is the difference between git and git bash?

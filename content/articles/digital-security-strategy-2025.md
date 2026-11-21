@@ -9,6 +9,20 @@ coverImage:
   src: /images/articles/digital-security-strategy-2025/cover.png
   alt: "Is Your Digital Security Strategy Up To Date?"
 draft: false
+relatedServices:
+  - title: Custom Software Development
+    href: /services/web
+  - title: Specialized Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: A Dev’s Guide to Free VM Hosting
+    href: /articles/free-vm-hosting-2025
+  - title: "Should You Go Serverless? Pros, Cons & What to Expect"
+    href: /articles/what-is-serverless-computing
+  - title: "What Is DevOps? Key Concepts, Benefits, and Best Practices"
+    href: /articles/what-is-devops-best-practices
+  - title: A Guide to Custom Software Development
+    href: /articles/what-is-custom-software-development
 seo:
   title: Top Cybersecurity Practices for Businesses in 2025
   description: "Full guide to digital security and cybersecurity threats in 2025. Safety strategies, risk assessment, active vs. passive security, and network security tools."
@@ -38,7 +52,7 @@ In sectors where digital systems control physical infrastructure (such as traffi
 
 On an individual level, the situation is just as alarming. In 2023, reports indicated that [50% of personal devices](https://www.securitymagazine.com/articles/99019-over-50-of-personal-devices-were-exposed-to-a-mobile-phishing-attack) were exposed to phishing attacks. These attacks are often executed through viruses, worms, Trojans, man-in-the-middle (MITM) attacks, or email spoofing campaigns. These types of cyberattacks highlight the importance of proactive digital protection.
 
-###### \[Also check out: [Is Serverless Computing the Right Choice for You?](https://www.oliant.io/articles/what-is-serverless-computing) \]
+###### \[Also check out: [Is Serverless Computing the Right Choice for You?](https://www.oliant.io/articles/what-is-serverless-computing)\]
 
 ## Cybersecurity Best Practices: Active vs. Passive Security
 
@@ -87,7 +101,7 @@ Businesses, especially small to medium enterprises, should not rely on isolated 
 
 Creating a secure network architecture involves collaboration across departments, consistent policy enforcement, and the adoption of advanced cybersecurity frameworks. These are not just reactive, but proactive, aligning with current cybersecurity trends for businesses.
 
-###### \[Also check out: [How to Make the Most Out of Free VM Hosting](https://www.oliant.io/articles/free-vm-hosting-2025) \]
+###### \[Also check out: [How to Make the Most Out of Free VM Hosting](https://www.oliant.io/articles/free-vm-hosting-2025)\]
 
 ## How Cybersecurity Creates Opportunity
 

@@ -1,0 +1,1 @@
+import { chromium } from "playwright"; const b = await chromium.launch(); const p = await b.newPage(); await p.goto(process.argv[2], { waitUntil: "networkidle" }); console.log(await p.evaluate((s) => [...document.querySelectorAll(s)].map((i) => `${i.currentSrc} ${i.naturalWidth}x${i.naturalHeight}`).join("\n"), process.argv[3])); await b.close()

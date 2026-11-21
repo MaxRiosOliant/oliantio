@@ -535,37 +535,79 @@ type MarkdownNode = {
   children?: MarkdownNode[]
 }
 
-function paragraphText(node: MarkdownNode) {
-  if (
-    !node.children ||
-    node.children.some((child) => child.type !== "text" && child.type !== "break")
-  ) {
-    return null
-  }
-  return node.children
-    .map((child) => (child.type === "break" ? "\n" : (child.value ?? "")))
-    .join("")
-}
+type TableRow = { raw: string; cells: MarkdownNode[][] }
 
-function tableCells(row: string) {
-  const trimmed = row.trim().replace(/^\|/, "").replace(/\|$/, "")
-  const cells: string[] = []
-  let current = ""
-  for (let index = 0; index < trimmed.length; index += 1) {
-    if (trimmed[index] === "\\" && trimmed[index + 1] === "|") {
-      current += "|"
-      index += 1
-      continue
-    }
-    if (trimmed[index] === "|") {
-      cells.push(current.trim())
-      current = ""
-      continue
-    }
-    current += trimmed[index]
+// Splits a paragraph into pipe-table rows and cells. Inline nodes (strong,
+// emphasis, links, code) stay inside their cell; "\|" is a literal pipe.
+function paragraphRows(node: MarkdownNode) {
+  const rows: TableRow[] = []
+  let row: TableRow = { raw: "", cells: [[]] }
+  const cell = () => row.cells[row.cells.length - 1] ?? []
+  const pushText = (value: string) => {
+    if (!value) return
+    const current = cell()
+    const last = current[current.length - 1]
+    if (last?.type === "text") last.value = (last.value ?? "") + value
+    else current.push({ type: "text", value })
   }
-  cells.push(current.trim())
-  return cells
+  const endRow = () => {
+    if (row.raw.trim()) rows.push(row)
+    row = { raw: "", cells: [[]] }
+  }
+
+  for (const child of node.children ?? []) {
+    if (child.type === "break") {
+      endRow()
+      continue
+    }
+    if (child.type !== "text") {
+      cell().push(child)
+      row.raw += "x"
+      continue
+    }
+    const value = child.value ?? ""
+    let buffer = ""
+    for (let index = 0; index < value.length; index += 1) {
+      const character = value[index]
+      if (character === "\\" && value[index + 1] === "|") {
+        buffer += "|"
+        row.raw += "x"
+        index += 1
+      } else if (character === "|") {
+        pushText(buffer)
+        buffer = ""
+        row.cells.push([])
+        row.raw += "|"
+      } else if (character === "\n") {
+        pushText(buffer)
+        buffer = ""
+        endRow()
+      } else {
+        buffer += character
+        row.raw += character
+      }
+    }
+    pushText(buffer)
+  }
+  endRow()
+
+  for (const item of rows) {
+    item.raw = item.raw.trim()
+    const isBlank = (nodes: MarkdownNode[]) =>
+      nodes.every((part) => part.type === "text" && !(part.value ?? "").trim())
+    if (item.cells.length > 1 && isBlank(item.cells[0] ?? [])) item.cells.shift()
+    if (item.cells.length > 1 && isBlank(item.cells[item.cells.length - 1] ?? [])) item.cells.pop()
+    for (const parts of item.cells) {
+      const first = parts[0]
+      const last = parts[parts.length - 1]
+      if (first?.type === "text") first.value = (first.value ?? "").trimStart()
+      if (last?.type === "text") last.value = (last.value ?? "").trimEnd()
+    }
+    item.cells = item.cells.map((parts) =>
+      parts.filter((part) => part.type !== "text" || part.value),
+    )
+  }
+  return rows
 }
 
 function remarkTables() {
@@ -576,27 +618,21 @@ function remarkTables() {
         const child = node.children[index]
         if (!child) continue
         if (child.type === "paragraph") {
-          const rows = (paragraphText(child) ?? "")
-            .split("\n")
-            .map((row) => row.trim())
-            .filter(Boolean)
+          const rows = paragraphRows(child)
           const separator = /^\|(?:\s*:?-{3,}:?\s*\|)+$/
           if (
             rows.length >= 3 &&
-            rows.every((row) => row.startsWith("|") && row.endsWith("|")) &&
-            separator.test(rows[1] ?? "")
+            rows.every((row) => row.raw.startsWith("|") && row.raw.endsWith("|")) &&
+            separator.test(rows[1]?.raw ?? "")
           ) {
-            const toRow = (row: string): MarkdownNode => ({
+            const toRow = (row: TableRow): MarkdownNode => ({
               type: "tableRow",
-              children: tableCells(row).map((cell) => ({
-                type: "tableCell",
-                children: cell ? [{ type: "text", value: cell }] : [],
-              })),
+              children: row.cells.map((parts) => ({ type: "tableCell", children: parts })),
             })
             node.children[index] = {
               type: "table",
-              align: tableCells(rows[1] ?? "").map(() => null),
-              children: [toRow(rows[0] ?? ""), ...rows.slice(2).map(toRow)],
+              align: (rows[1]?.cells ?? []).map(() => null),
+              children: [toRow(rows[0] as TableRow), ...rows.slice(2).map(toRow)],
             }
             continue
           }
@@ -717,9 +753,19 @@ async function buildContent() {
     }
   }
 
+  const articleSlugs = new Set(articles.map((article) => article.data.slug))
   for (const article of articles) {
     checkLocalImage(article.file, "coverImage.src", article.data.coverImage.src, errors)
     checkLocalImage(article.file, "seo.image", article.data.seo.image, errors)
+    article.data.relatedArticles.forEach((link, index) => {
+      const slug = /^\/articles\/([^/]+)$/.exec(link.href)?.[1]
+      if (link.href.startsWith("/") && (!slug || !articleSlugs.has(slug))) {
+        errors.push({
+          file: article.file,
+          message: `relatedArticles.${index}.href: "${link.href}" does not match an article`,
+        })
+      }
+    })
   }
   for (const author of authors) {
     checkLocalImage(author.file, "avatar", author.data.avatar, errors)
@@ -754,6 +800,17 @@ async function buildContent() {
   }
   for (const page of pages) {
     checkLocalImage(page.file, "seo.image", page.data.seo.image, errors)
+    const prefix = `/images/pages/${page.data.slug}/`
+    for (const match of page.body.matchAll(/["'](\/images\/[^"']+)["']/g)) {
+      const imagePath = match[1] ?? ""
+      if (!imagePath.startsWith(prefix)) {
+        errors.push({
+          file: page.file,
+          message: `image: "${imagePath}" must start with ${prefix}`,
+        })
+      }
+      checkLocalImage(page.file, "image", imagePath, errors)
+    }
   }
 
   const reserved = reservedPageSlugs()
@@ -833,6 +890,9 @@ async function buildContent() {
         excerpt: article.data.excerpt,
         coverImage: article.data.coverImage,
         draft: article.data.draft,
+        relatedServices: article.data.relatedServices,
+        relatedArticles: article.data.relatedArticles,
+        ...(article.data.faq ? { faq: article.data.faq } : {}),
         seo: article.data.seo,
         path: `/articles/${article.data.slug}`,
       }
@@ -885,6 +945,7 @@ async function buildContent() {
       title: page.data.title,
       slug: page.data.slug,
       heading: page.data.heading ?? page.data.title,
+      ...(page.data.layout ? { layout: page.data.layout } : {}),
       seo: page.data.seo,
       path: `/${page.data.slug}`,
     }))

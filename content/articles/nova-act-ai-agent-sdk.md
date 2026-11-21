@@ -10,6 +10,18 @@ coverImage:
   src: /images/articles/nova-act-ai-agent-sdk/cover.png
   alt: Nova Act Amazon AI Agent SDK
 draft: false
+relatedServices:
+  - title: Custom Web Development
+    href: /services/web
+relatedArticles:
+  - title: "How Smart is Grok 3 Really? A Review"
+    href: /articles/grok-3-2025-review
+  - title: "Race to the AI throne: Where do ChatGPT Competitors Stand?"
+    href: /articles/chatgpt-alternatives
+  - title: How DeepSeek Can Reshape AI
+    href: /articles/what-is-deepseek-ai
+  - title: Salesforce AI’s Secret Weapon for Predictive Data
+    href: /articles/salesforce-ai-predictive-analytics
 seo:
   title: Why Amazon Nova Act Could Lead the AI Agent Race in 2025
   description: "The Nova Act SDK powers Amazon’s AI agent to handle browser automation, execute multi-step workflows, and outperform ChatGPT and Claude in benchmarks."
@@ -32,7 +44,7 @@ What sets Nova Act apart for us isn’t just what it can do; it’s how reliably
 
 All of this is possible because Nova Act is trained across more than 100 domains, including travel, finance, and healthcare. That broad training scope makes it uniquely adaptable to real-world, web-based AI tasks beyond what current assistants can manage.
 
-###### \[Also check out [the top ChatGPT alternatives](https://www.oliant.io/articles/chatgpt-alternatives) \]
+###### \[Also check out [the top ChatGPT alternatives](https://www.oliant.io/articles/chatgpt-alternatives)\]
 
 For example, Amazon reports a 94% success rate in handling tricky calendar widgets and a 91% accuracy rate when parsing dense restaurant menus, both common problem areas for AI systems trying to mimic human browser behavior.
 
@@ -70,7 +82,7 @@ Despite all of these questions, this moment already feels like the starting line
 
 The difference with Nova Act is Amazon’s scale. With Alexa embedded in over 500 million devices worldwide, they have a direct pathway to global deployment that few competitors can match.
 
-###### \[Also check out [our Grok 3 Review](https://www.oliant.io/articles/grok-3-2025-review) \]
+###### \[Also check out [our Grok 3 Review](https://www.oliant.io/articles/grok-3-2025-review)\]
 
 ## How to Set Up Nova Act on Windows
 
@@ -78,11 +90,32 @@ If anything in our article has made you curious and you're looking to try Nova A
 
 1.  Create and activate a virtual environment
 
+```
+python -m venv venv
+venv\Scripts\activate
+```
+
 2.  Install Nova act
+
+```
+pip install nova-act
+```
 
 3.  Get the API key
 
+```
+set NOVA_ACT_API_KEY="your_api_key"
+```
+
 That should be it. If you want to give it a test, we suggest using the example script (hello\_nova.py) given by the Nova Act GitHub page.
+
+```
+from nova_act import NovaAct
+with NovaAct(starting_page="https://www.amazon.com") as nova:
+   nova.act("search for a coffee maker")
+   nova.act("select the first result")
+   nova.act("scroll down or up until you see 'add to cart' and then click 'add to cart'")
+```
 
 ## Closing Thoughts
 

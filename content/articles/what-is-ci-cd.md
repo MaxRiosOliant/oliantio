@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/what-is-ci-cd/cover.png
   alt: "What is CI/CD?"
 draft: false
+relatedServices:
+  - title: Custom Software Development
+    href: /services/web
+  - title: Specialized Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: "OKR vs KPI: Navigating Performance Metrics with Confidence"
+    href: /articles/okr-vs-kpi
+  - title: "RACI Matrix: Your New Favorite Project Blueprint"
+    href: /articles/what-is-raci-matrix
+  - title: "What Is DevOps? Key Concepts, Benefits, and Best Practices"
+    href: /articles/what-is-devops-best-practices
+  - title: "Is Your Team Agile Enough? How To Choose The Right Framework"
+    href: /articles/agile-vs-scrum
 seo:
   title: "CI/CD Explained: Streamline Development in DevOps Automation"
   description: "CI/CD: A guide to Continuous Integration, Continuous Deployment, Continuous Delivery, DevOps automation, the best CI/CD tools, plugins, and applications."

@@ -1,21 +1,27 @@
+import type { ReactNode } from "react"
 import Image from "next/image"
 
 type ServiceCatalogItem = {
   title: string
   id?: string
   icon: string
-  paragraphs: string[]
+  paragraphs: ReactNode[]
+  list?: string[]
 }
 
 type ServiceCatalogProps = {
+  id?: string
   title: string
   intro: string
   items: ServiceCatalogItem[]
 }
 
-export function ServiceCatalog({ title, intro, items }: ServiceCatalogProps) {
+export function ServiceCatalog({ id, title, intro, items }: ServiceCatalogProps) {
   return (
-    <section className="bg-paper py-[clamp(4rem,3.142857rem+4.285714vw,7rem)] text-ink">
+    <section
+      id={id}
+      className={`bg-paper py-[clamp(4rem,3.142857rem+4.285714vw,7rem)] text-ink${id ? " scroll-mt-[5.125rem]" : ""}`}
+    >
       <div className="site-container">
         <h2 className="trim-text mb-6 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
           {title}
@@ -40,11 +46,20 @@ export function ServiceCatalog({ title, intro, items }: ServiceCatalogProps) {
                 <h3 className="trim-text mb-6 text-xl leading-[1.1] font-extrabold text-balance">
                   {item.title}
                 </h3>
-                {item.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="mb-3 text-base leading-6">
+                {item.paragraphs.map((paragraph, index) => (
+                  <p key={index} className="mb-3 text-base leading-6 [&_a]:text-brand-5 [&_a:hover]:underline">
                     {paragraph}
                   </p>
                 ))}
+                {item.list ? (
+                  <ul className="list-inside list-disc text-base leading-6">
+                    {item.list.map((entry) => (
+                      <li key={entry} className="pl-4">
+                        {entry}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </li>
           ))}

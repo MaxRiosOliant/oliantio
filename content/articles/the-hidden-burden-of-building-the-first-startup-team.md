@@ -10,6 +10,11 @@ coverImage:
   src: /images/articles/the-hidden-burden-of-building-the-first-startup-team/cover.png
   alt: Scaling startup team
 draft: false
+relatedServices:
+  - title: MVP Development
+    href: /services/mvp-development
+  - title: QA Services
+    href: /services/qa
 seo:
   title: "The Hidden Burden of Startup Team Building: Why Finding the"
   description: "90% of startups fail — and nearly a quarter cite team issues. Learn how to build the right MVP team, avoid costly mistakes, and set your startup up for success."

@@ -2,9 +2,32 @@
 title: Oliant Form USA
 slug: oliant-form-usa
 heading: Tell us about yourself!
+layout: standalone
 seo:
   title: Oliant Form USA
   noindex: true
 ---
 
-Almost there!
+<StandaloneForm
+  logo={{ src: "/images/pages/oliant-form-usa/logo.webp", alt: "Oliant", width: 250, height: 84 }}
+  background={{ src: "/images/pages/oliant-form-usa/background.jpg", alt: "" }}
+  title="Tell us about yourself!"
+  text="Knowing more about your business will help us better tailor your experience."
+  selectLabel="Number of Employees"
+  selectOptions={["1 - 10", "11 - 50", "51 - 500", "500 +"]}
+  consent="By submitting my personal data, I consent to Oliant collecting, processing and storing my information in accordance with the"
+  consentLinkText="Privacy Policy"
+  consentHref="/privacy-policy"
+  next="Continue"
+  detailsTitle="Almost there!"
+  fields={[
+    { name: "firstName", label: "First Name*", placeholder: "Enter your first name", required: true },
+    { name: "lastName", label: "Last Name*", placeholder: "Enter your last name", required: true },
+    { name: "email", label: "Email Address*", placeholder: "Enter your email", type: "email", required: true },
+    { name: "jobTitle", label: "Job Title*", placeholder: "Enter your job title", required: true },
+    { name: "company", label: "Company Name*", placeholder: "Enter your company name", required: true },
+    { name: "phone", label: "Phone Number", placeholder: "Enter your phone number", type: "tel" },
+  ]}
+  optIn="I agree to receive marketing emails and newsletters."
+  submit="Submit"
+/>

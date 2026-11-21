@@ -1,7 +1,9 @@
+import { readFileSync } from "node:fs"
+import { join } from "node:path"
+
 import Image from "next/image"
 import Link from "next/link"
 
-import { Logo } from "@/components/layout/Logo"
 import { NewsletterForm } from "@/components/layout/NewsletterForm"
 import { ButtonLink } from "@/components/ui/ButtonLink"
 import { home } from "@/content/home"
@@ -9,6 +11,7 @@ import { site } from "@/config/site"
 
 const footer = home.footer
 const phoneHref = `tel:${site.phone.replace(/[^\d+]/g, "")}`
+const footerLogo = readFileSync(join(process.cwd(), "public/images/home/footer-logo.svg"), "utf8")
 
 function FooterLink({ href, children }: { href: string; children: string }) {
   const className =
@@ -29,13 +32,24 @@ function FooterLink({ href, children }: { href: string; children: string }) {
   )
 }
 
-export function Footer() {
+export type FooterTheme = "dark" | "light"
+
+export function Footer({ theme = "dark" }: { theme?: FooterTheme }) {
   return (
-    <footer className="bg-[linear-gradient(180deg,#45ab34,#142314)] text-paper">
+    <footer
+      className={
+        theme === "light" ? "bg-paper text-ink" : "bg-[linear-gradient(180deg,#45ab34,#142314)] text-paper"
+      }
+    >
       <div className="site-container relative">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,30rem),1fr))] gap-4">
           <div className="relative z-[1] flex flex-col gap-[var(--size-2rem)]">
-            <Logo variant="footer" />
+            <Link
+              href="/"
+              aria-label="Home Page"
+              className="inline-flex w-[15rem] shrink-0 [&_svg]:h-auto [&_svg]:w-full"
+              dangerouslySetInnerHTML={{ __html: footerLogo }}
+            />
             <nav
               aria-label="Footer"
               className="grid w-full grid-cols-[repeat(auto-fit,minmax(min(100%,11rem),1fr))] gap-4"

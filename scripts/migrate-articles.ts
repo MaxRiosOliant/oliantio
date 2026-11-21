@@ -89,7 +89,7 @@ type Turndown = {
 
 const downloadCache = new Map<string, Promise<Downloaded>>()
 
-function parseCsv(text: string) {
+export function parseCsv(text: string) {
   const rows: string[][] = []
   let row: string[] = []
   let field = ""
@@ -144,7 +144,7 @@ function parseCsv(text: string) {
     )
 }
 
-function findExport(prefix: string) {
+export function findExport(prefix: string) {
   return readdir(migrationDir).then((names) => {
     const matches = names.filter((name) => name.startsWith(prefix) && name.endsWith(".csv"))
     if (matches.length !== 1) {
@@ -154,7 +154,7 @@ function findExport(prefix: string) {
   })
 }
 
-function flagged(value: string) {
+export function flagged(value: string) {
   const normalized = value.trim().toLowerCase()
   if (normalized === "true") return true
   if (normalized === "false" || normalized === "") return false
@@ -185,7 +185,7 @@ function slugify(value: string) {
   return slug
 }
 
-function yamlString(value: string) {
+export function yamlString(value: string) {
   if (
     value.length === 0 ||
     /[:#&*!|>%@`'"\\{}\[\],?\n\r]/.test(value) ||
@@ -198,7 +198,7 @@ function yamlString(value: string) {
   return value
 }
 
-function decodeEntities(value: string) {
+export function decodeEntities(value: string) {
   let current = value
   for (let pass = 0; pass < 2; pass += 1) {
     current = current
@@ -216,7 +216,7 @@ function decodeEntities(value: string) {
   return current
 }
 
-function plainText(value: string) {
+export function plainText(value: string) {
   return decodeEntities(value)
     .replace(/<[^>]+>/g, " ")
     .replace(/\u00a0/g, " ")
@@ -454,11 +454,11 @@ type HtmlDocument = {
 }
 
 function createHtmlDocument(html: string) {
-  const module = domino as unknown as {
+  const dominoModule = domino as unknown as {
     createDocument?: (value: string) => HtmlDocument
     default?: { createDocument?: (value: string) => HtmlDocument }
   }
-  const createDocument = module.createDocument ?? module.default?.createDocument
+  const createDocument = dominoModule.createDocument ?? dominoModule.default?.createDocument
   if (!createDocument) {
     throw new Error("Could not load the HTML parser used by turndown")
   }

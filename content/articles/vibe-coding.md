@@ -10,6 +10,20 @@ coverImage:
   src: /images/articles/vibe-coding/cover.png
   alt: "What is Vibe Coding?"
 draft: false
+relatedServices:
+  - title: Custom Web Development
+    href: /services/web
+  - title: Staff Augmentation
+    href: /services/staff-augmentation
+relatedArticles:
+  - title: How to Build a No-Code Website
+    href: /articles/no-code-web-development-2025
+  - title: A Guide to Custom Software Development
+    href: /articles/what-is-custom-software-development
+  - title: The Git Bash Commands you Need to Know
+    href: /articles/git-bash-commonly-used-commands
+  - title: "Coding Your Way: 5 Must-Know Languages for Web Development"
+    href: /articles/web-development-languages-2025
 seo:
   title: "What is Vibe Coding? LLMs and AI-Assisted Programming"
   description: "What is vibe coding? Is vibe coding the future of programming? How vibe coding uses AI and LLMs to modernize software development. Top vibe coding tools."
@@ -44,14 +58,14 @@ I’ve seen this tension firsthand. There’s a bittersweet irony: while AI can 
 
 What makes vibe coding so appealing is the fascinatingly simple and iterative nature of its process. Here’s how it typically unfolds:
 
-1.  **Express Your Vision in Natural Language:
-    **Instead of typing out every intricate command, you simply describe what you want. For example, you might say, “I need a simple web page that shows the current weather for a given city.” The clarity of natural language means you don’t have to remember every detail of HTML, CSS, or JavaScript syntax.
-2.  **AI Generates Code:
-    **The AI, leveraging advanced LLMs like those behind GitHub Copilot, ChatGPT, or specialized tools like Cursor and Replit, churns out code based on your request. This code might come in the form of a fully functioning web page, a basic app prototype, or even a backend API.
-3.  **Review and Iteration:
-    **Once the AI produces the code, it’s up to you to review it. This stage is critical, as the generated code may not always be perfect or optimized, and will make all the difference between something functional and trash. You offer feedback, asking for adjustments like “make the design more vibrant” or “add error handling for user input.” The AI then refines its output. This back-and-forth dialogue continues until you’re satisfied with the result.
-4.  **Debugging and Integration:
-    **Often, things don’t work the first time. Error messages, unforeseen bugs, or awkward code structures can arise. In the spirit of vibe coding, you can simply copy an error message back to the AI, which will ideally suggest a fix, or at least explain what went wrong. It’s akin to having a tireless junior programmer who’s always ready to patch things up.
+1.  **Express Your Vision in Natural Language:**\
+    Instead of typing out every intricate command, you simply describe what you want. For example, you might say, “I need a simple web page that shows the current weather for a given city.” The clarity of natural language means you don’t have to remember every detail of HTML, CSS, or JavaScript syntax.
+2.  **AI Generates Code:**\
+    The AI, leveraging advanced LLMs like those behind GitHub Copilot, ChatGPT, or specialized tools like Cursor and Replit, churns out code based on your request. This code might come in the form of a fully functioning web page, a basic app prototype, or even a backend API.
+3.  **Review and Iteration:**\
+    Once the AI produces the code, it’s up to you to review it. This stage is critical, as the generated code may not always be perfect or optimized, and will make all the difference between something functional and trash. You offer feedback, asking for adjustments like “make the design more vibrant” or “add error handling for user input.” The AI then refines its output. This back-and-forth dialogue continues until you’re satisfied with the result.
+4.  **Debugging and Integration:**\
+    Often, things don’t work the first time. Error messages, unforeseen bugs, or awkward code structures can arise. In the spirit of vibe coding, you can simply copy an error message back to the AI, which will ideally suggest a fix, or at least explain what went wrong. It’s akin to having a tireless junior programmer who’s always ready to patch things up.
 
 This iterative approach not only speeds up the development process but also lowers the barrier to entry. Individuals who might not be fluent in traditional coding languages can bring their ideas to life.
 
