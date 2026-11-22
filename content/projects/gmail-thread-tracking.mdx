@@ -1,0 +1,30 @@
+---
+title: "Gmail-native outreach and thread tracking for a client platform"
+label: "Client project, live in production"
+stack:
+  - name: "Gmail API"
+    description: "Sending as the user and receiving change notifications"
+  - name: "Cloud Pub/Sub"
+    description: "Streams inbox events to the backend for asynchronous processing"
+  - name: "Google Cloud IAM"
+    description: "Service-account credentials securing every Google-side call"
+  - name: "OpenTofu"
+    description: "Infrastructure-as-code templates for the Google Cloud environment, reproducible and version-controlled"
+  - name: "AWS Lambda + API Gateway"
+    description: "The client's serverless backend, receiving Google Cloud events and processing them"
+  - name: "PostgreSQL"
+    description: "A complete record of every tracked thread and its activity"
+---
+
+Our client's users needed to email their contacts without leaving the
+platform, and then copy replies back into it by hand, which was slow and
+error-prone. We built a Gmail integration that lets them start
+conversations from the app's own interface, using their own Google
+Workspace accounts. Every reply, forward and new participant on those
+threads is then captured, analyzed and saved automatically, with no extra
+work.
+
+**Privacy by design.** Users connect their Gmail account once, through
+Google-verified OAuth with sensitive-scope permissions. The app never
+reads the inbox: it only follows threads the user started through the
+app, and ignores everything else.

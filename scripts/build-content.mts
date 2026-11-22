@@ -20,7 +20,9 @@ import {
   authorSchema,
   categorySchema,
   pageSchema,
+  projectSchema,
   serviceSchema,
+  slugSchema,
 } from "../lib/content/schemas.ts"
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
@@ -64,10 +66,18 @@ type CategoryData = {
   seo: SeoData
 }
 
-type ServiceProjectData = {
+type ProjectData = {
   title: string
-  text: string
-  href?: string
+  label: string
+  stack: Array<{
+    name: string
+    description: string
+  }>
+}
+
+type ProjectRecord = ProjectData & {
+  slug: string
+  body: string
 }
 
 type ServiceData = {
@@ -78,7 +88,8 @@ type ServiceData = {
   parent?: string
   heading?: string
   layout?: "document" | "landing"
-  projects?: ServiceProjectData[]
+  projectsHeading: string
+  projects: string[]
   seo: SeoData
 }
 
@@ -392,6 +403,57 @@ function duplicateSlugs<T extends { slug: string }>(
   }
 }
 
+function projectRecords(
+  docs: Array<ParsedDocument<ProjectData>>,
+  errors: FileError[],
+) {
+  const records: Array<ParsedDocument<ProjectRecord>> = []
+  for (const doc of docs) {
+    const slug = path.basename(doc.file, path.extname(doc.file))
+    const slugResult = slugSchema.safeParse(slug)
+    if (!slugResult.success) {
+      errors.push({
+        file: doc.file,
+        message: `filename: "${slug}" must be a lowercase kebab-case slug`,
+      })
+      continue
+    }
+
+    const body = doc.body.trim()
+    if (body.length === 0) {
+      errors.push({
+        file: doc.file,
+        message: "body: projects include a markdown body",
+      })
+    }
+
+    records.push({
+      ...doc,
+      data: { ...doc.data, slug: slugResult.data, body },
+    })
+  }
+  return records
+}
+
+function serviceProjectReferences(
+  services: Array<ParsedDocument<ServiceData>>,
+  projects: Array<ParsedDocument<ProjectRecord>>,
+  errors: FileError[],
+) {
+  const slugs = new Set(projects.map((project) => project.data.slug))
+  for (const service of services) {
+    service.data.projects.forEach((slug, index) => {
+      if (slugs.has(slug)) {
+        return
+      }
+      errors.push({
+        file: service.file,
+        message: `projects.${index}: "${slug}" does not match a projects document`,
+      })
+    })
+  }
+}
+
 function serviceCycles(
   docs: Array<ParsedDocument<ServiceData>>,
   errors: FileError[],
@@ -663,7 +725,7 @@ async function compileBody(body: string, format: Format) {
 }
 
 function writeJsonModule(fileName: string, exports: Array<[string, unknown, string]>) {
-  const imports = `import type { ArticleMeta, AuthorMeta, CategoryMeta, PageMeta, ServiceMeta } from "../records"\n\n`
+  const imports = `import type { ArticleMeta, AuthorMeta, CategoryMeta, PageMeta, ProjectMeta, ServiceMeta } from "../records"\n\n`
   const body = exports
     .map(
       ([name, value, typeName]) =>
@@ -711,12 +773,14 @@ async function buildContent() {
   const articlesRead = readCollection("content/articles")
   const authorsRead = readCollection("content/authors")
   const categoriesRead = readCollection("content/categories")
+  const projectsRead = readCollection("content/projects")
   const servicesRead = readCollection("content/services")
   const pagesRead = readCollection("content/pages")
   errors.push(
     ...articlesRead.errors,
     ...authorsRead.errors,
     ...categoriesRead.errors,
+    ...projectsRead.errors,
     ...servicesRead.errors,
     ...pagesRead.errors,
   )
@@ -724,14 +788,20 @@ async function buildContent() {
   const articles = parseDocuments(articlesRead.docs, articleSchema, errors)
   const authors = parseDocuments(authorsRead.docs, authorSchema, errors)
   const categories = parseDocuments(categoriesRead.docs, categorySchema, errors)
+  const projects = projectRecords(
+    parseDocuments(projectsRead.docs, projectSchema, errors),
+    errors,
+  )
   const services = parseDocuments(servicesRead.docs, serviceSchema, errors)
   const pages = parseDocuments(pagesRead.docs, pageSchema, errors)
 
   duplicateSlugs(articles, errors)
   duplicateSlugs(authors, errors)
   duplicateSlugs(categories, errors)
+  duplicateSlugs(projects, errors)
   duplicateSlugs(services, errors)
   duplicateSlugs(pages, errors)
+  serviceProjectReferences(services, projects, errors)
   serviceCycles(services, errors)
 
   const authorsBySlug = new Map(authors.map((doc) => [doc.data.slug, doc]))
@@ -941,12 +1011,23 @@ async function buildContent() {
         ...(service.data.parent ? { parent: service.data.parent } : {}),
         heading: service.data.heading ?? service.data.title,
         ...(service.data.layout ? { layout: service.data.layout } : {}),
-        ...(service.data.projects ? { projects: service.data.projects } : {}),
+        projectsHeading: service.data.projectsHeading,
+        projects: service.data.projects,
         seo: service.data.seo,
         path,
       }
     })
     .sort((a, b) => a.order - b.order || a.slug.localeCompare(b.slug))
+
+  const projectMeta = projects
+    .map((project) => ({
+      title: project.data.title,
+      label: project.data.label,
+      stack: project.data.stack,
+      slug: project.data.slug,
+      body: project.data.body,
+    }))
+    .sort((a, b) => a.slug.localeCompare(b.slug))
 
   const pageMeta = pages
     .map((page) => ({
@@ -965,6 +1046,7 @@ async function buildContent() {
     ["authorMeta", authorMeta, "AuthorMeta"],
     ["categoryMeta", categoryMeta, "CategoryMeta"],
     ["serviceMeta", serviceMeta, "ServiceMeta"],
+    ["projectMeta", projectMeta, "ProjectMeta"],
     ["pageMeta", pageMeta, "PageMeta"],
   ])
 
@@ -976,7 +1058,7 @@ async function buildContent() {
     { name: "pageBodies", collection: "pages", slugs: slugs(pageMeta) },
   ])
 
-  const documentCount = sources.length + categories.length
+  const documentCount = sources.length + categories.length + projects.length
   console.log(
     `Content build wrote ${documentCount} document${documentCount === 1 ? "" : "s"}.`,
   )

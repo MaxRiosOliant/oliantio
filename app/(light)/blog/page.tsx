@@ -2,13 +2,12 @@ import { blog } from "@/content/blog"
 import { ArticleGrid } from "@/components/sections/ArticleGrid"
 import { BlogFeatured } from "@/components/sections/BlogFeatured"
 import { CategoryChips } from "@/components/sections/CategoryChips"
-import { site } from "@/config/site"
 import { categories, publishedArticles } from "@/lib/content"
 import { buildMetadata } from "@/lib/seo"
 
 export const metadata = buildMetadata({
   title: "Blog",
-  description: site.description,
+  description: blog.description,
   path: "/blog",
 })
 

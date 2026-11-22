@@ -1,6 +1,6 @@
 import * as z from "zod"
 
-const slugSchema = z
+export const slugSchema = z
   .string()
   .regex(
     /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
@@ -109,13 +109,15 @@ export const articleSchema = z
     }
   })
 
-const serviceProjectSchema = z.object({
+const stackItemSchema = z.object({
+  name: z.string().min(1),
+  description: z.string().min(1),
+})
+
+export const projectSchema = z.object({
   title: z.string().min(1),
-  text: z.string().min(1),
-  href: z
-    .string()
-    .regex(/^(\/|https:\/\/)/, "Must be a site path or https URL")
-    .optional(),
+  label: z.string().min(1),
+  stack: z.array(stackItemSchema).min(1),
 })
 
 export const serviceSchema = z.object({
@@ -126,7 +128,8 @@ export const serviceSchema = z.object({
   parent: slugSchema.optional(),
   heading: z.string().min(1).optional(),
   layout: z.enum(["document", "landing"]).optional(),
-  projects: z.array(serviceProjectSchema).optional(),
+  projectsHeading: z.string().min(1).default("Our work"),
+  projects: z.array(slugSchema).default([]),
   seo: seoSchema,
 })
 

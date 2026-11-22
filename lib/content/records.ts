@@ -5,10 +5,16 @@ import type {
   authorSchema,
   categorySchema,
   pageSchema,
+  projectSchema,
   serviceSchema,
 } from "@/lib/content/schemas"
 
 export type AuthorMeta = z.output<typeof authorSchema>
+
+export type ProjectMeta = z.output<typeof projectSchema> & {
+  slug: string
+  body: string
+}
 
 export type CategoryMeta = z.output<typeof categorySchema> & {
   path: string

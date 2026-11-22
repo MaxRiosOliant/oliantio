@@ -4,7 +4,7 @@
 // Text entries match one word-diff hunk: `removed` is the live-only text and
 // `added` the local-only text (omit a side to require it to be empty). `hunk`
 // sees both sides at once.
-// Item entries match one heading, link, or image that exists on one side only.
+// Item entries match one heading, link, image, or robots value that exists on one side only.
 
 import { readdirSync, readFileSync } from "node:fs"
 import path from "node:path"
@@ -23,6 +23,7 @@ type ItemKind =
   | "image"
   | "image-count"
   | "status"
+  | "robots"
 
 export type AllowEntry = {
   kind: "text" | ItemKind
@@ -196,6 +197,30 @@ const mvpIntroLocal = normalize(
   "Startup-to-enterprise experience: With 30+ years delivering global end-to-end coverage —from strategy through QA and deployment —you get a seamless, integrated team, not a piecemeal vendor.",
 )
 
+const angularLiveCopy = [
+  "Deliver high-quality and modern UI",
+  "Our team delivered several solutions using the most modern UX/UI techniques for different markets and industries.",
+  "We merge extensive knowledge of architecture, user experience, and industry expertise into teams that understand your market, suggest solutions, and build applications end to end.",
+  "Angular Continuous Delivery",
+  "If you already have a cloud provider or Enterprise solution or need help deploying to different host providers, our teams master Continuous Delivery, ensuring your code goes live without issues, is thoroughly tested, and runs smoothly.",
+].map(normalize)
+
+const angularLocalCopy = [
+  "Angular interfaces that stay current",
+  "Our teams deliver Angular for enterprise products: a typed architecture, progressive web apps, and version upgrades.",
+  "We apply Angular's typed architecture to enterprise applications: strict TypeScript, clear module boundaries, and a structure the next team can extend without a rewrite.",
+  "Progressive web apps and upgrades",
+  "When the product should install and keep working offline, we build it as an Angular progressive web app. When an enterprise app is on an older Angular, we upgrade it in steps so releases keep shipping while the framework moves forward.",
+].map(normalize)
+
+const angularLiveText = angularLiveCopy.join(" ")
+const angularLocalText = angularLocalCopy.join(" ")
+
+const angularSeoHunk = (removed: string, added: string) =>
+  (removed === "" || angularLiveText.includes(removed)) &&
+  (added === "" || angularLocalText.includes(added)) &&
+  removed + added !== ""
+
 const serviceBreadcrumb =
   "Breadcrumb: live renders it under the fixed header (not visible) with typos and Webflow placeholders; locally it is visible below the header as Home / Services / [Parent] / [service title], with Services and the parent as plain text"
 
@@ -323,6 +348,22 @@ export const allowlist: AllowEntry[] = [
 
   // ---------- services ----------
   {
+    kind: "robots",
+    pages: [
+      "/services/web",
+      "/services/staff-augmentation",
+      "/services/mvp-development",
+      "/services/digital-marketing-seo",
+      "/services/development/react",
+      "/services/development/angular",
+      "/services/development/net",
+    ],
+    side: "live",
+    match: "noindex",
+    reason:
+      "Webflow marks this service page noindex; it is indexable locally now that the copy is approved",
+  },
+  {
     kind: "text",
     pages: "/services/web",
     removed: "Develoment",
@@ -437,6 +478,38 @@ export const allowlist: AllowEntry[] = [
     removed: "moder",
     added: "modern",
     reason: "Typo fix",
+  },
+  {
+    kind: "heading",
+    pages: "/services/development/angular",
+    side: "live",
+    match: "H1 Deliver high-quality and modern UI",
+    reason:
+      "Content correction: the Angular H1 no longer repeats the React H1; it is \"Angular interfaces that stay current\"",
+  },
+  {
+    kind: "heading",
+    pages: "/services/development/angular",
+    side: "local",
+    match: "H1 Angular interfaces that stay current",
+    reason:
+      "Content correction: the Angular H1 no longer repeats the React H1; it is \"Angular interfaces that stay current\"",
+  },
+  {
+    kind: "text",
+    pages: "/services/development/angular",
+    removed: any,
+    added: any,
+    hunk: angularSeoHunk,
+    reason:
+      "Content correction: the Angular H1, hero, and two reason columns are specific to Angular (typed architecture, enterprise apps, PWAs, upgrades) instead of repeating the React page",
+  },
+  {
+    kind: "text",
+    pages: "/services/digital-marketing-seo",
+    removed: "standards",
+    added: "standards.",
+    reason: "Missing final period restored on the QA reason card",
   },
   {
     kind: "text",

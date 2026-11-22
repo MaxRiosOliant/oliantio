@@ -4,10 +4,24 @@ import { Breadcrumbs } from "@/components/sections/Breadcrumbs"
 import { ContentBody } from "@/components/sections/ContentBody"
 import { PageIntro } from "@/components/sections/PageIntro"
 import { ServiceProjects } from "@/components/sections/ServiceProjects"
-import type { services } from "@/lib/content"
+import { projects, type services } from "@/lib/content"
 import type { ServiceMeta } from "@/lib/content/records"
 
 type LoadedService = (typeof services)[number]
+
+const projectsBySlug = new Map(projects.map((project) => [project.slug, project]))
+
+function projectsFor(service: LoadedService) {
+  return service.projects.map((slug) => {
+    const project = projectsBySlug.get(slug)
+    if (!project) {
+      throw new Error(
+        `Service "${service.slug}" references missing project "${slug}"`,
+      )
+    }
+    return project
+  })
+}
 
 type ServiceDocumentProps = {
   service: LoadedService & { path: string }
@@ -30,10 +44,11 @@ export async function ServiceDocument({ service, parent }: ServiceDocumentProps)
 
   if (service.layout === "landing") {
     const { default: Content } = await service.loadBody()
+    const referenced = projectsFor(service)
     const components = {
       ...mdxComponents,
-      ServiceProjects: ({ title }: { title: string }) => (
-        <ServiceProjects title={title} projects={service.projects ?? []} />
+      ServiceProjects: () => (
+        <ServiceProjects title={service.projectsHeading} projects={referenced} />
       ),
     }
     return (

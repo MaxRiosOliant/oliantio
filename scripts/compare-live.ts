@@ -86,6 +86,8 @@ type Snapshot = {
   paragraphs: string[]
   links: Record<Region, string[]>
   images: string[]
+  // "noindex" when a robots meta tag contains that directive, otherwise "".
+  robots: string
 }
 
 type TextHunk = {
@@ -513,7 +515,12 @@ async function extract(page: Page, side: Side) {
         return { alt: image.alt, file: decodeURIComponent(src.split("/").pop() ?? "") }
       })
 
-    return { words, headings, links, images, paragraphs }
+    const robotsMeta = [...document.querySelectorAll("meta")].find(
+      (meta) => meta.getAttribute("name")?.toLowerCase() === "robots",
+    )
+    const robots = /\bnoindex\b/i.test(robotsMeta?.getAttribute("content") ?? "") ? "noindex" : ""
+
+    return { words, headings, links, images, paragraphs, robots }
   }, side)
 }
 
@@ -592,6 +599,7 @@ async function capture(
         },
         images: raw.images.map((image) => `alt="${normalizeText(image.alt)}"`),
         paragraphs: raw.paragraphs.map((paragraph) => normalizeText(paragraph)),
+        robots: raw.robots,
       },
       imageFiles: raw.images.map((image) => image.file),
       shotFiles,
@@ -1038,6 +1046,14 @@ async function comparePage(browser: Browser, pagePath: string, shots: boolean): 
         item: `${live.snapshot.images.length} live / ${local.snapshot.images.length} local`,
       })
     }
+    if (live.snapshot.robots !== local.snapshot.robots) {
+      if (live.snapshot.robots) {
+        items.push({ kind: "robots", side: "live", item: live.snapshot.robots })
+      }
+      if (local.snapshot.robots) {
+        items.push({ kind: "robots", side: "local", item: local.snapshot.robots })
+      }
+    }
     for (const diff of items) diff.reason = allowItem(pagePath, diff)
     if (live.snapshot.status !== 200 || local.snapshot.status !== 200) {
       items.push({
@@ -1340,7 +1356,7 @@ function renderNewPage(result: PageResult) {
   return `
   <section id="${id}">
     <h3><span class="badge ${badgeClass(result.status)}">${result.status}</span> ${escapeHtml(result.path)}</h3>
-    <p class="meta">Not on the live site · HTTP local ${result.localStatus ?? "?"} · ${result.wordCount ?? 0} words in main · noindex until copy is approved</p>
+    <p class="meta">Not on the live site · HTTP local ${result.localStatus ?? "?"} · ${result.wordCount ?? 0} words in main · indexable</p>
     ${result.error ? `<p class="error">${escapeHtml(result.error)}</p>` : ""}
     ${renderIssues(result)}
     ${issues ? `<ul>${issues}</ul>` : ""}
@@ -1405,13 +1421,13 @@ function renderReport(results: PageResult[], placeholderHrefs: string[]) {
 <h1>Live vs local comparison</h1>
 <p>Generated ${new Date().toISOString()} · ${pass}/${compared.length} PASS · live ${liveOrigin} vs local production build (next start).</p>
 ${placeholder}
-<p>Checks per page: normalized visible main-content text (word diff), H1–H3 outline, links (href + text) in main, header and footer, image count and alt text, full-page screenshots at 1440px and 390px, and the header at scroll 0 with no hover (1440px, 390px, 390px with the menu open, and 1440px after client-side navigation from /), where every header link and button must reach ${minHeaderContrast}:1 contrast against the pixels behind it. Allowlisted differences carry their reason from <code>scripts/compare-live.allowlist.ts</code>. Console and network errors are collected on the local production build at 1440px and 390px.</p>
+<p>Checks per page: normalized visible main-content text (word diff), H1–H3 outline, links (href + text) in main, header and footer, image count and alt text, robots meta (noindex), full-page screenshots at 1440px and 390px, and the header at scroll 0 with no hover (1440px, 390px, 390px with the menu open, and 1440px after client-side navigation from /), where every header link and button must reach ${minHeaderContrast}:1 contrast against the pixels behind it. Allowlisted differences carry their reason from <code>scripts/compare-live.allowlist.ts</code>. Console and network errors are collected on the local production build at 1440px and 390px.</p>
 ${renderErrorSummary(results)}
 <table><thead><tr><th>Page</th><th>Status</th><th>Unexplained</th><th>Allowlisted</th><th>Errors</th></tr></thead><tbody>${rows}</tbody></table>
 ${compared.map(renderPage).join("")}
 <section id="new-copy-review">
   <h2>NEW: copy review</h2>
-  <p>These pages are not on the live site. Text is the visible main content after FAQ answers are expanded. Screenshots are the full page at scroll 0 with no hover. Header contrast uses the same scroll-0, no-hover checks as the migrated pages. Each page is <code>noindex</code> until the copy is approved.</p>
+  <p>These pages are not on the live site. Text is the visible main content after FAQ answers are expanded. Screenshots are the full page at scroll 0 with no hover. Header contrast uses the same scroll-0, no-hover checks as the migrated pages. Each page is indexable.</p>
   <table><thead><tr><th>Page</th><th>Words</th><th>Status</th><th>Errors</th></tr></thead><tbody>${newRows}</tbody></table>
   ${fresh.map(renderNewPage).join("")}
 </section>

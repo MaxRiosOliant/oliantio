@@ -1,5 +1,7 @@
 export const blog = {
   title: "OLIANT's Insights",
+  description:
+    "OLIANT's Insights on software, hiring, AI, and the decisions teams make while they ship a product.",
   breadcrumb: "Blog",
   latestTitle: "Latest blog posts",
   readMore: "Read more",

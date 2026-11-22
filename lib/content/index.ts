@@ -11,6 +11,7 @@ import {
   authorMeta,
   categoryMeta,
   pageMeta,
+  projectMeta,
   serviceMeta,
 } from "@/lib/content/generated/meta"
 
@@ -36,6 +37,7 @@ export const draftArticles = articles.filter((article) => article.draft)
 
 export const authors = withBodies(authorMeta, authorBodies)
 export const categories = categoryMeta
+export const projects = projectMeta
 export const services = withBodies(serviceMeta, serviceBodies)
 export const pages = withBodies(pageMeta, pageBodies)
 
