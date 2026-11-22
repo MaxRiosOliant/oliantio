@@ -52,7 +52,7 @@ export async function sendFormEmail(message: FormEmail) {
   }
 
   const resend = new Resend(apiKey)
-  const { error } = await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from,
     to,
     replyTo: message.replyTo,
@@ -62,4 +62,8 @@ export async function sendFormEmail(message: FormEmail) {
   if (error) {
     throw new Error(error.message)
   }
+  if (!data?.id) {
+    throw new Error("Resend did not return an email id")
+  }
+  console.log(`form sent ${data.id} ${message.subject}`)
 }

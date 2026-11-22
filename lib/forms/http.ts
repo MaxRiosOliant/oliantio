@@ -22,22 +22,27 @@ export type Admission =
   | { type: "done"; response: Response }
 
 /** Rate limit, honeypot, and minimum time. Honeypot hits look like success. */
+function blocked(request: Request, reason: string, response: Response): Admission {
+  console.log(`form blocked ${reason} ${new URL(request.url).pathname}`)
+  return { type: "done", response }
+}
+
 export async function admit(request: Request, now = Date.now()): Promise<Admission> {
   if (!allowIp(clientIp(request), now)) {
-    return { type: "done", response: jsonError(429) }
+    return blocked(request, "rate-limit", jsonError(429))
   }
 
   const body = await readJson(request)
   if (honeypotFilled(body)) {
-    return { type: "done", response: jsonOk() }
+    return blocked(request, "honeypot", jsonOk())
   }
 
   if (!timingOk(body, now)) {
-    return { type: "done", response: jsonError(400) }
+    return blocked(request, "timing", jsonError(400))
   }
 
   if (body === undefined) {
-    return { type: "done", response: jsonError(400) }
+    return blocked(request, "invalid-json", jsonError(400))
   }
 
   return { type: "proceed", body }

@@ -22,7 +22,8 @@ export async function handleEmailForm<T extends { email: string }>(
   try {
     await send(build(parsed.data, new Date(now)))
   } catch (error) {
-    console.error(error instanceof Error ? error.message : "Form email failed")
+    const message = error instanceof Error ? error.message : "Form email failed"
+    console.error(`form error ${message}`)
     return jsonError(500)
   }
 
