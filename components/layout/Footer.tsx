@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { NewsletterForm } from "@/components/layout/NewsletterForm"
+import { SiteContactButton, SiteContactLink } from "@/components/layout/SiteContactLink"
 import { ButtonLink } from "@/components/ui/ButtonLink"
 import { home } from "@/content/home"
 import { site } from "@/config/site"
@@ -30,6 +31,14 @@ function FooterLink({ href, children }: { href: string; children: string }) {
           <span className="sr-only"> (opens in a new tab)</span>
         </span>
       </a>
+    )
+  }
+
+  if (href === "/contact-us") {
+    return (
+      <SiteContactLink href={href} className={className}>
+        {children}
+      </SiteContactLink>
     )
   }
 
@@ -103,9 +112,7 @@ export function Footer({ theme = "dark", space = "main" }: { theme?: FooterTheme
             </h3>
             <p className="trim-text text-[1.25rem] leading-[1.5] tracking-[0em]">{footer.formText}</p>
             <div className="mt-[var(--size-2rem)] flex flex-wrap items-center gap-2">
-              <ButtonLink href={footer.contactHref} variant="secondary" tone="onLight">
-                {footer.contact}
-              </ButtonLink>
+              <SiteContactButton href={footer.contactHref}>{footer.contact}</SiteContactButton>
               <ButtonLink href={footer.scheduleHref} tone="onLight">
                 {footer.schedule}
               </ButtonLink>

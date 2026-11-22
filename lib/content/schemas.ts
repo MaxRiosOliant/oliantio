@@ -146,5 +146,6 @@ export const pageSchema = z.object({
   slug: slugSchema,
   heading: z.string().min(1).optional(),
   layout: z.enum(["document", "landing", "standalone"]).optional(),
+  footer: z.enum(["dark", "light"]).optional(),
   seo: seoSchema,
 })

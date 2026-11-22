@@ -7,6 +7,7 @@ import { useEffect, useId, useRef, useState } from "react"
 import type { NavGroup, NavItem, NavLink } from "@/config/navigation"
 import { ButtonLink } from "@/components/ui/ButtonLink"
 import { site } from "@/config/site"
+import { contactHrefForPath } from "@/lib/forms/topics"
 
 type NavProps = {
   items: readonly NavItem[]
@@ -56,8 +57,9 @@ function NavAnchor({
   className: string
 }) {
   const href = destination(item.href)
+  const linkHref = href === "/contact-us" ? contactHrefForPath(pathname) : href
 
-  if (!href) {
+  if (!href || !linkHref) {
     const Tag = "links" in item ? "p" : "span"
     return <Tag className={plainClassName(className)}>{item.label}</Tag>
   }
@@ -80,7 +82,7 @@ function NavAnchor({
 
   return (
     <Link
-      href={href}
+      href={linkHref}
       aria-current={isCurrent(pathname, href) ? "page" : undefined}
       onClick={onNavigate}
       className={className}

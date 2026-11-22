@@ -1,5 +1,7 @@
 import * as z from "zod"
 
+import { contactTopicSlugs } from "./topics.ts"
+
 const requiredText = z
   .string({ error: "This field is required." })
   .trim()
@@ -57,9 +59,24 @@ export const newsletterSchema = z.object({
   pageUrl: pageUrlSchema,
 })
 
+export const contactSchema = z.object({
+  name: requiredText,
+  email: emailSchema,
+  company: optionalText,
+  topic: z.enum(contactTopicSlugs, { error: "Select what we can help with." }),
+  message: z
+    .string({ error: "This field is required." })
+    .trim()
+    .min(20, "Enter at least 20 characters.")
+    .max(2000, "Must be 2000 characters or fewer."),
+  consent: z.literal(true, { error: "Please accept the Privacy Policy." }),
+  pageUrl: pageUrlSchema,
+})
+
 export type ScheduleInput = z.infer<typeof scheduleSchema>
 export type UsaInput = z.infer<typeof usaSchema>
 export type NewsletterInput = z.infer<typeof newsletterSchema>
+export type ContactInput = z.infer<typeof contactSchema>
 
 export function fieldErrorsFrom(error: z.ZodError) {
   const fieldErrors: Record<string, string> = {}

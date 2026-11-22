@@ -9,6 +9,7 @@ import { PageHero } from "@/components/sections/PageHero"
 import { PageIntro } from "@/components/sections/PageIntro"
 import { ProseSection } from "@/components/sections/ProseSection"
 import { ReasonColumns } from "@/components/sections/ReasonColumns"
+import { ContactSection } from "@/components/sections/ContactSection"
 import { ScheduleForm } from "@/components/sections/ScheduleForm"
 import { ServiceCatalog } from "@/components/sections/ServiceCatalog"
 import { ServiceHero } from "@/components/sections/ServiceHero"
@@ -20,6 +21,7 @@ export const mdxComponents = {
   PageHero,
   CenteredIntro,
   OfficeCards,
+  ContactSection,
   ScheduleForm,
   ProseSection,
   StandaloneForm,

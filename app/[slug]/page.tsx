@@ -44,7 +44,11 @@ export default async function ContentPage({ params }: PageProps<"/[slug]">) {
   }
 
   return (
-    <SiteShell headerMode={page.darkHero ? "transparent" : "solid"}>
+    <SiteShell
+      headerMode={page.darkHero ? "transparent" : "solid"}
+      footerTheme={page.footer}
+      footerSpace={page.footer === "light" ? "none" : undefined}
+    >
       <PageDocument page={page} />
     </SiteShell>
   )

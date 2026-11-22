@@ -3,6 +3,7 @@ title: Contact Us
 slug: contact-us
 heading: Bridging IT Ambitions with Expertise. Connect Today.
 layout: landing
+footer: light
 seo:
   title: Contact Us
 ---
@@ -12,8 +13,19 @@ seo:
   text="Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success."
 />
 
-<OfficeCards
-  title="Come and visit our offices around the world"
+<ContactSection
+  nameLabel="Name"
+  emailLabel="Work email"
+  companyLabel="Company"
+  topicLabel="What can we help with?"
+  messageLabel="Message"
+  consent="I agree to the processing of my information as described in the"
+  consentLinkText="Privacy Policy"
+  consentHref="/privacy-policy"
+  submit="Send message"
+  asideTitle="Prefer to talk?"
+  schedule="Schedule a Call"
+  scheduleHref="/schedule-a-call"
   offices={[
     {
       city: "Chicago",
@@ -21,14 +33,12 @@ seo:
       address: "25 S Grove Ave, Elgin, IL",
       phone: "(224) 238-3800",
       email: "hellochicago@oliant.io",
-      image: { src: "/images/pages/contact-us/chicago.webp", alt: "Chicago skyline at night" },
     },
     {
       city: "Sofia",
       country: "Bulgaria",
       address: "25 Petar Dertliev, Sofia",
       email: "hellosofia@oliant.io",
-      image: { src: "/images/pages/contact-us/sofia.webp", alt: "Sofia city center at night" },
     },
     {
       city: "Buenos Aires",
@@ -36,15 +46,6 @@ seo:
       address: "Av. del Libertador 1000, Bs.As.",
       phone: "(54) 11-5320-5503",
       email: "holabuenosaires@oliant.io",
-      image: { src: "/images/pages/contact-us/buenos-aires.webp", alt: "Buenos Aires avenue at night" },
     },
   ]}
-/>
-
-<CtaBand
-  layout="centered"
-  title={"Bridging IT Ambitions with Expertise.\nConnect Today."}
-  text="Ready to transform tech ambitions into reality? Connect with OLIANT, and embark on a unique, unparalleled journey of innovation and success."
-  cta="Schedule a Call"
-  ctaHref="/schedule-a-call"
 />

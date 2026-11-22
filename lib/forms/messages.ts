@@ -5,6 +5,7 @@ export const formNames = {
   schedule: "Schedule a Call",
   usa: "Oliant Form USA",
   newsletter: "Newsletter",
+  contact: "Contact Us",
 } as const
 
 export type FormName = (typeof formNames)[keyof typeof formNames]
