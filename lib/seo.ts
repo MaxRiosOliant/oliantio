@@ -2,6 +2,12 @@ import type { Metadata } from "next"
 
 import { site } from "@/config/site"
 
+// Vercel sets VERCEL_ENV to "production" only for the production deployment.
+// Preview, development, local, and CI builds are unset or another value.
+export function isProductionDeployment() {
+  return process.env.VERCEL_ENV === "production"
+}
+
 type MetadataInput = {
   title: string
   description: string
@@ -88,11 +94,16 @@ export function buildMetadata({
 }: MetadataInput): Metadata {
   const socialTitle = absoluteTitle ?? `${title} | ${site.name}`
   const socialImage = image ?? "/opengraph-image.png"
+  const robots = !isProductionDeployment()
+    ? { index: false, follow: false }
+    : noindex
+      ? { index: false, follow: true }
+      : null
 
   return {
     title: absoluteTitle ? { absolute: absoluteTitle } : title,
     description,
-    ...(noindex ? { robots: { index: false, follow: true } } : {}),
+    ...(robots ? { robots } : {}),
     alternates: {
       canonical: path,
     },

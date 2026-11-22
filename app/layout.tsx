@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Raleway } from "next/font/google";
 import { Analytics } from "@/components/analytics/Analytics";
 import { site } from "@/config/site";
+import { isProductionDeployment } from "@/lib/seo";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  ...(isProductionDeployment()
+    ? {}
+    : { robots: { index: false, follow: false } }),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

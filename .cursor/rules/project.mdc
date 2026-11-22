@@ -13,3 +13,4 @@ alwaysApply: true
 - Verify SEO-critical changes against raw HTML from `npm start`, not the dev server.
 - Never migrate placeholder content (lorem ipsum, ‘Heading’, Webflow default text, empty accordions) even when copying a live page word for word. Report it instead.
 - Migrate only content that is visible on the rendered live page. Check computed visibility, not just the HTML.
+- Never commit or push to main. Always work on a new branch named after the change (e.g. fix-footer-spacing), push it, and give me the Vercel preview URL. Changes reach production only through a pull request I merge.
