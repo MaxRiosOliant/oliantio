@@ -1,14 +1,20 @@
 // Compares every migrated page against the live site and writes
 // _migration/report/index.html (plus report.json).
 //
-// Requires a production build (npm run build). The script starts `next start`
-// on port 3100 itself.
+// Builds with VERCEL_ENV=production (the same steps as `npm run build`) and
+// starts `next start` on port 3100 with that env, so robots.txt and the robots
+// meta match the production deployment. A plain `npm run build` leaves
+// VERCEL_ENV unset and noindexes every page.
 //
 // node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/compare-live.ts [--only=/a,/b] [--no-shots]
 //
 // On the local production build, every page is also opened at 1440px and 390px
 // to collect console errors and warnings, uncaught exceptions, and failed
 // requests (analytics endpoints excluded).
+//
+// --errors-against=https://oliant-io.vercel.app
+//   Skip the diff. Open every sitemap page, plus the requested and new pages,
+//   at 1440px and 390px on that origin and print the same error report.
 //
 // Windows behind TLS inspection: set NODE_OPTIONS=--use-system-ca.
 
@@ -170,9 +176,9 @@ function normalizeText(value: string) {
     .trim()
 }
 
-function normalizeHref(href: string) {
+function normalizeHref(href: string, extraOrigins: readonly string[] = []) {
   let value = href.trim()
-  for (const origin of [liveOrigin, "https://oliant.io", localOrigin]) {
+  for (const origin of [liveOrigin, "https://oliant.io", localOrigin, ...extraOrigins]) {
     if (value === origin) return "/"
     if (value.startsWith(origin + "/") || value.startsWith(origin + "?") || value.startsWith(origin + "#")) {
       value = value.slice(origin.length)
@@ -794,10 +800,22 @@ function isAnalyticsUrl(raw: string) {
   return false
 }
 
+// Hosts treated as this app. oliant.io is always included. The origin under
+// test (localhost, or --errors-against) is registered as well, so a deployment
+// on another host is not classified as third-party.
+const appHostnames = new Set(["localhost", "127.0.0.1"])
+
+function registerAppOrigin(origin: string) {
+  appHostnames.add(new URL(origin).hostname)
+}
+
+function isAppHost(host: string) {
+  return appHostnames.has(host) || hostIs(host, "oliant.io")
+}
+
 function isAppUrl(raw: string) {
   try {
-    const host = asUrl(raw).hostname
-    return host === "localhost" || host === "127.0.0.1" || hostIs(host, "oliant.io")
+    return isAppHost(asUrl(raw).hostname)
   } catch {
     return false
   }
@@ -856,8 +874,7 @@ function isThirdPartySource(source?: string) {
   if (!source) return false
   if (isAnalyticsUrl(source)) return true
   try {
-    const host = asUrl(source).hostname
-    return host !== "localhost" && host !== "127.0.0.1" && !hostIs(host, "oliant.io")
+    return !isAppHost(asUrl(source).hostname)
   } catch {
     return false
   }
@@ -892,7 +909,7 @@ function classifyIssue(issue: PageIssue): { classification: "MUST FIX" | "OK"; r
 }
 
 // Fresh load at one viewport so hydration and network failures belong to that width.
-async function collectAtWidth(browser: Browser, pagePath: string, width: number) {
+async function collectAtWidth(browser: Browser, origin: string, pagePath: string, width: number) {
   const context = await browser.newContext({ viewport: { width, height: 900 } })
   const page = await context.newPage()
   const found: Array<Omit<PageIssue, "widths">> = []
@@ -935,7 +952,12 @@ async function collectAtWidth(browser: Browser, pagePath: string, width: number)
     push({ kind: "request", level: "error", message: failure, source: url })
   })
   try {
-    await page.goto(localOrigin + pagePath, { waitUntil: "networkidle", timeout: 90000 })
+    // Analytics is excluded from the report and must not hold networkidle open.
+    await page.route("**/*", (route) => {
+      if (isAnalyticsUrl(route.request().url())) return route.abort()
+      return route.continue()
+    })
+    await page.goto(origin + pagePath, { waitUntil: "networkidle", timeout: 90000 })
     await settle(page)
     await page.waitForLoadState("networkidle", { timeout: 15000 }).catch(() => {})
     await page.waitForTimeout(300)
@@ -946,11 +968,13 @@ async function collectAtWidth(browser: Browser, pagePath: string, width: number)
   return found
 }
 
-async function collectLocalErrors(browser: Browser, pagePath: string): Promise<PageIssue[]> {
+async function collectErrors(browser: Browser, origin: string, pagePath: string): Promise<PageIssue[]> {
   const issues: PageIssue[] = []
   for (const width of widths) {
     try {
-      for (const issue of await collectAtWidth(browser, pagePath, width)) addIssue(issues, issue, width)
+      for (const issue of await collectAtWidth(browser, origin, pagePath, width)) {
+        addIssue(issues, issue, width)
+      }
     } catch (error) {
       addIssue(
         issues,
@@ -964,6 +988,10 @@ async function collectLocalErrors(browser: Browser, pagePath: string): Promise<P
     }
   }
   return issues
+}
+
+async function collectLocalErrors(browser: Browser, pagePath: string): Promise<PageIssue[]> {
+  return collectErrors(browser, localOrigin, pagePath)
 }
 
 function groupErrors(results: PageResult[]): ErrorGroup[] {
@@ -1418,7 +1446,7 @@ function renderReport(results: PageResult[], placeholderHrefs: string[]) {
   figure img { width: 100%; display: block; }
 </style></head><body>
 <h1>Live vs local comparison</h1>
-<p>Generated ${new Date().toISOString()} · ${pass}/${compared.length} PASS · live ${liveOrigin} vs local production build (next start).</p>
+<p>Generated ${new Date().toISOString()} · ${pass}/${compared.length} PASS · live ${liveOrigin} vs local production build (next start, VERCEL_ENV=production).</p>
 ${placeholder}
 <p>Checks per page: normalized visible main-content text (word diff), H1–H3 outline, links (href + text) in main, header and footer, image count and alt text, robots meta (noindex), full-page screenshots at 1440px and 390px, and the header at scroll 0 with no hover (1440px, 390px, 390px with the menu open, and 1440px after client-side navigation from /), where every header link and button must reach ${minHeaderContrast}:1 contrast against the pixels behind it. Allowlisted differences carry their reason from <code>scripts/compare-live.allowlist.ts</code>. Console and network errors are collected on the local production build at 1440px and 390px.</p>
 ${renderErrorSummary(results)}
@@ -1447,17 +1475,89 @@ async function waitFor(url: string, timeoutMs: number) {
   throw new Error(`Timed out waiting for ${url}`)
 }
 
+function runNode(args: string[]): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, args, {
+      cwd: root,
+      stdio: "inherit",
+      env: { ...process.env, VERCEL_ENV: "production" },
+    })
+    child.on("error", reject)
+    child.on("exit", (code) => {
+      if (code === 0) resolve()
+      else reject(new Error(`node ${args.join(" ")} exited with code ${code}`))
+    })
+  })
+}
+
+// Same steps as `npm run build`. VERCEL_ENV=production is what makes robots.txt
+// and the robots meta match the production deployment.
+async function buildProduction() {
+  console.log("Building with VERCEL_ENV=production...")
+  await runNode([
+    "--experimental-strip-types",
+    "--disable-warning=ExperimentalWarning",
+    "--disable-warning=MODULE_TYPELESS_PACKAGE_JSON",
+    path.join(root, "scripts", "build-content.mts"),
+    "--production",
+  ])
+  await runNode([path.join(root, "node_modules", "next", "dist", "bin", "next"), "build"])
+}
+
 function startServer(): ChildProcess {
   const nextBin = path.join(root, "node_modules", "next", "dist", "bin", "next")
   return spawn(process.execPath, [nextBin, "start", "-p", String(port)], {
     cwd: root,
     stdio: "ignore",
+    env: { ...process.env, VERCEL_ENV: "production" },
   })
 }
 
-async function sitemapPaths() {
-  const xml = await (await fetch(`${localOrigin}/sitemap.xml`)).text()
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => normalizeHref(match[1] ?? ""))
+async function sitemapPaths(origin = localOrigin) {
+  const xml = await (await fetch(`${origin}/sitemap.xml`)).text()
+  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => normalizeHref(match[1] ?? "", [origin]))
+}
+
+function printErrorGroups(results: PageResult[]) {
+  const groups = groupErrors(results)
+  const mustGroups = groups.filter((group) => group.classification === "MUST FIX")
+  console.log(`\nErrors: ${mustGroups.length} MUST FIX, ${groups.length - mustGroups.length} OK.`)
+  for (const group of groups) {
+    const line = group.message.split("\n")[0]?.slice(0, 240) ?? ""
+    console.log(`${group.classification} (${group.reason}) [${group.kind}] ${line}`)
+    if (group.source) console.log(`  ${group.source}`)
+    console.log(`  ${group.pages.map((page) => `${page.path} [${page.widths.join(", ")}]`).join(", ")}`)
+  }
+}
+
+async function auditDeployedErrors(origin: string) {
+  const base = origin.replace(/\/+$/, "")
+  registerAppOrigin(base)
+  const paths = [...new Set([...requestedPages, ...newPages, ...(await sitemapPaths(base))])].sort()
+  console.log(`Checking ${paths.length} pages on ${base} at ${widths.join("px and ")}px.`)
+  const browser = await chromium.launch()
+  try {
+    let done = 0
+    const results = await pool(paths, concurrency, async (pagePath) => {
+      const errors = await collectErrors(browser, base, pagePath)
+      done += 1
+      const mustFix = errors.filter((issue) => classifyIssue(issue).classification === "MUST FIX").length
+      console.log(`[${done}/${paths.length}] ${pagePath}${mustFix ? `  MUST FIX ${mustFix}` : ""}`)
+      const result: PageResult = {
+        path: pagePath,
+        status: "PASS",
+        text: [],
+        items: [],
+        counts: { liveImages: 0, localImages: 0 },
+        shots: [],
+        errors,
+      }
+      return result
+    })
+    printErrorGroups(results)
+  } finally {
+    await browser.close()
+  }
 }
 
 async function pool<T, R>(items: T[], size: number, run: (item: T) => Promise<R>) {
@@ -1477,13 +1577,16 @@ async function pool<T, R>(items: T[], size: number, run: (item: T) => Promise<R>
 
 async function main() {
   const args = process.argv.slice(2)
+  const errorsAgainst = args.find((arg) => arg.startsWith("--errors-against="))?.slice("--errors-against=".length)
+  if (errorsAgainst) {
+    await auditDeployedErrors(errorsAgainst)
+    return
+  }
   const only = args.find((arg) => arg.startsWith("--only="))?.slice("--only=".length).split(",")
   const shots = !args.includes("--no-shots")
-  if (!existsSync(path.join(root, ".next", "BUILD_ID"))) {
-    throw new Error("No production build found. Run `npm run build` first.")
-  }
   mkdirSync(shotsDir, { recursive: true })
 
+  await buildProduction()
   const server = startServer()
   try {
     await waitFor(`${localOrigin}/`, 60000)
@@ -1542,15 +1645,7 @@ async function main() {
           ? `href="#" still present on: ${placeholderHrefs.sort().join(", ")}`
           : 'No href="#" in local HTML.',
       )
-      const groups = groupErrors(results)
-      const mustGroups = groups.filter((group) => group.classification === "MUST FIX")
-      console.log(`\nErrors: ${mustGroups.length} MUST FIX, ${groups.length - mustGroups.length} OK.`)
-      for (const group of groups) {
-        const line = group.message.split("\n")[0]?.slice(0, 240) ?? ""
-        console.log(`${group.classification} (${group.reason}) [${group.kind}] ${line}`)
-        if (group.source) console.log(`  ${group.source}`)
-        console.log(`  ${group.pages.map((page) => `${page.path} [${page.widths.join(", ")}]`).join(", ")}`)
-      }
+      printErrorGroups(results)
     } finally {
       await browser.close()
     }
