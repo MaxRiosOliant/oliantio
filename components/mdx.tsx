@@ -12,6 +12,7 @@ import { ReasonColumns } from "@/components/sections/ReasonColumns"
 import { ScheduleForm } from "@/components/sections/ScheduleForm"
 import { ServiceCatalog } from "@/components/sections/ServiceCatalog"
 import { ServiceHero } from "@/components/sections/ServiceHero"
+import { ServiceProjects } from "@/components/sections/ServiceProjects"
 import { StandaloneForm } from "@/components/sections/StandaloneForm"
 
 export const mdxComponents = {
@@ -24,6 +25,7 @@ export const mdxComponents = {
   StandaloneForm,
   ServiceHero,
   ServiceCatalog,
+  ServiceProjects,
   CtaBand,
   ReasonColumns,
   FaqSection,

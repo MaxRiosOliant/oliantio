@@ -125,7 +125,7 @@ export const home = {
     ],
     badge: {
       src: "/images/home/badge.avif",
-      alt: "",
+      alt: "BBB Accredited Business",
       width: 366,
       height: 95,
     },

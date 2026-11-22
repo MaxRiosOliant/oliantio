@@ -3,6 +3,7 @@ import { mdxComponents } from "@/components/mdx"
 import { Breadcrumbs } from "@/components/sections/Breadcrumbs"
 import { ContentBody } from "@/components/sections/ContentBody"
 import { PageIntro } from "@/components/sections/PageIntro"
+import { ServiceProjects } from "@/components/sections/ServiceProjects"
 import type { services } from "@/lib/content"
 import type { ServiceMeta } from "@/lib/content/records"
 
@@ -29,10 +30,16 @@ export async function ServiceDocument({ service, parent }: ServiceDocumentProps)
 
   if (service.layout === "landing") {
     const { default: Content } = await service.loadBody()
+    const components = {
+      ...mdxComponents,
+      ServiceProjects: ({ title }: { title: string }) => (
+        <ServiceProjects title={title} projects={service.projects ?? []} />
+      ),
+    }
     return (
       <>
         {trail}
-        <Content components={mdxComponents} />
+        <Content components={components} />
       </>
     )
   }

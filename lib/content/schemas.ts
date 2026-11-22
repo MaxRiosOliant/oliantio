@@ -109,6 +109,15 @@ export const articleSchema = z
     }
   })
 
+const serviceProjectSchema = z.object({
+  title: z.string().min(1),
+  text: z.string().min(1),
+  href: z
+    .string()
+    .regex(/^(\/|https:\/\/)/, "Must be a site path or https URL")
+    .optional(),
+})
+
 export const serviceSchema = z.object({
   title: z.string().min(1),
   slug: slugSchema,
@@ -117,6 +126,7 @@ export const serviceSchema = z.object({
   parent: slugSchema.optional(),
   heading: z.string().min(1).optional(),
   layout: z.enum(["document", "landing"]).optional(),
+  projects: z.array(serviceProjectSchema).optional(),
   seo: seoSchema,
 })
 

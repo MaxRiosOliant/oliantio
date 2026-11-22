@@ -64,6 +64,12 @@ type CategoryData = {
   seo: SeoData
 }
 
+type ServiceProjectData = {
+  title: string
+  text: string
+  href?: string
+}
+
 type ServiceData = {
   title: string
   slug: string
@@ -72,6 +78,7 @@ type ServiceData = {
   parent?: string
   heading?: string
   layout?: "document" | "landing"
+  projects?: ServiceProjectData[]
   seo: SeoData
 }
 
@@ -934,6 +941,7 @@ async function buildContent() {
         ...(service.data.parent ? { parent: service.data.parent } : {}),
         heading: service.data.heading ?? service.data.title,
         ...(service.data.layout ? { layout: service.data.layout } : {}),
+        ...(service.data.projects ? { projects: service.data.projects } : {}),
         seo: service.data.seo,
         path,
       }

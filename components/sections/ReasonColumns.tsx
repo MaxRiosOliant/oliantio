@@ -8,7 +8,7 @@ type ReasonItem = {
 
 type ReasonColumnsProps = {
   title: string
-  text: string
+  text?: string
   image: {
     src: string
     alt: string
@@ -20,26 +20,24 @@ export function ReasonColumns({ title, text, image, items }: ReasonColumnsProps)
   return (
     <section className="bg-paper py-[clamp(4rem,3.142857rem+4.285714vw,7rem)] text-ink">
       <div className="site-container">
-        <div className="grid items-stretch gap-4 [grid-template-columns:repeat(auto-fit,minmax(min(100%,28rem),1fr))] min-[62rem]:gap-28">
-          <div className="flex h-full flex-col justify-between gap-8">
-            <div>
-              <h2 className="trim-text mb-6 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
-                {title}
-              </h2>
-              <p className="trim-text text-base leading-6">{text}</p>
-            </div>
-            <div className="relative hidden aspect-square overflow-hidden rounded-2xl min-[62rem]:block">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                unoptimized
-                sizes="(min-width: 62rem) 36rem, 100vw"
-                className="object-cover"
-              />
-            </div>
+        <div className="grid items-start gap-4 [grid-template-columns:repeat(auto-fit,minmax(min(100%,28rem),1fr))] min-[62rem]:[grid-template-columns:repeat(2,minmax(0,1fr))] min-[62rem]:gap-x-28 min-[62rem]:gap-y-8">
+          <div className="min-[62rem]:col-start-1 min-[62rem]:row-start-1">
+            <h2 className="trim-text text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
+              {title}
+            </h2>
+            {text ? <p className="trim-text mt-6 text-base leading-6">{text}</p> : null}
           </div>
-          <ul className="flex list-none flex-col gap-6">
+          <div className="relative hidden aspect-square w-full overflow-hidden rounded-2xl min-[62rem]:col-start-1 min-[62rem]:row-start-2 min-[62rem]:block min-[62rem]:self-start">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              unoptimized
+              sizes="(min-width: 62rem) 36rem, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <ul className="flex list-none flex-col gap-6 min-[62rem]:col-start-2 min-[62rem]:row-start-2 min-[62rem]:self-start">
             {items.map((item) => (
               <li
                 key={item.title ?? item.text}
