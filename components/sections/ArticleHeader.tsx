@@ -11,6 +11,7 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
     <>
       <Breadcrumbs
         className="site-container pt-6"
+        path={article.path}
         items={[
           { label: blog.homeLabel, href: "/" },
           { label: blog.breadcrumb, href: "/blog" },

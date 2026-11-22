@@ -1,0 +1,216 @@
+---
+title: Microsoft Azure
+slug: microsoft-azure
+summary: Azure App Service, Functions, or AKS, with Entra ID, resource groups per environment, and a pipeline the team already runs.
+order: 11
+parent: development
+heading: Azure for the stack you run
+layout: landing
+seo:
+  title: Microsoft Azure Development Services
+  description: Azure App Service, Functions, or AKS, with Entra ID, resource groups per environment, and a pipeline you already run.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="Microsoft Azure"
+  title="Azure for the stack you run"
+  text="We run applications on Microsoft Azure the way a Microsoft-centered team already works: resource groups per environment, Entra ID for access, and App Service, Functions, or AKS chosen for the process."
+  cta="Lay out the Azure subscription"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/microsoft-azure/hero.svg", alt: "Illustration for Microsoft Azure development services" }}
+/>
+
+<ServiceCatalog
+  title="What we build on Microsoft Azure"
+  intro="Azure work lines up with identity and with the runtime. .NET is a frequent application stack here. The platform decisions are still about resource groups, access, and how the process runs."
+  items={[
+    {
+      title: "Subscriptions, resource groups, and Entra ID",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Environments are resource groups with a naming scheme, or separate subscriptions when the organization already splits that way. Entra ID groups decide who can deploy and who can read production.",
+        "Managed identities call Azure SQL, Storage, or Service Bus. A connection string in an app setting is the fallback, stored as a secret, not as a value in the repository.",
+      ],
+    },
+    {
+      title: "App Service, Functions, and AKS",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        <>App Service hosts the site or API that should stay up, including the <a href="/services/development/net">.NET</a> applications OLIANT has long built. Deployment slots are the rollback. Configuration is slot-specific where the environments differ.</>,
+        "Azure Functions covers a short job or an event: a queue message, a timer, an HTTP call that finishes. AKS is for a team that has chosen Kubernetes and will own the cluster upgrades. A single web app is not a reason to start AKS.",
+      ],
+    },
+    {
+      title: "Azure SQL, Storage, and Service Bus",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Azure SQL is the relational store when the application speaks SQL Server. Blob Storage holds objects. Service Bus carries commands and events that must be retried independently of the web request.",
+        "Private endpoints or service endpoints keep that data off the public internet when the subscription supports them. The app identity is the principal on the firewall rule.",
+      ],
+    },
+    {
+      title: "Pipelines you already have",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Azure DevOps Pipelines or GitHub Actions, whichever builds the application today. The pipeline identity can deploy to the resource group and cannot change another environment.",
+        "Bicep or Terraform describes the resources. A portal click is reconciled back into that description or it is reverted.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="Azure fits teams that already sign in with Entra ID and host on Microsoft services, whether the application is .NET or another runtime App Service can run."
+  items={[
+    {
+      title: "A .NET site on App Service",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "The application is ASP.NET or a similar web stack. App Service runs it, slots carry the new version, and Azure SQL is reached with a managed identity. The publish profile is not the deployment process.",
+      ],
+    },
+    {
+      title: "A timer or a queue worker on Functions",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "A message arrives on Service Bus or a clock fires. The function does one job, writes its outcome, and can be retried. It does not grow into the web application.",
+      ],
+    },
+    {
+      title: "A container platform with an owner",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "AKS when several services share a cluster and a person is named for upgrades. Workload identity and namespaces are part of the first release. App Service or Container Apps stays the recommendation when that owner does not exist.",
+      ],
+    },
+    {
+      title: "Identity already in Entra ID",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Employees sign in with the tenant you have. The application uses that tenant for users, and a separate app registration or managed identity for itself. Guest accounts and admin roles are not the same group.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="An Azure engagement names the resource group, the identity, and the host before feature work depends on them."
+  items={[
+    {
+      title: "Place the environment in a resource group",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "One group per environment, tagged, with a budget alert if you use budgets. Resources that share a lifecycle live together. A shared group for everything is the habit we replace.",
+      ],
+    },
+    {
+      title: "Decide App Service, Functions, or AKS",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Site or API, short job, or cluster. The choice includes who patches the platform. .NET on App Service is the common path for the applications we already build. Another runtime is fine when the host supports it and the team can run it.",
+      ],
+    },
+    {
+      title: "Use Entra ID for users and for the app",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Users come from the tenant. The app uses a managed identity toward Azure SQL, Storage, and Service Bus. Local development has a documented way to sign in that does not copy production secrets into a laptop file.",
+      ],
+    },
+    {
+      title: "Deploy with the pipeline that exists",
+      icon: "/images/services/microsoft-azure/check.svg",
+      paragraphs: [
+        "Azure DevOps or GitHub Actions builds, tests, and deploys to a slot or a staging resource group. Swapping a slot or rerunning the previous release is practiced before production is the only environment.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Tell us the subscription and the runtime"
+  text="App Service, Functions, or AKS, and whether the application is .NET. We will fit it to Entra ID and a resource group per environment."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="Microsoft Azure at OLIANT lines up with Entra ID, with .NET when that is the application, and with a resource group you can audit."
+  image={{ src: "/images/services/microsoft-azure/why-oliant.svg", alt: "Illustration beside reasons to choose OLIANT for Microsoft Azure" }}
+  items={[
+    {
+      title: "Identity is the tenant you have",
+      icon: "/images/services/microsoft-azure/checks.svg",
+      text: "Entra ID groups and managed identities replace shared secrets. Admin access and application access are different principals.",
+    },
+    {
+      title: ".NET has a natural host",
+      icon: "/images/services/microsoft-azure/checks.svg",
+      text: "App Service and deployment slots suit the .NET applications we build. The platform choice does not force a rewrite of the web stack.",
+    },
+    {
+      title: "The resource group is the environment",
+      icon: "/images/services/microsoft-azure/checks.svg",
+      text: "You can see what belongs to staging and what belongs to production. The pipeline deploys into one of them on purpose.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Questions about Azure hosting and how it meets the application."
+  items={[
+    {
+      question: "Do you only host .NET on Azure?",
+      parts: [
+        {
+          text: "No. .NET on App Service is a common path because that is a stack we already build. Node, Python, Java, and containers are in scope when Azure is the right host and the team can operate that runtime. The language pages describe the application. This page describes the platform.",
+        },
+      ],
+    },
+    {
+      question: "When do you recommend AKS?",
+      parts: [
+        {
+          text: "When you have several services, a reason to run Kubernetes, and a person who will upgrade the cluster. Otherwise App Service, Functions, or Container Apps is the smaller system. We will recommend the smaller one.",
+        },
+      ],
+    },
+    {
+      question: "Can you use our Azure DevOps project?",
+      parts: [
+        {
+          text: "Yes. We add the pipeline steps to the project you have: build, test, deploy to a slot or a staging resource group, then promote. GitHub Actions is the alternative when that is already the CI system. We do not install a third system beside either one.",
+        },
+      ],
+    },
+    {
+      question: "How should data be reached from the app?",
+      parts: [
+        {
+          text: "With a managed identity to Azure SQL, Storage, or Service Bus, on a private path when the subscription supports it. Connection strings, if they remain, are secrets in the app configuration, different per slot, and absent from the repository.",
+        },
+      ],
+    },
+    {
+      question: "What about AWS and Google Cloud?",
+      parts: [
+        {
+          text: "Both have their own pages. Choose Azure when identity, SQL Server, and the operational habit are already Microsoft. A system can still call a service hosted elsewhere. That call is an API with a timeout, not a shared administrator account.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="Azure in the tenant you already have"
+  text="Share the subscription model and the application runtime. We will propose the host, the identity, and the pipeline step."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/microsoft-azure/closing.svg", alt: "Illustration for the Microsoft Azure closing invitation" }}
+/>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Raleway } from "next/font/google";
+import { Analytics } from "@/components/analytics/Analytics";
 import { site } from "@/config/site";
 import "./globals.css";
 
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang={site.locale}
       className={`${montserrat.variable} ${raleway.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

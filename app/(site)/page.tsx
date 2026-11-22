@@ -5,7 +5,7 @@ import { ServiceGrid } from "@/components/sections/ServiceGrid"
 import { WhyWorkWithUs } from "@/components/sections/WhyWorkWithUs"
 import { site } from "@/config/site"
 import { publishedArticles } from "@/lib/content"
-import { buildMetadata } from "@/lib/seo"
+import { buildMetadata, organizationJsonLd } from "@/lib/seo"
 
 const newestArticles = [...publishedArticles]
   .sort((a, b) => {
@@ -28,6 +28,12 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       <Hero />
       <ServiceGrid />
       <WhyWorkWithUs />

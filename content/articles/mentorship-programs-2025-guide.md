@@ -12,8 +12,6 @@ draft: false
 relatedServices:
   - title: Staff Augmentation
     href: /services/staff-augmentation
-  - title: HR Solutions - Factorial
-    href: "https://www.oliant.io/oliant-factorial"
 relatedArticles:
   - title: Why Remote Work Feels Freeing—But Also Kind of Lonely
     href: /articles/remote-vs-in-office

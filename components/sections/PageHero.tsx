@@ -10,7 +10,7 @@ type PageHeroProps = {
 
 export function PageHero({ title, text, cta, ctaHref }: PageHeroProps) {
   return (
-    <section className="dark-hero relative overflow-hidden bg-[linear-gradient(90deg,#366c2f,#2c3d2c_25%,#2c3d2c_30%,#45ab34)] py-[var(--size-10rem)] text-paper">
+    <section className="relative -mt-[5.125rem] overflow-hidden bg-[linear-gradient(90deg,#366c2f,#2c3d2c_25%,#2c3d2c_30%,#45ab34)] py-[var(--size-10rem)] text-paper">
       <div className="site-container relative">
         <div className="flex max-w-[43rem] flex-col items-start">
           <h1 className="trim-display font-display text-[length:var(--size-3-5rem)] leading-none font-black tracking-[0em] whitespace-pre-line text-outline">

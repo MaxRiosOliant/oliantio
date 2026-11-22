@@ -4,7 +4,7 @@ type Office = {
   city: string
   country: string
   address: string
-  phone: string
+  phone?: string
   email: string
   image: {
     src: string
@@ -46,8 +46,12 @@ export function OfficeCards({ title, offices }: OfficeCardsProps) {
                 <p className="text-base leading-6">
                   <strong className="font-bold">{office.address}</strong>
                   <br />
-                  {office.phone}
-                  <br />
+                  {office.phone ? (
+                    <>
+                      {office.phone}
+                      <br />
+                    </>
+                  ) : null}
                   {office.email}
                 </p>
               </div>

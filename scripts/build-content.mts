@@ -948,6 +948,7 @@ async function buildContent() {
       ...(page.data.layout ? { layout: page.data.layout } : {}),
       seo: page.data.seo,
       path: `/${page.data.slug}`,
+      darkHero: /^\s*<PageHero\b/.test(page.body),
     }))
     .sort((a, b) => a.slug.localeCompare(b.slug))
 

@@ -32,4 +32,6 @@ export type ServiceMeta = Omit<z.output<typeof serviceSchema>, "heading"> & {
 export type PageMeta = Omit<z.output<typeof pageSchema>, "heading"> & {
   heading: string
   path: string
+  // Body opens with <PageHero>, whose dark background sits behind the header.
+  darkHero: boolean
 }

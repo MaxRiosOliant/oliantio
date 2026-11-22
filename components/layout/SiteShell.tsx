@@ -1,9 +1,19 @@
 import type { ReactNode } from "react"
 
-import { Footer, type FooterTheme } from "@/components/layout/Footer"
-import { Header } from "@/components/layout/Header"
+import { Footer, type FooterSpace, type FooterTheme } from "@/components/layout/Footer"
+import { Header, type HeaderMode } from "@/components/layout/Header"
 
-export function SiteShell({ children, footerTheme }: { children: ReactNode; footerTheme?: FooterTheme }) {
+export function SiteShell({
+  children,
+  footerTheme,
+  footerSpace,
+  headerMode = "solid",
+}: {
+  children: ReactNode
+  footerTheme?: FooterTheme
+  footerSpace?: FooterSpace
+  headerMode?: HeaderMode
+}) {
   return (
     <>
       <a
@@ -12,15 +22,11 @@ export function SiteShell({ children, footerTheme }: { children: ReactNode; foot
       >
         Skip to main content
       </a>
-      <Header />
-      <main
-        id="main"
-        tabIndex={-1}
-        className="flex-1 pt-[5.125rem] outline-none has-[.dark-hero]:pt-0 has-[.service-hero]:pt-0"
-      >
+      <Header mode={headerMode} />
+      <main id="main" tabIndex={-1} className="flex-1 pt-[5.125rem] outline-none">
         {children}
       </main>
-      <Footer theme={footerTheme} />
+      <Footer theme={footerTheme} space={footerSpace} />
     </>
   )
 }

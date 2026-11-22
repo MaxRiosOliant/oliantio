@@ -14,7 +14,7 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone()
   url.pathname = redirect.destination
   url.search = ""
-  return NextResponse.redirect(url, redirect.permanent ? 308 : 307)
+  return NextResponse.redirect(url, redirect.permanent ? 301 : 307)
 }
 
 export const config = {

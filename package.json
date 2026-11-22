@@ -10,12 +10,15 @@
     "dev": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-content.mts --watch",
     "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-content.mts --production && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test lib/forms/forms.test.ts"
   },
   "dependencies": {
     "next": "16.4.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "resend": "6.39.0",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@11ty/gray-matter": "3.0.0",
@@ -29,7 +32,6 @@
     "playwright": "^1.65.1",
     "tailwindcss": "4.3.3",
     "turndown": "7.2.5",
-    "typescript": "^5",
-    "zod": "4.6.7"
+    "typescript": "^5"
   }
 }

@@ -23,7 +23,7 @@ export function ServiceHero({
   image,
 }: ServiceHeroProps) {
   return (
-    <section className="service-hero bg-paper pt-[6.5rem] pb-[clamp(3rem,2.428571rem+2.857143vw,5rem)] text-ink">
+    <section className="bg-paper pt-6 desk:pt-0 pb-[clamp(3rem,2.428571rem+2.857143vw,5rem)] text-ink">
       <div className="site-container">
         <div className="grid items-center gap-4 [grid-template-columns:repeat(auto-fit,minmax(min(100%,25rem),1fr))]">
           <div className="flex flex-col items-start">

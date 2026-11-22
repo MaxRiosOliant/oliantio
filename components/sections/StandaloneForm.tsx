@@ -1,8 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import type { FormEvent } from "react"
 import Image from "next/image"
 import Link from "next/link"
+
+import { FieldError, FormBanner, Honeypot, Spinner, useFormSubmit } from "@/components/forms/FormControls"
+import { formNames } from "@/lib/forms/messages"
 
 type Field = {
   name: string
@@ -49,6 +53,34 @@ export function StandaloneForm({
   submit,
 }: StandaloneFormProps) {
   const [step, setStep] = useState<1 | 2>(1)
+  const [employeesError, setEmployeesError] = useState("")
+  const { fieldErrors, sending, submit: send, banner } = useFormSubmit(formNames.usa)
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    if (step !== 2) {
+      const employees = String(data.get("employees") ?? "")
+      if (!employees) {
+        setEmployeesError("This field is required.")
+        return
+      }
+      setEmployeesError("")
+      setStep(2)
+      return
+    }
+    await send("/api/forms/oliant-form-usa", {
+      employees: String(data.get("employees") ?? ""),
+      firstName: String(data.get("firstName") ?? ""),
+      lastName: String(data.get("lastName") ?? ""),
+      email: String(data.get("email") ?? ""),
+      jobTitle: String(data.get("jobTitle") ?? ""),
+      company: String(data.get("company") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      subscribe: data.get("subscribe") === "on",
+      hp_field: String(data.get("hp_field") ?? ""),
+    })
+  }
 
   return (
     <section className="relative isolate flex min-h-screen overflow-hidden bg-[#1a181e] text-paper">
@@ -67,11 +99,8 @@ export function StandaloneForm({
         </Link>
       </div>
       <div className="flex flex-1 items-center justify-center bg-[radial-gradient(circle_at_100%_100%,rgba(255,255,255,0),rgba(255,255,255,0.12))] px-6 py-16">
-        {/* TODO: wire submission to the CRM; both steps only collect input for now. */}
-        <form
-          className="w-full max-w-[47rem]"
-          onSubmit={(event) => event.preventDefault()}
-        >
+        <form className="relative w-full max-w-[47rem]" onSubmit={onSubmit} noValidate>
+          <Honeypot />
           <div className="mb-8 md:hidden">
             <Link href="/" aria-label="Home Page" className="inline-block">
               <Image
@@ -87,14 +116,15 @@ export function StandaloneForm({
             {step === 1 ? title : detailsTitle}
           </h1>
           <p className="mt-2 text-base leading-6 opacity-80">{text}</p>
-          {step === 1 ? (
-            <>
+          <div hidden={step !== 1}>
               <label className="relative mt-6 block">
                 <span className="sr-only">{selectLabel}</span>
                 <select
                   name="employees"
                   required
                   defaultValue=""
+                  aria-invalid={employeesError || fieldErrors.employees ? true : undefined}
+                  aria-describedby={employeesError || fieldErrors.employees ? "usa-employees-error" : undefined}
                   className={`${surface} block w-full appearance-none px-5 py-5 text-base text-paper [&_option]:text-ink`}
                 >
                   <option value="">{selectLabel}</option>
@@ -121,20 +151,28 @@ export function StandaloneForm({
                   {consentLinkText}
                 </Link>
               </p>
+              <FieldError
+                id="usa-employees-error"
+                tone="dark"
+                message={employeesError || fieldErrors.employees}
+              />
               <button
                 type="button"
                 onClick={(event) => {
-                  if (event.currentTarget.form?.reportValidity()) {
-                    setStep(2)
+                  const employees = String(new FormData(event.currentTarget.form ?? undefined).get("employees") ?? "")
+                  if (!employees) {
+                    setEmployeesError("This field is required.")
+                    return
                   }
+                  setEmployeesError("")
+                  setStep(2)
                 }}
                 className="mt-4 w-full rounded-[15px] bg-[#19d99f] py-[23px] text-lg leading-[27px] font-semibold text-paper"
               >
                 {next}
               </button>
-            </>
-          ) : (
-            <>
+          </div>
+          <div hidden={step !== 2}>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {fields.map((field) => (
                   <label key={field.name} className="block sm:[&:nth-child(n+3)]:col-span-2">
@@ -145,8 +183,11 @@ export function StandaloneForm({
                       required={field.required}
                       maxLength={256}
                       placeholder={field.placeholder}
+                      aria-invalid={fieldErrors[field.name] ? true : undefined}
+                      aria-describedby={fieldErrors[field.name] ? `usa-${field.name}-error` : undefined}
                       className={`${surface} block w-full px-5 py-3 text-base text-paper placeholder:text-paper/60`}
                     />
+                    <FieldError id={`usa-${field.name}-error`} tone="dark" message={fieldErrors[field.name]} />
                   </label>
                 ))}
               </div>
@@ -156,12 +197,19 @@ export function StandaloneForm({
               </label>
               <button
                 type="submit"
-                className="mt-6 w-full rounded-[15px] bg-[#19d99f] py-[23px] text-lg leading-[27px] font-semibold text-paper"
+                disabled={sending}
+                aria-busy={sending}
+                className="relative mt-6 w-full rounded-[15px] bg-[#19d99f] py-[23px] text-lg leading-[27px] font-semibold text-paper disabled:opacity-70"
               >
+                {sending ? (
+                  <span className="absolute top-1/2 left-6 -translate-y-1/2">
+                    <Spinner />
+                  </span>
+                ) : null}
                 {submit}
               </button>
-            </>
-          )}
+              <FormBanner kind={banner} className="mt-4 text-base" />
+          </div>
         </form>
       </div>
     </section>

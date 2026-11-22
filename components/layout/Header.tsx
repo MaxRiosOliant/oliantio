@@ -7,7 +7,11 @@ import { ButtonLink } from "@/components/ui/ButtonLink"
 import { primaryNav } from "@/config/navigation"
 import { home } from "@/content/home"
 
-export function Header() {
+export type HeaderMode = "solid" | "transparent"
+
+// "transparent" is only for routes whose hero puts a dark background behind
+// the header; the bar turns solid once the page scrolls past 30px.
+export function Header({ mode }: { mode: HeaderMode }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -18,9 +22,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const barClass = scrolled
-    ? "bg-[#201e28e6] backdrop-blur-[2px]"
-    : "bg-ink in-[body:has(.dark-hero)]:bg-transparent"
+  const barClass =
+    mode === "solid"
+      ? "bg-ink"
+      : scrolled
+        ? "bg-[#201e28e6] backdrop-blur-[2px]"
+        : "bg-transparent"
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 text-paper">

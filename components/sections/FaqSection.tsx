@@ -3,6 +3,8 @@
 import { useId, useState } from "react"
 import Link from "next/link"
 
+import { faqJsonLd } from "@/lib/seo"
+
 type FaqPart = {
   text: string
   href?: string
@@ -23,8 +25,25 @@ export function FaqSection({ title, text, items }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState(0)
   const baseId = useId()
 
+  const answers = (items ?? []).map((item) => ({
+    question: item.question,
+    answer: item.parts
+      .map((part) => part.text)
+      .join("")
+      .replace(/\s+/g, " ")
+      .trim(),
+  }))
+
   return (
     <section className="bg-paper py-[clamp(4rem,3.142857rem+4.285714vw,7rem)] text-ink">
+      {answers.length > 0 ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd(answers)).replace(/</g, "\\u003c"),
+          }}
+        />
+      ) : null}
       <div className="site-container">
         <h2 className="trim-text mb-6 text-[clamp(2rem,1.857143rem+0.714286vw,2.5rem)] leading-none font-black tracking-[-0.03em] text-balance">
           {title}

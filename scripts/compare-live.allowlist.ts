@@ -88,7 +88,19 @@ function questionsIn(source: string) {
 // FAQ questions are H6 on live and H3 (inside the accordion button) locally.
 function faqHeadings(): AllowEntry[] {
   const reason = "FAQ question is an H6 on live; locally it is an H3 inside the accordion button"
-  const development = new Set(["react", "angular", "net"])
+  const development = new Set([
+    "react",
+    "angular",
+    "net",
+    "java",
+    "node",
+    "python",
+    "webflow",
+    "wordpress",
+    "google-cloud-platform",
+    "aws",
+    "microsoft-azure",
+  ])
   const pages = [
     ...contentFiles("articles").map((file) => ({ page: `/articles/${file.slug}`, source: file.source })),
     ...contentFiles("services").map((file) => ({
@@ -132,7 +144,7 @@ function categoryEntries(): AllowEntry[] {
   const reason = "Category lists all its articles on one page, newest first; live paginates 6 per page in CMS order"
   return [
     { kind: "text", pages: categories, removed: cardWords, added: cardWords, reason },
-    { kind: "link:main", pages: categories, side: "live", match: /^\d+ -> \?\w+_page=\d+$/, reason },
+    { kind: "link:main", pages: categories, side: "live", match: /^(?:\d+|\(no text\)) -> (?:\?\w+_page=\d+|#)$/, reason },
     { kind: "link:main", pages: categories, side: "local", match: /^.+ -> \/articles\/[\w-]+$/, reason },
     { kind: "heading", pages: categories, side: "local", match: /^H3 /, reason },
     { kind: "image", pages: categories, side: "local", match: 'alt=""', reason },
@@ -171,8 +183,21 @@ const placeholderNav = [
   "Contact Us",
 ]
 
+const articleHeadings = contentFiles("articles").flatMap((file) =>
+  [frontmatterValue(file.source, "heading"), frontmatterValue(file.source, "title")].filter(
+    (value): value is string => Boolean(value),
+  ),
+)
+
+const mvpIntroLive = normalize(
+  "Startup-to-enterprise experience: With 30+ years delivering gloEnd-to-end coverage: From strategy through QA and deployment, you get a seamless, integrated team—not a piecemeal vendor.bal teams and distributed systems, we bring both startup agility and enterprise-class rigor.",
+)
+const mvpIntroLocal = normalize(
+  "Startup-to-enterprise experience: With 30+ years delivering global end-to-end coverage —from strategy through QA and deployment —you get a seamless, integrated team, not a piecemeal vendor.",
+)
+
 const serviceBreadcrumb =
-  "Live renders a breadcrumb at the top of the hero (y 0-24px) that the fixed 82px header covers; not visible, so omitted"
+  "Breadcrumb: live renders it under the fixed header (not visible) with typos and Webflow placeholders; locally it is visible below the header as Home / Services / [Parent] / [service title], with Services and the parent as plain text"
 
 export const allowlist: AllowEntry[] = [
   // ---------- site header and footer (every page) ----------
@@ -205,15 +230,21 @@ export const allowlist: AllowEntry[] = [
     pages: any,
     side: "local",
     match: oneOf([
-      "Custom Development -> /services/web",
+      "Custom Development -> /services/custom-development",
+      "Java -> /services/development/java",
+      "Node -> /services/development/node",
+      "Python -> /services/development/python",
       "Manual Testing -> /services/qa#manual-testing",
       "Automation -> /services/qa#automation",
       "Performance Testing -> /services/qa#performance-testing",
       "SEO Optimization -> /services/digital-marketing-seo#seo-optimization",
       "Content Marketing -> /services/digital-marketing-seo#content-marketing",
       "Social Media Marketing -> /services/digital-marketing-seo#social-media-marketing",
-      "WebFlow -> /services/web",
-      "WordPress -> /services/web",
+      "WebFlow -> /services/development/webflow",
+      "WordPress -> /services/development/wordpress",
+      "Google Cloud Platform -> /services/development/google-cloud-platform",
+      "AWS -> /services/development/aws",
+      "Microsoft Azure -> /services/development/microsoft-azure",
       "About Us -> /about-us",
       "Contact Us -> /contact-us",
     ]),
@@ -294,63 +325,60 @@ export const allowlist: AllowEntry[] = [
   {
     kind: "text",
     pages: "/services/web",
-    removed: "Services Web Develoment",
-    reason: serviceBreadcrumb,
+    removed: "Develoment",
+    added: "Development",
+    context: /Services Web ¦/,
+    reason: `${serviceBreadcrumb} (live has the typo "Develoment")`,
   },
   {
     kind: "text",
     pages: "/services/development/react",
-    removed: "Services Website Development React Development",
-    reason: serviceBreadcrumb,
+    removed: "Website",
+    context: /Services ¦ Development React/,
+    reason: `${serviceBreadcrumb} (live labels the parent "Website Development")`,
   },
   {
     kind: "text",
-    pages: "/services/development/angular",
-    removed: "Services Development Angular Development",
-    reason: serviceBreadcrumb,
+    pages: ["/services/development/react", "/services/development/angular"],
+    removed: "Development",
+    context: /Development (?:React|Angular) ¦ (?:REACT|ANGULAR) DEVELOPMENT/,
+    reason: `${serviceBreadcrumb} (live ends the trail in "<Name> Development"; locally it is the service title)`,
   },
   {
     kind: "text",
     pages: "/services/development/net",
-    removed: "Services Development .Net Development",
-    reason: serviceBreadcrumb,
-  },
-  {
-    kind: "text",
-    pages: "/services/staff-augmentation",
-    removed: "Services Staff Augmentation",
-    reason: serviceBreadcrumb,
-  },
-  {
-    kind: "text",
-    pages: ["/services/qa", "/services/mvp-development"],
-    removed: "Services",
-    reason: serviceBreadcrumb,
+    removed: "Development",
+    added: "/ C#",
+    context: /Services Development \.Net ¦/,
+    reason: `${serviceBreadcrumb} (live ends the trail in ".Net Development"; locally it is the service title ".Net / C#")`,
   },
   {
     kind: "text",
     pages: "/services/qa",
-    removed: "Testig and Automation QA",
-    reason: `${serviceBreadcrumb} (it also has the typo "Testig")`,
+    removed: "Testig and",
+    added: "Testing &",
+    context: /Services QA ¦ Automation/,
+    reason: `${serviceBreadcrumb} (live has "Testig and Automation QA"; locally it is the service title)`,
   },
   {
     kind: "text",
     pages: "/services/mvp-development",
-    removed: "Development Third Level Service Title MVP",
-    reason: `${serviceBreadcrumb} (it ends in the Webflow placeholder "Third Level Service Title")`,
+    removed: "Third Level Service Title",
+    context: /Services MVP Development ¦/,
+    reason: `${serviceBreadcrumb} (live ends in the Webflow placeholder "Third Level Service Title")`,
   },
   {
     kind: "text",
     pages: "/services/digital-marketing-seo",
-    removed: "Services Digital Marketing & SEO TAGLINE MAXIMUM TWO LINES",
-    reason: `${serviceBreadcrumb}; "TAGLINE MAXIMUM TWO LINES" is a Webflow placeholder`,
+    removed: "TAGLINE MAXIMUM TWO LINES",
+    context: /Services Digital Marketing & SEO ¦/,
+    reason: `${serviceBreadcrumb} ("TAGLINE MAXIMUM TWO LINES" after it is a Webflow placeholder)`,
   },
   {
     kind: "link:main",
     pages: services,
     side: "live",
     match: oneOf([
-      "(no text) -> /",
       "Services -> #",
       "Development -> /services/web",
       "Website Development -> /services/web",
@@ -384,6 +412,16 @@ export const allowlist: AllowEntry[] = [
     side: "live",
     match: /^H3 Reason [1-4]$/,
     reason: "Webflow placeholder title (\"Reason 1-4\"); the reason text itself is migrated",
+  },
+  {
+    kind: "text",
+    pages: "/services/mvp-development",
+    removed: any,
+    added: any,
+    hunk: (removed, added) =>
+      mvpIntroLive.includes(removed.replace(/ Reason [1-4]$/, "")) && mvpIntroLocal.includes(added),
+    reason:
+      "Content correction: the garbled \"Why Choose Oliant\" intro (two reasons spliced mid-word) is replaced with the client-supplied text",
   },
   {
     kind: "link:main",
@@ -499,6 +537,19 @@ export const allowlist: AllowEntry[] = [
     reason: "Code block: the line break after a file-name comment is a separate element on live; same code",
   },
   {
+    kind: "text",
+    pages: "/articles/mentorship-programs-2025-guide",
+    removed: "HR Solutions - Factorial",
+    reason: "Content correction: /oliant-factorial is no longer linked; the Related Services entry is removed",
+  },
+  {
+    kind: "link:main",
+    pages: "/articles/mentorship-programs-2025-guide",
+    side: "live",
+    match: "HR Solutions - Factorial -> /oliant-factorial",
+    reason: "Content correction: /oliant-factorial is no longer linked; the Related Services entry is removed",
+  },
+  {
     kind: "link:main",
     pages: "/articles/remote-team-management-2025",
     side: "live",
@@ -507,6 +558,33 @@ export const allowlist: AllowEntry[] = [
   },
 
   // ---------- blog and categories ----------
+  {
+    kind: "text",
+    pages: "/blog",
+    added: "OLIANT's Insights",
+    reason: "Content correction: live /blog has no page title; \"OLIANT's Insights\" is added as the page H1",
+  },
+  {
+    kind: "heading",
+    pages: "/blog",
+    side: "local",
+    match: "H1 OLIANT's Insights",
+    reason: "Content correction: live /blog has no page title; \"OLIANT's Insights\" is added as the page H1",
+  },
+  {
+    kind: "heading",
+    pages: "/blog",
+    side: "live",
+    match: oneOf(articleHeadings.map((heading) => `H1 ${normalize(heading)}`)),
+    reason: "Featured article title is the page H1 on live; locally it is an H2 (same style) under the \"OLIANT's Insights\" H1",
+  },
+  {
+    kind: "heading",
+    pages: "/blog",
+    side: "local",
+    match: oneOf(articleHeadings.map((heading) => `H2 ${normalize(heading)}`)),
+    reason: "Featured article title is the page H1 on live; locally it is an H2 (same style) under the \"OLIANT's Insights\" H1",
+  },
   {
     kind: "text",
     pages: "/blog",
@@ -562,10 +640,9 @@ export const allowlist: AllowEntry[] = [
   {
     kind: "text",
     pages: "/contact-us",
-    removed: "Sofia(+30)",
-    added: "Sofia (+30)",
-    reason:
-      "Live runs the address and phone together; locally they are separate lines. (+30 is Greece's code; flagged for the client)",
+    removed: "Sofia(+30) 2810-300345",
+    added: "Sofia",
+    reason: "Content correction: the Sofia office phone number (a Greek +30 number) is removed; the rest of the office details stay",
   },
   {
     kind: "text",

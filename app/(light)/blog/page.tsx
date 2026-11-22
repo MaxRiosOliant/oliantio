@@ -24,6 +24,7 @@ export default function BlogPage() {
     <>
       <CategoryChips categories={categories} />
       <BlogFeatured
+        title={blog.title}
         featured={featured}
         latest={rest.slice(0, 3)}
         latestTitle={blog.latestTitle}

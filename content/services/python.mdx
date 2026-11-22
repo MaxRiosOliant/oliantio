@@ -1,0 +1,207 @@
+---
+title: Python
+slug: python
+summary: Python services with Django, Flask, or FastAPI, plus the automation and data jobs that should not live inside the web request.
+order: 6
+parent: development
+heading: Services and jobs in Python
+layout: landing
+seo:
+  title: Python Development Services
+  description: Python services with Django, Flask, or FastAPI, plus the automation and data jobs that should stay outside the web request.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="Python Development"
+  title="Services and jobs in Python"
+  text="We build Python web services and the scripts that move data around them. Django when the product needs an application and an admin. FastAPI or Flask when it needs a smaller HTTP API. A separate entry point when the work is a job, not a request."
+  cta="Talk through the Python work"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/python/hero.svg", alt: "Illustration for Python development services" }}
+/>
+
+<ServiceCatalog
+  title="What we build with Python"
+  intro="Python is readable, and that is only an advantage if the project has one way to run, one way to install, and a clear split between the web process and the jobs."
+  items={[
+    {
+      title: "Django applications",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "Django fits an application with models, an admin, and server-rendered or API views. We use Django REST framework when the same models need a JSON API, and we keep business rules on the model or a service module rather than in the view.",
+        "Migrations ship with the code that depends on them. The admin is configured for the people who will use it, including which fields they must not edit.",
+      ],
+    },
+    {
+      title: "FastAPI and Flask APIs",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "FastAPI is the usual choice for a typed HTTP API: Pydantic models on the boundary, dependency injection for the database session, and OpenAPI generated from those types. Flask remains a good fit for a small service or for an application that already uses it.",
+        "We do not grow a Flask app into an informal Django. If the project needs an admin, auth, and a migration story, we start with Django or we add those pieces on purpose.",
+      ],
+    },
+    {
+      title: "Jobs and automation",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "A report, a file ingest, or a sync with another system gets its own module and its own command. Celery, RQ, or a scheduled container runs it. The web worker does not import a script that takes minutes.",
+        "pandas is available when the job is tabular. It is not the application framework. Data frames stay inside the job that needs them.",
+      ],
+    },
+    {
+      title: "Environments and tests",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "Dependencies are locked, with uv, pip-tools, or Poetry, and the choice is written down. The same lock installs in CI and in the image that runs production. pytest covers the service and the job, including the database the ORM or the SQL actually hits.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="Python earns its place when the team wants one language for the HTTP service and for the automation around it, without pretending those are the same process."
+  items={[
+    {
+      title: "An internal tool with an admin",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "A team needs to review records, correct a field, and export a slice. Django gives them that admin and a permission model. We build the models around the review step, not around every column in the source system.",
+      ],
+    },
+    {
+      title: "A small API next to a data store",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "One or two resources, a clear schema, and a few callers. FastAPI or Flask is enough. We publish the schema and the error format, and we stop before the service accumulates unused apps.",
+      ],
+    },
+    {
+      title: "A file or report that someone runs by hand",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "A workbook arrives, a person cleans it, and a system of record is updated. We turn that into a Python job with validation, a reject file, and a way to rerun the failed rows.",
+      ],
+    },
+    {
+      title: "A glue service between two APIs",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "Python is a direct way to translate one provider's payload into another's. We keep the translation in a tested module, with timeouts and a record of what was sent, rather than in a notebook that only one person can run.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="Python projects fail quietly when the environment is tribal knowledge. We make the install, the framework, and the job boundary boring on purpose."
+  items={[
+    {
+      title: "Lock the interpreter and the dependencies",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "The Python version is the one production runs. The lockfile is the install. A developer machine that needs extra undocumented packages is a bug in the repo, and we fix it before adding features.",
+      ],
+    },
+    {
+      title: "Choose Django, FastAPI, or Flask once",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "The framework matches the product: Django for an application with an admin, FastAPI for a typed API, Flask for a small existing or narrow service. Mixing them inside one deployable is not a phase we plan for.",
+      ],
+    },
+    {
+      title: "Keep jobs out of the web process",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "Anything that waits on a file, a large query, or another company's API is a command or a queue task. The web process validates, records the request, and returns. The job reports success or a specific failure.",
+      ],
+    },
+    {
+      title: "Test the boundary that can break",
+      icon: "/images/services/python/check.svg",
+      paragraphs: [
+        "pytest, with the database and the HTTP client the code uses. A typed schema is checked against an example payload. A job is tested with the bad file we expect, not only the happy path.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Say whether this is a service or a job"
+  text="Django, FastAPI, Flask, or a scheduled script. The shape of the work matters more than a preference for the language."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="Python at OLIANT keeps the web service and the data job in the same language and in different processes."
+  image={{ src: "/images/services/python/why-oliant.svg", alt: "Illustration beside reasons to choose OLIANT for Python" }}
+  items={[
+    {
+      title: "One framework, named up front",
+      icon: "/images/services/python/checks.svg",
+      text: "Django, FastAPI, or Flask is a project decision with a reason. Later features follow it.",
+    },
+    {
+      title: "Jobs are first-class",
+      icon: "/images/services/python/checks.svg",
+      text: "Ingest, sync, and reports have a command, a failure mode, and a test. They are not hidden inside a view.",
+    },
+    {
+      title: "The environment is in the repo",
+      icon: "/images/services/python/checks.svg",
+      text: "Interpreter version and locked dependencies install the same way in CI and in production. Setup is a command, not a checklist in chat.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Questions we answer before choosing a Python stack."
+  items={[
+    {
+      question: "Should we use Django or FastAPI?",
+      parts: [
+        {
+          text: "Django when you need models, an admin, and the batteries that come with a full application. FastAPI when you are publishing a typed HTTP API and you do not need that admin. Flask when the service is small or already written in Flask. We pick one.",
+        },
+      ],
+    },
+    {
+      question: "Do you build data-science models?",
+      parts: [
+        {
+          text: "We build the Python services and jobs around data: APIs, ingest, validation, and the code that puts rows where the application can read them. Training and evaluating a machine-learning model is a different engagement, and we will not describe a data job as if it were one.",
+        },
+      ],
+    },
+    {
+      question: "How do you package Python for production?",
+      parts: [
+        {
+          text: "A locked install in a container or a host virtual environment, with the web server named: gunicorn or uvicorn, depending on the framework. The start command, the worker count, and the health check are part of the repository.",
+        },
+      ],
+    },
+    {
+      question: "Can Python call the rest of our stack?",
+      parts: [
+        {
+          text: "Yes. A Python service can sit beside Java, Node, or .NET systems and talk to them over HTTP or a queue. Custom development is the wider page when the Python piece is one part of a product.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="Python with a way to run it"
+  text="Tell us whether you need an application, an API, or a job. We will name the framework and the process split."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/python/closing.svg", alt: "Illustration for the Python development closing invitation" }}
+/>

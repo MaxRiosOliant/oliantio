@@ -1,0 +1,208 @@
+---
+title: AWS
+slug: aws
+summary: AWS workloads on Lambda, ECS, or EKS, with account boundaries, S3 and RDS where they fit, and infrastructure described in code.
+order: 10
+parent: development
+heading: The AWS services the workload needs
+layout: landing
+seo:
+  title: AWS Development Services
+  description: AWS workloads on Lambda, ECS, or EKS, with account boundaries, S3 and RDS, and infrastructure described in code.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="AWS Development"
+  title="The AWS services the workload needs"
+  text="We place an application on AWS by the way the work runs: Lambda for short requests, ECS or EKS for containers that stay up, and a written boundary for accounts, IAM, S3, and RDS."
+  cta="Sketch the AWS layout"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/aws/hero.svg", alt: "Illustration for AWS development services" }}
+/>
+
+<ServiceCatalog
+  title="What we build on AWS"
+  intro="AWS has many services. A project uses the small set that matches the workload, described in code so the next environment is not a click-through."
+  items={[
+    {
+      title: "Accounts and IAM",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "Environments are separate accounts when the organization can support that, and separate IAM boundaries inside an account when it cannot. Roles are assumed. Long-lived access keys are not how a person logs in, and they are not how a service authenticates if a role will do.",
+        "The pipeline role can deploy what it owns. It cannot read another environment because the names happen to match.",
+      ],
+    },
+    {
+      title: "Lambda, ECS, and EKS",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "Lambda fits a request or an event that finishes quickly and can tolerate a cold start. ECS fits a container you want running, on Fargate or on instances you already operate. EKS fits a team that has chosen Kubernetes and will run the cluster.",
+        "API Gateway or an application load balancer is the front door when the service needs one. CloudFront sits in front of public static assets and, when it helps, in front of the HTTP entry.",
+      ],
+    },
+    {
+      title: "S3, RDS, and queues",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "S3 holds objects, with a bucket policy and a lifecycle for the data that should expire. RDS holds relational data, in the engine the application already speaks, in a private subnet. SQS or SNS carries work that must outlive the request.",
+        "The application receives permission for its bucket and its database. A wildcard on the account is a defect.",
+      ],
+    },
+    {
+      title: "Infrastructure in code",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "CloudFormation, AWS CDK, or Terraform describes the stack. The format is the one the team will edit. A console change that is not imported back into that description does not count as done.",
+        "Logs go to CloudWatch with a retention. Alarms cover the failure you would page on, not every metric the service happens to emit.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="The right AWS shape depends on how long the work runs and who will operate it."
+  items={[
+    {
+      title: "An event or HTTP handler on Lambda",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "A webhook, a file arriving in S3, or a short API method. The function has a timeout, a role, and a test that invokes it with the event it will really receive.",
+      ],
+    },
+    {
+      title: "A container service on ECS",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "An API that stays up, with a task definition, a target group, and a deploy that replaces tasks. Fargate when you do not want to patch instances. EC2-backed ECS when you already run the hosts.",
+      ],
+    },
+    {
+      title: "Kubernetes that is a deliberate choice",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "EKS for a platform team with more than one service and a reason to share a cluster. Namespaces and IAM roles for service accounts are part of the first deploy, not a later cleanup.",
+      ],
+    },
+    {
+      title: "A public site with private data",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "CloudFront and S3 for the public assets. The API and RDS stay in private subnets. The browser never receives a path to the database, and the bucket is not the application log store.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="We name the account boundary and the compute model before we add services. Extra AWS products have to pay for their operational cost."
+  items={[
+    {
+      title: "Fix the account and the network",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "Which account, which VPC, which subnets are public. The application's security groups are written to the destinations it calls. A wide-open security group is not a temporary step we leave in the template.",
+      ],
+    },
+    {
+      title: "Choose Lambda, ECS, or EKS for a reason",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "The reason is duration, deploy style, and who patches the platform. We record it next to the template. A second compute model inside the same service needs its own justification.",
+      ],
+    },
+    {
+      title: "Describe it in the tool you will keep",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "CDK, CloudFormation, or Terraform. One of them. Parameters cover the differences between environments. Secrets live in Secrets Manager or Parameter Store, referenced by the task, not pasted into a task definition.",
+      ],
+    },
+    {
+      title: "Rehearse the deploy and the rollback",
+      icon: "/images/services/aws/check.svg",
+      paragraphs: [
+        "Staging is another account or another isolated stack, built from the same template. We deploy there, check the health endpoint, and roll back once so production is not the first time the rollback path runs.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Bring the runtime you have in mind"
+  text="Lambda, a container, or a cluster. We will match it to an account layout, a data store, and a template you can apply again."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="AWS at OLIANT is a short list of services, an IAM boundary, and a template that can rebuild the environment."
+  image={{ src: "/images/services/aws/why-oliant.avif", alt: "Illustration beside reasons to choose OLIANT for AWS" }}
+  items={[
+    {
+      title: "Compute follows the work",
+      icon: "/images/services/aws/checks.svg",
+      text: "Lambda, ECS, or EKS is a decision about duration and operations. It is written down with the template.",
+    },
+    {
+      title: "Accounts mean environments",
+      icon: "/images/services/aws/checks.svg",
+      text: "Identity and network boundaries separate staging from production. A shared admin key is not the deployment plan.",
+    },
+    {
+      title: "The console is not the source",
+      icon: "/images/services/aws/checks.svg",
+      text: "CDK, CloudFormation, or Terraform holds the stack. A click in the console is either imported or reverted.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Questions we answer before choosing AWS services."
+  items={[
+    {
+      question: "Do you default to serverless?",
+      parts: [
+        {
+          text: "No. Lambda is the right tool for short, event-driven work. A service that stays warm, holds a connection pool, or takes a long time belongs on ECS or another container runtime. We choose after looking at the work.",
+        },
+      ],
+    },
+    {
+      question: "Can you work in our existing organization?",
+      parts: [
+        {
+          text: "Yes. We use your AWS Organizations structure, your VPCs, and your pipeline. New stacks land in the account you designate, with roles that fit the permission model you already enforce.",
+        },
+      ],
+    },
+    {
+      question: "Which infrastructure tool do you use?",
+      parts: [
+        {
+          text: "The one your team will edit. CloudFormation, AWS CDK, or Terraform. We do not introduce a second tool beside a stack you already maintain.",
+        },
+      ],
+    },
+    {
+      question: "How does this relate to Google Cloud or Azure?",
+      parts: [
+        {
+          text: "They are separate pages because the identity model and the product names differ. We can run a piece of a system on AWS and another piece elsewhere, with an explicit contract between them. The application itself is described under custom development and the language pages.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="An AWS stack you can apply twice"
+  text="Tell us the workload and the account you have. We will name the compute, the data services, and the template."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/aws/closing.svg", alt: "Illustration for the AWS development closing invitation" }}
+/>

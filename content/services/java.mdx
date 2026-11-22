@@ -1,0 +1,215 @@
+---
+title: Java
+slug: java
+summary: Java services on the JVM with Spring Boot or Jakarta EE, including the APIs and batch jobs around an application you already run.
+order: 4
+parent: development
+heading: JVM systems that stay maintainable
+layout: landing
+seo:
+  title: Java Development Services
+  description: Java services on the JVM with Spring Boot or Jakarta EE, including APIs and batch jobs around an application you already run.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="Java Development"
+  title="JVM systems that stay maintainable"
+  text="We design, extend, and maintain Java services: Spring Boot for newer APIs, Jakarta EE where the application already lives there, and the batch and integration jobs that sit beside both."
+  cta="Review your Java stack"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/java/hero.svg", alt: "Illustration for Java development services" }}
+/>
+
+<ServiceCatalog
+  title="What we build with Java"
+  intro="Java work here is server-side. We use the JVM, a build you can reproduce, and a module boundary that a later change can find."
+  items={[
+    {
+      title: "Spring Boot services",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "New HTTP services are usually Spring Boot: controllers or functional routes, Spring Security where the API needs an identity, and Spring Data or jOOQ against the database you already have. Dependencies stay in Maven or Gradle, pinned, with a build that fails when the lockfile drifts.",
+        "We keep the service bootable from a main class and from a container. Configuration comes from the environment, not from a file that only exists on one laptop.",
+      ],
+    },
+    {
+      title: "Jakarta EE and existing JVM applications",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "Plenty of Java worth keeping is not a new Spring service. We work in Jakarta EE and in the older Java EE layouts still running in application servers: servlets, CDI, JPA, and the deployment descriptor the server actually reads.",
+        "A change in that codebase starts by reading the modules that already exist. We do not open a rewrite because a newer framework is more familiar.",
+      ],
+    },
+    {
+      title: "APIs, messaging, and batch",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "Services expose REST with an explicit contract. Where the system already uses a queue, we add producers and consumers on that broker, JMS or Kafka, instead of inventing a second channel.",
+        "Scheduled work stays in its own entry point: Spring Batch, a Quartz job, or the scheduler the current application uses. A batch failure is visible as a failed job, not as a request that timed out.",
+      ],
+    },
+    {
+      title: "Tests that follow the module",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "JUnit covers the domain rules. An API change also gets a test that boots the slice and calls the endpoint. Testcontainers is the default when the test needs a real database or broker, so the suite is not asserting against a mock that hides a SQL mistake.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="Java is the right tool when the system is already on the JVM, or when the service has to live for years beside a relational database and a set of internal callers."
+  items={[
+    {
+      title: "An internal API in front of a relational database",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "Several applications need the same customer, policy, or inventory rules. We put those rules in a Java service with a documented API, and we stop copying the SQL into each caller.",
+      ],
+    },
+    {
+      title: "A module added to a monolith",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "The current WAR or Spring application can take a new package with a clear boundary. We add the module, its schema changes, and its tests, and we leave the unrelated packages alone.",
+      ],
+    },
+    {
+      title: "A nightly or hourly job",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "Files arrive, records need reconciling, or a downstream system wants a feed. We build that job on the JVM, with a rerun story for the rows that failed, rather than hiding it inside a web request.",
+      ],
+    },
+    {
+      title: "A service that has to meet an existing security model",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "The company already has an identity provider and a set of roles. We map those into Spring Security or the application server's constraints, and we test the paths that must stay forbidden.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="Java engagements start in the repository you have. The first week is for the build, the runtime, and the boundary of the change."
+  items={[
+    {
+      title: "Read the build before writing features",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "We identify the JDK version, Maven or Gradle, the application server if there is one, and the tests that already run. A feature that does not build the way the team builds is not done.",
+      ],
+    },
+    {
+      title: "Agree the package boundary",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "New code goes in a package or module with a public API small enough to name. Callers inside the same repository use that API. Reaching into another module's internals is a review comment, not a shortcut.",
+      ],
+    },
+    {
+      title: "Prove the endpoint and the job",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "Unit tests cover the rules. A running slice covers the HTTP contract or the batch step, including the failure we expect when a dependency is down. We do not treat a green unit suite as proof the service starts.",
+      ],
+    },
+    {
+      title: "Release beside the current deployment",
+      icon: "/images/services/java/check.svg",
+      paragraphs: [
+        "The artifact is the one your pipeline already knows, or a container if that is how this service is deployed. We add the health check and the log fields operators use, and we roll out next to the version that is live.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Bring the repository, including the old parts"
+  text="Spring Boot, Jakarta EE, or a mix of both. We will tell you what we would change first and what we would leave on the current JDK."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="Java at OLIANT includes the application you already run, not only a greenfield Spring service."
+  image={{ src: "/images/services/java/why-oliant.svg", alt: "Illustration beside reasons to choose OLIANT for Java" }}
+  items={[
+    {
+      title: "Old and new Java in one review",
+      icon: "/images/services/java/checks.svg",
+      text: "We read application-server layouts and Spring Boot services with the same care. The recommendation follows the code that is in production.",
+    },
+    {
+      title: "The JVM stays operable",
+      icon: "/images/services/java/checks.svg",
+      text: "Memory, startup, and dependency updates are part of the change. A service that only works with a hand-tuned laptop JDK is not finished.",
+    },
+    {
+      title: "A boundary you can point at",
+      icon: "/images/services/java/checks.svg",
+      text: "Packages, public types, and tests mark what the change owns. The next developer can find the edge without an oral history.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Practical questions about Java work, before a project starts."
+  items={[
+    {
+      question: "Do you only take Spring Boot?",
+      parts: [
+        {
+          text: "No. Spring Boot is the usual choice for a new service. Jakarta EE and existing application-server code are in scope when that is what production runs. We will not propose a framework migration as the price of a small feature.",
+        },
+      ],
+    },
+    {
+      question: "Which JDK versions do you work with?",
+      parts: [
+        {
+          text: "The version the application already builds on, and a current LTS when we are starting a new service. Moving an old service to a newer JDK is its own piece of work, with the test suite as the gate, not a side effect of an unrelated feature.",
+        },
+      ],
+    },
+    {
+      question: "Can you add an API without rewriting the monolith?",
+      parts: [
+        {
+          text: "Yes. That is a common shape: a new package or a new Spring service that owns one area, with the monolith calling it or being called by it. The data ownership is decided before the first endpoint is published.",
+        },
+      ],
+    },
+    {
+      question: "How do you handle database access?",
+      parts: [
+        {
+          text: "With the approach already in the codebase when there is one: JPA, jOOQ, JDBC, or Spring Data. A new service gets one of those, chosen for the queries it has to run, and the schema change ships with the code that uses it.",
+        },
+      ],
+    },
+    {
+      question: "Where does Java sit next to our other systems?",
+      parts: [
+        {
+          text: "Java is the service and the job. React or another front end calls it. Cloud hosting, including Microsoft Azure when the company already runs there, is a separate decision from the language. Custom development is the page for the wider product shape around that service.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="Keep the JVM application you have"
+  text="Tell us the JDK, the framework, and the change you need. We will work inside that build."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/java/closing.svg", alt: "Illustration for the Java development closing invitation" }}
+/>

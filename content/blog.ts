@@ -1,4 +1,5 @@
 export const blog = {
+  title: "OLIANT's Insights",
   breadcrumb: "Blog",
   latestTitle: "Latest blog posts",
   readMore: "Read more",

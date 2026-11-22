@@ -28,7 +28,7 @@ export const primaryNav: NavItem[] = [
         links: [
           { label: "Web Development", href: "/services/web" },
           { label: "Staff Augmentation", href: "/services/staff-augmentation" },
-          { label: "Custom Development", href: "/services/web" },
+          { label: "Custom Development", href: "/services/custom-development" },
           { label: "MVP Development", href: "/services/mvp-development" },
         ],
       },
@@ -66,9 +66,9 @@ export const primaryNav: NavItem[] = [
         label: "Languages",
         links: [
           { label: ".Net / C#", href: "/services/development/net" },
-          { label: "Java" },
-          { label: "Node" },
-          { label: "Python" },
+          { label: "Java", href: "/services/development/java" },
+          { label: "Node", href: "/services/development/node" },
+          { label: "Python", href: "/services/development/python" },
         ],
       },
       {
@@ -81,16 +81,16 @@ export const primaryNav: NavItem[] = [
       {
         label: "No Code",
         links: [
-          { label: "WebFlow", href: "/services/web" },
-          { label: "WordPress", href: "/services/web" },
+          { label: "WebFlow", href: "/services/development/webflow" },
+          { label: "WordPress", href: "/services/development/wordpress" },
         ],
       },
       {
         label: "Cloud",
         links: [
-          { label: "Google Cloud Platform" },
-          { label: "AWS" },
-          { label: "Microsoft Azure" },
+          { label: "Google Cloud Platform", href: "/services/development/google-cloud-platform" },
+          { label: "AWS", href: "/services/development/aws" },
+          { label: "Microsoft Azure", href: "/services/development/microsoft-azure" },
         ],
       },
     ],

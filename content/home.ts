@@ -143,27 +143,27 @@ export const home = {
     social: [
       {
         label: "Facebook",
-        href: "https://www.facebook.com/profile.php?id=61563344463128",
+        href: site.social.facebook,
         icon: "/images/home/social-facebook.svg",
       },
       {
         label: "Instagram",
-        href: "https://www.instagram.com/oliantllc/",
+        href: site.social.instagram,
         icon: "/images/home/social-instagram.svg",
       },
       {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/company/oliant",
+        href: site.social.linkedin,
         icon: "/images/home/social-linkedin.svg",
       },
       {
         label: "X",
-        href: "https://x.com/OliantGlobal",
+        href: site.social.x,
         icon: "/images/home/social-x.svg",
       },
       {
         label: "YouTube",
-        href: "https://www.youtube.com/@Oliant-Orbit",
+        href: site.social.youtube,
         icon: "/images/home/social-youtube.svg",
       },
     ],

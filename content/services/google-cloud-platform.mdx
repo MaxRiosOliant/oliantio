@@ -1,0 +1,208 @@
+---
+title: Google Cloud Platform
+slug: google-cloud-platform
+summary: Applications on Google Cloud Platform with project and IAM layout first, then Cloud Run, GKE, or Compute Engine for the workload.
+order: 9
+parent: development
+heading: Run the workload on Google Cloud
+layout: landing
+seo:
+  title: Google Cloud Platform Development
+  description: Google Cloud Platform projects with IAM, Cloud Run, GKE, or Compute Engine, plus the data services the app uses.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="Google Cloud Platform"
+  title="Run the workload on Google Cloud"
+  text="We design how an application runs on Google Cloud Platform: the project and IAM layout, the runtime that fits the process, and the data services it is allowed to use. OLIANT is listed as a Google Cloud Partner in our services menu. This page is that platform work."
+  cta="Map the GCP project"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/google-cloud-platform/hero.svg", alt: "Illustration for Google Cloud Platform services" }}
+/>
+
+<ServiceCatalog
+  title="What we build on Google Cloud Platform"
+  intro="The platform choice follows the process. A request-sized container, a Kubernetes cluster, and a virtual machine are different operating models, and we pick one."
+  items={[
+    {
+      title: "Projects, folders, and IAM",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Each environment gets a project. Folders group those projects when the organization needs it. Service accounts own deploy and runtime access. Human users do not share a key.",
+        "IAM bindings are written down: who can deploy, who can read production data, and which APIs are enabled. A new service starts from that list.",
+      ],
+    },
+    {
+      title: "Cloud Run, GKE, and Compute Engine",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Cloud Run is the default for a stateless container with HTTP or a job. GKE is for a workload that already needs Kubernetes: several services, a mesh, or a platform team that will run the cluster. Compute Engine is for the process that has to be a VM.",
+        "We do not put a single container on GKE to make the diagram look complete. The runtime matches who will operate it.",
+      ],
+    },
+    {
+      title: "Data services the application is allowed to touch",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Cloud SQL for relational data the application queries. Cloud Storage for objects and uploads. BigQuery when the work is analysis over large tables, not a row the user is editing. Memorystore when a cache is actually required.",
+        "Pub/Sub carries events between services. A service publishes a message it can name. Consumers are separate deploys with their own service accounts.",
+      ],
+    },
+    {
+      title: "Build and release",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Cloud Build, or the pipeline you already run, builds the artifact and deploys it into the right project. Environments are not two folders in the same project with a comment that says prod.",
+        "Logs and error reporting are on from the first deploy. A service without a way to tell a failed revision from a healthy one is not ready for traffic.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="These are the platform shapes we set up. They are not a claim about a particular customer's bill or traffic."
+  items={[
+    {
+      title: "A container service on Cloud Run",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "An API or a worker with a container, a concurrency setting, and a service account that can reach Cloud SQL or Cloud Storage. Revisions are the rollback.",
+      ],
+    },
+    {
+      title: "A cluster that already has a reason",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "GKE when several services share a cluster and someone will own node pools, upgrades, and namespaces. We set the namespace, the workload identity, and the deploy. We do not treat the cluster as a substitute for IAM.",
+      ],
+    },
+    {
+      title: "Analysis that should not hit the application database",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Events or exports land in BigQuery. The application database stays for transactions. Queries for reporting run against BigQuery, with a dataset and a group that is allowed to read it.",
+      ],
+    },
+    {
+      title: "An existing application moving onto GCP",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "We start with what the process needs: a VM, a container, or a managed SQL instance. The move is a runtime and a data store, plus the IAM that replaces the old shared login.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="Google Cloud work starts with identity and projects. Product selection comes after we know who deploys and where data lives."
+  items={[
+    {
+      title: "Draw the projects and the accounts",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Development, staging, and production are separate projects unless there is a written reason not to. Service accounts are created for deploy and for runtime. Keys are a last resort.",
+      ],
+    },
+    {
+      title: "Match the runtime to the process",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "HTTP container, Kubernetes workload, scheduled job, or VM. We name the Google Cloud product and the operational task it creates, including who upgrades it.",
+      ],
+    },
+    {
+      title: "Put data in the service that fits the question",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "Transactions in Cloud SQL. Objects in Cloud Storage. Analytical queries in BigQuery. The application gets credentials for the one it needs, not for the whole project.",
+      ],
+    },
+    {
+      title: "Deploy from a pipeline into that project",
+      icon: "/images/services/google-cloud-platform/check.svg",
+      paragraphs: [
+        "The pipeline identity can deploy to the target project and cannot rummage through another environment. A rollback is a previous revision or a previous image, tried before the production project depends on it.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Start with the project layout"
+  text="Tell us what runs today and who is allowed to deploy. We will place it on Cloud Run, GKE, or Compute Engine with IAM to match."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="Google Cloud Platform at OLIANT is the project, the identity, and the runtime. The Google Cloud Partner listing in our menu points at this work."
+  image={{ src: "/images/services/google-cloud-platform/why-oliant.svg", alt: "Illustration beside reasons to choose OLIANT for Google Cloud Platform" }}
+  items={[
+    {
+      title: "IAM before the product icon",
+      icon: "/images/services/google-cloud-platform/checks.svg",
+      text: "Projects and service accounts are the first deliverable. A runtime is added only after we know who can deploy it.",
+    },
+    {
+      title: "One runtime, with an operator",
+      icon: "/images/services/google-cloud-platform/checks.svg",
+      text: "Cloud Run, GKE, or Compute Engine is chosen with the person who will upgrade it. The diagram and the on-call task match.",
+    },
+    {
+      title: "Data access is specific",
+      icon: "/images/services/google-cloud-platform/checks.svg",
+      text: "Cloud SQL, Cloud Storage, and BigQuery are granted per service account. Reporting does not log into the transaction database.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Questions about how we use Google Cloud Platform."
+  items={[
+    {
+      question: "What does the Google Cloud Partner listing mean here?",
+      parts: [
+        {
+          text: "OLIANT is listed as a Google Cloud Partner in the services menu. On this page that means we design and run workloads on Google Cloud Platform: projects, IAM, and the managed services the application uses.",
+        },
+      ],
+    },
+    {
+      question: "Should we use Cloud Run or GKE?",
+      parts: [
+        {
+          text: "Cloud Run when you have a container and you want revisions, scale, and a small operating surface. GKE when you already need Kubernetes and someone will run the cluster. A single service is rarely a reason to start a cluster.",
+        },
+      ],
+    },
+    {
+      question: "Can you work in an organization that already has folders and policies?",
+      parts: [
+        {
+          text: "Yes. We use the folder, project, and organization policies you have. New services get projects and service accounts inside that structure. We do not stand up a shadow organization beside it.",
+        },
+      ],
+    },
+    {
+      question: "Do you also build on AWS or Azure?",
+      parts: [
+        {
+          text: "Yes. AWS and Microsoft Azure have their own pages. A system can span more than one cloud, and we still keep each environment's identity and data access explicit. The application language is a separate choice, covered under custom development.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="A Google Cloud layout you can explain"
+  text="Bring the current hosting and the people who deploy. We will propose the projects, the runtime, and the data services."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/google-cloud-platform/closing.svg", alt: "Illustration for the Google Cloud Platform closing invitation" }}
+/>

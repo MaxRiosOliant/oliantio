@@ -6,6 +6,7 @@ import { useEffect, useId, useRef, useState } from "react"
 
 import type { NavGroup, NavItem, NavLink } from "@/config/navigation"
 import { ButtonLink } from "@/components/ui/ButtonLink"
+import { site } from "@/config/site"
 
 type NavProps = {
   items: readonly NavItem[]
@@ -67,6 +68,7 @@ function NavAnchor({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        data-track={href === site.careersUrl ? "careers-click" : undefined}
         onClick={onNavigate}
         className={className}
       >

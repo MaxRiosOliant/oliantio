@@ -1,0 +1,216 @@
+---
+title: WordPress
+slug: wordpress
+summary: WordPress themes, blocks, and plugins, including WooCommerce, with updates rehearsed on a staging site before they reach production.
+order: 8
+parent: development
+heading: WordPress that stays updatable
+layout: landing
+seo:
+  title: WordPress Development Services
+  description: WordPress themes, blocks, and plugins, including WooCommerce, with updates rehearsed on staging before production.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="WordPress Development"
+  title="WordPress that stays updatable"
+  text="We build and maintain WordPress sites on the block editor: a theme that holds the design, plugins that hold custom behavior, and an update path that is tried on staging before it touches production."
+  cta="Review the WordPress site"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/wordpress/hero.svg", alt: "Illustration for WordPress development services" }}
+/>
+
+<ServiceCatalog
+  title="What we build with WordPress"
+  intro="WordPress is PHP, a database, and a plugin ecosystem. We keep custom code in the places core updates will not erase."
+  items={[
+    {
+      title: "Block themes and the Site Editor",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "New sites use a block theme. Templates and template parts express the layout. theme.json carries the type, color, and spacing so editors stay inside the design instead of pasting inline styles.",
+        "A classic PHP theme stays when the site already depends on it. We extend it with a child theme. We do not edit a parent theme that the next update will overwrite.",
+      ],
+    },
+    {
+      title: "Blocks and patterns",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Repeated sections become block patterns or a small custom block. Editors insert the pattern. They do not rebuild a hero from twenty loose blocks every time.",
+        "A custom block is registered from a plugin, with the attributes it needs and a fallback in the editor. The theme does not secretly own behavior the content depends on.",
+      ],
+    },
+    {
+      title: "Plugins, including WooCommerce",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "We prefer a maintained plugin when it matches the need. A custom plugin is for the behavior that should survive a theme change: a content type, an integration, a checkout rule.",
+        <>WooCommerce is in scope for catalogs, checkout, and the hooks a store actually needs. Product data and payment settings stay in WooCommerce. Presentation stays in the theme. Broader storefront engineering also sits with <a href="/services/web">web development</a>.</>,
+      ],
+    },
+    {
+      title: "Updates, staging, and headless when it is real",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Core, theme, and plugin updates land on a staging copy first. We check the editor and the public templates, then production. A site with no staging is the first thing we add.",
+        <>Headless WordPress, with the REST API feeding a separate front end such as <a href="/services/development/react">React</a>, is a choice we make when the editorial team wants WordPress and the interface cannot be a theme. It is not the default.</>,
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="WordPress fits content sites and stores whose editors live in wp-admin and whose hosting you can update."
+  items={[
+    {
+      title: "A company site on the block editor",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Pages, posts, and a small set of patterns. Marketing can publish. The theme stops them from inventing a new layout on every page, without closing the editor.",
+      ],
+    },
+    {
+      title: "A catalog on WooCommerce",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Products, variations, and checkout through WooCommerce. Custom work is the piece the store needs that a setting does not cover, written as a plugin with a test on staging.",
+      ],
+    },
+    {
+      title: "A site drowning in plugins",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "We list what each plugin does, remove the ones that overlap, and replace a fragile combination with one custom plugin when that is smaller than the pile.",
+      ],
+    },
+    {
+      title: "Editorial WordPress with a separate front end",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Authors stay in WordPress. The public site is an application that reads the REST API. We version the fields the front end depends on, so an editor change does not silently break a route.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="WordPress maintenance is part of the build. A theme that cannot take an update is unfinished."
+  items={[
+    {
+      title: "Separate theme, plugin, and content",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Design tokens and templates live in the theme. Behavior the content needs lives in a plugin. Posts and pages live in the database, exported when we need a copy. We do not hide PHP in a widget body.",
+      ],
+    },
+    {
+      title: "Stage every update",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Staging is a copy of production with the same PHP version and the same active plugins. Updates are applied there, the editor and the public pages are checked, and only then does production change.",
+      ],
+    },
+    {
+      title: "Name the load-bearing plugins",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "The handover lists which plugins can be removed and which ones the theme or the content assumes. WooCommerce, a forms plugin, or an SEO plugin is called out with the version we tested.",
+      ],
+    },
+    {
+      title: "Leave wp-admin usable",
+      icon: "/images/services/wordpress/check.svg",
+      paragraphs: [
+        "Roles match the people who will log in. Patterns are available in the inserter. A custom block has a name an editor recognizes. We watch someone publish a page before we call the work done.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Tell us the theme, the plugins, and the PHP version"
+  text="An existing site or a new one. We will say what belongs in a theme, what belongs in a plugin, and what should be removed."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="WordPress at OLIANT is a site you can update, with custom behavior in a plugin and design in the theme."
+  image={{ src: "/images/services/wordpress/why-oliant.svg", alt: "Illustration beside reasons to choose OLIANT for WordPress" }}
+  items={[
+    {
+      title: "Updates are rehearsed",
+      icon: "/images/services/wordpress/checks.svg",
+      text: "Staging sees the core and plugin updates first. Production is the second step, not the experiment.",
+    },
+    {
+      title: "Custom code has an address",
+      icon: "/images/services/wordpress/checks.svg",
+      text: "Plugins hold behavior. Child themes or block themes hold design. Content is not the place we store PHP.",
+    },
+    {
+      title: "The editor is part of the test",
+      icon: "/images/services/wordpress/checks.svg",
+      text: "A page that looks right when we build it and breaks when an editor touches it is not finished. Publishing is part of the check.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Questions about how we take on WordPress work."
+  items={[
+    {
+      question: "Will you work on an old classic theme?",
+      parts: [
+        {
+          text: "Yes. We use a child theme and we avoid a rewrite unless the parent theme is blocking an update you need. A block theme is the recommendation for a new site, not a surprise migration in the middle of a content change.",
+        },
+      ],
+    },
+    {
+      question: "How do you decide between a plugin and custom code?",
+      parts: [
+        {
+          text: "A maintained plugin wins when it does the job and its update history is acceptable. Custom code wins when the behavior is specific to your content model or when several plugins are doing the same thing badly. The custom code is a plugin either way.",
+        },
+      ],
+    },
+    {
+      question: "Can you build a WooCommerce store?",
+      parts: [
+        {
+          text: "Yes. Products, checkout, and the custom rules that settings cannot express. Payment provider configuration stays in WooCommerce. We test the purchase path on staging, including the email and the stock change.",
+        },
+      ],
+    },
+    {
+      question: "Is headless WordPress worth it?",
+      parts: [
+        {
+          text: "When editors want WordPress and the public experience cannot be a theme. It adds a second application, a React front end or another client, and a contract for the fields. For a marketing site, a theme is the smaller system, and we will recommend it.",
+        },
+      ],
+    },
+    {
+      question: "Who applies security updates?",
+      parts: [
+        {
+          text: "Whoever we agree will own the staging check. We can do that as part of the engagement: review the update on staging, confirm the editor and the templates, then apply it. We do not leave core updates as an unnamed task.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="WordPress you can update next month"
+  text="Share the theme, the plugin list, and the PHP version. We will tell you what we would keep."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/wordpress/closing.svg", alt: "Illustration for the WordPress development closing invitation" }}
+/>

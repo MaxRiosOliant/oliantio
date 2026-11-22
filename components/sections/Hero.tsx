@@ -8,7 +8,7 @@ const hero = home.hero
 
 export function Hero() {
   return (
-    <section className="home-hero dark-hero relative overflow-hidden bg-[linear-gradient(90deg,#366c2f,#2c3d2c_25%,#2c3d2c_30%,#45ab34)] text-paper">
+    <section className="relative -mt-[5.125rem] overflow-hidden bg-[linear-gradient(90deg,#366c2f,#2c3d2c_25%,#2c3d2c_30%,#45ab34)] text-paper">
       <div className="h-[var(--size-10rem)]" />
       <div className="site-container">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))] items-center gap-4">

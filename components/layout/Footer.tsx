@@ -18,32 +18,50 @@ function FooterLink({ href, children }: { href: string; children: string }) {
     "inline-block py-2 text-base leading-6 tracking-[0em] hover:text-[#9fc418] hover:underline"
   if (href.startsWith("http")) {
     return (
-      <a href={href} className={className} target="_blank" rel="noopener noreferrer">
-        {children}
-        <span className="sr-only"> (opens in a new tab)</span>
+      <a
+        href={href}
+        className={className}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-track={href === site.careersUrl ? "careers-click" : undefined}
+      >
+        <span className="trim-text">
+          {children}
+          <span className="sr-only"> (opens in a new tab)</span>
+        </span>
       </a>
     )
   }
 
   return (
     <Link href={href} className={className}>
-      {children}
+      <span className="trim-text">{children}</span>
     </Link>
   )
 }
 
 export type FooterTheme = "dark" | "light"
 
-export function Footer({ theme = "dark" }: { theme?: FooterTheme }) {
+// Space between the previous section and the "Get in touch" card.
+export type FooterSpace = "none" | "small" | "main"
+
+const spaceClass: Record<FooterSpace, string> = {
+  none: "",
+  small: "h-[var(--size-5rem)]",
+  main: "h-[var(--size-7rem)]",
+}
+
+export function Footer({ theme = "dark", space = "main" }: { theme?: FooterTheme; space?: FooterSpace }) {
   return (
     <footer
-      className={
+      className={`overflow-x-clip ${
         theme === "light" ? "bg-paper text-ink" : "bg-[linear-gradient(180deg,#45ab34,#142314)] text-paper"
-      }
+      }`}
     >
+      {space === "none" ? null : <div aria-hidden="true" className={spaceClass[space]} />}
       <div className="site-container relative">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,30rem),1fr))] gap-4">
-          <div className="relative z-[1] flex flex-col gap-[var(--size-2rem)]">
+          <div className="relative z-[1] flex flex-col justify-center gap-[var(--size-2rem)]">
             <Link
               href="/"
               aria-label="Home Page"
@@ -108,15 +126,15 @@ export function Footer({ theme = "dark" }: { theme?: FooterTheme }) {
               <h5 className="text-[18px] leading-[25px] font-extrabold">{footer.socialTitle}</h5>
               <ul className="flex w-[192px] items-center gap-2">
                 {footer.social.map((item) => (
-                  <li key={item.label}>
+                  <li key={item.label} className="flex-none max-[479px]:-mr-[3px]">
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={item.label}
-                      className="flex size-8 items-center justify-center"
+                      className="flex size-12 items-center justify-center"
                     >
-                      <Image src={item.icon} alt="" width={32} height={32} unoptimized className="size-8" />
+                      <Image src={item.icon} alt="" width={48} height={48} unoptimized className="size-12" />
                       <span className="sr-only"> (opens in a new tab)</span>
                     </a>
                   </li>
@@ -127,7 +145,7 @@ export function Footer({ theme = "dark" }: { theme?: FooterTheme }) {
         </div>
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 left-[55%] z-0 bg-[#e1e3e1] max-[1050px]:hidden"
+          className="pointer-events-none absolute inset-y-0 left-[55%] z-0 w-full bg-[#e1e3e1] max-[1050px]:hidden"
         />
       </div>
     </footer>

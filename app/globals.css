@@ -7,6 +7,7 @@
   --size-3rem: clamp(2.25rem, 2.0357142857142856rem + 1.0714285714285714vw, 3rem);
   --size-3-5rem: clamp(2.375rem, 2.0535714285714284rem + 1.607142857142857vw, 3.5rem);
   --size-4rem: clamp(2.5rem, 2.0714285714285716rem + 2.142857142857143vw, 4rem);
+  --size-5rem: clamp(3rem, 2.4285714285714284rem + 2.857142857142857vw, 5rem);
   --size-7rem: clamp(4rem, 3.142857142857143rem + 4.285714285714286vw, 7rem);
   --size-10rem: clamp(5.5rem, 4.214285714285714rem + 6.428571428571428vw, 10rem);
   --size-14rem: clamp(7rem, 5rem + 10vw, 14rem);

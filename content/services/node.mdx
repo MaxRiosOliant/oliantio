@@ -1,0 +1,216 @@
+---
+title: Node
+slug: node
+summary: Node.js APIs and workers in TypeScript, on Express, NestJS, or Fastify, with a runtime and a contract the front end can call.
+order: 5
+parent: development
+heading: APIs and services on Node.js
+layout: landing
+seo:
+  title: Node.js Development Services
+  description: Node.js APIs and workers in TypeScript, on Express, NestJS, or Fastify, with a contract the front end can call.
+  noindex: true
+---
+
+<ServiceHero
+  eyebrow="Node Development"
+  title="APIs and services on Node.js"
+  text="We build Node.js services in TypeScript: HTTP APIs, backends for a specific front end, and workers that share the same language without blocking the request path."
+  cta="Plan the Node service"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/node/hero.svg", alt: "Illustration for Node.js development services" }}
+/>
+
+<ServiceCatalog
+  title="What we build with Node"
+  intro="Node is the runtime. The framework, the types, and the process model are chosen so the event loop stays available and the API stays describable."
+  items={[
+    {
+      title: "HTTP APIs in TypeScript",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "Express is the default when the service is a thin HTTP layer. NestJS fits when the team wants modules, dependency injection, and a structure that several services can share. Fastify fits when the service is performance-sensitive and the plugin model is enough.",
+        "Request and response bodies are typed. A route that accepts an untyped object and hopes the front end sends the right shape does not pass review.",
+      ],
+    },
+    {
+      title: "A backend for a specific client",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        <>Web and mobile clients often need an API shaped for one screen, not a mirror of every downstream system. We build that backend-for-frontend in Node, and we keep the aggregation here so the client is not calling five services on each view. <a href="/services/development/react">React</a> applications are a common caller.</>,
+        "The BFF owns caching headers, auth token handling for that client, and the error shape the UI can show. It does not become a second copy of the domain rules.",
+      ],
+    },
+    {
+      title: "Workers off the request path",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "Email, file processing, and webhook fan-out do not belong inside the request that triggered them. We put that work on a queue, BullMQ or the broker you already run, and a separate Node process consumes it.",
+        "The HTTP process stays short. The worker can retry, fail, and be restarted without taking the API down with it.",
+      ],
+    },
+    {
+      title: "Runtime, packages, and logs",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "We pin the Node version in the engine field and in the environment that runs it. npm or pnpm is chosen once, and the lockfile is part of the build. Native addons are a decision, not an accident from a transitive dependency.",
+        "Logs are structured. A health endpoint reports whether the process can reach the dependencies it needs. The host, whether a container, a platform service, or a VM, restarts from that signal.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="Typical use cases"
+  intro="Node fits JavaScript teams and services whose main job is HTTP, aggregation, or a stream of events."
+  items={[
+    {
+      title: "An API the product UI calls",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "The screen needs a single payload. We build the Node API that assembles it, validates the write, and returns an error the interface can put next to a field.",
+      ],
+    },
+    {
+      title: "Webhooks and third-party callbacks",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "A provider posts an event and expects a fast acknowledgement. The Node route verifies the signature, stores the event, and lets a worker do the slow part.",
+      ],
+    },
+    {
+      title: "A real-time feature next to the API",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "When the product needs a live update, we add WebSockets or Server-Sent Events on the same TypeScript codebase, with an explicit story for reconnect and for what the client should do when the socket drops.",
+      ],
+    },
+    {
+      title: "A service in front of an older system",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "The system of record stays where it is. Node translates its API, its files, or its database into the contract the new client expects, and it isolates timeouts so a slow downstream call does not stall every request.",
+      ],
+    },
+  ]}
+/>
+
+<ServiceCatalog
+  title="How we work"
+  intro="A Node project is a runtime choice, a framework choice, and a test that hits the HTTP stack. We settle those before the endpoint list grows."
+  items={[
+    {
+      title: "Pin the runtime and the package manager",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "The Node version, the package manager, and the TypeScript config are fixed in the repo. CI uses the same ones. A feature branch that only runs on a newer Node than production is not ready.",
+      ],
+    },
+    {
+      title: "Pick one framework and say why",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "Express, NestJS, or Fastify. The reason is written down: team familiarity, module structure, or measured need for the faster server. We do not mix three HTTP frameworks in one service.",
+      ],
+    },
+    {
+      title: "Test the route, not only the function",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "Vitest or Jest covers units. Supertest, or the framework's own test client, calls the route with the headers and the body a real client would send, including the cases the schema should reject.",
+      ],
+    },
+    {
+      title: "Split the process from the work it queues",
+      icon: "/images/services/node/check.svg",
+      paragraphs: [
+        "If the service accepts work that outlives the request, that work has its own process and its own health check. Deploying the API does not silently drop the jobs, and deploying the worker does not restart every open connection by accident.",
+      ],
+    },
+  ]}
+/>
+
+<CtaBand
+  title="Tell us who calls the API"
+  text="A browser, a mobile app, another service, or a webhook. The caller decides the shape of the Node service more than the framework does."
+  cta="Schedule a call"
+  ctaHref="/schedule-a-call"
+/>
+
+<ReasonColumns
+  title="Why OLIANT"
+  text="Node at OLIANT is TypeScript, a single HTTP stack, and a process model that keeps slow work off the event loop."
+  image={{ src: "/images/services/node/why-oliant.svg", alt: "Illustration beside reasons to choose OLIANT for Node.js" }}
+  items={[
+    {
+      title: "Types on the contract",
+      icon: "/images/services/node/checks.svg",
+      text: "The payload the client sends and the payload it receives are typed and validated. Drift shows up in review, not in a production log.",
+    },
+    {
+      title: "One framework per service",
+      icon: "/images/services/node/checks.svg",
+      text: "Express, NestJS, or Fastify, chosen for a reason. The next endpoint follows that choice instead of introducing a second style.",
+    },
+    {
+      title: "The event loop stays free",
+      icon: "/images/services/node/checks.svg",
+      text: "Long work moves to a worker. The API process answers, logs, and shuts down cleanly when the host asks it to.",
+    },
+  ]}
+/>
+
+<FaqSection
+  title="Frequently asked questions"
+  text="Questions that come up when a team is deciding on Node."
+  items={[
+    {
+      question: "Do you write Node in plain JavaScript?",
+      parts: [
+        {
+          text: "New services are TypeScript. We will work in an existing JavaScript codebase, and we add types at the boundary we touch rather than pausing the project for a whole-repo conversion.",
+        },
+      ],
+    },
+    {
+      question: "Which framework should we use?",
+      parts: [
+        {
+          text: "Express when you want the least framework. NestJS when several modules and a shared structure matter. Fastify when you want a schema-first server and you have measured a need for it. We pick one for the service and keep it.",
+        },
+      ],
+    },
+    {
+      question: "Is Node a fit for CPU-heavy work?",
+      parts: [
+        {
+          text: "Usually no. Node is for IO: HTTP, queues, files, and upstream APIs. Heavy computation belongs in a worker, another process, or another language. We will say so if the workload is a mismatch.",
+        },
+      ],
+    },
+    {
+      question: "Can the same team build the React UI?",
+      parts: [
+        {
+          text: "Yes, when the project includes the front end. React is a separate practice with its own page. The Node service still has its own contract, so the UI and the API can release on different days.",
+        },
+      ],
+    },
+    {
+      question: "How do you deploy it?",
+      parts: [
+        {
+          text: "On the platform you already use: a container, a process manager, or a cloud service that runs Node. The repository contains the start command, the health check, and the Node version. The host is allowed to kill the process and start it again.",
+        },
+      ],
+    },
+  ]}
+/>
+
+<ClosingCta
+  title="A Node service with a contract"
+  text="Bring the caller and the downstream systems. We will propose the framework, the process split, and the first endpoints."
+  cta="Let’s get in touch"
+  ctaHref="/schedule-a-call"
+  image={{ src: "/images/services/node/closing.svg", alt: "Illustration for the Node.js development closing invitation" }}
+/>

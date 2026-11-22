@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+import { breadcrumbJsonLd } from "@/lib/seo"
+
 export type BreadcrumbItem = {
   label: string
   href?: string
@@ -8,6 +10,8 @@ export type BreadcrumbItem = {
 type BreadcrumbsProps = {
   items: readonly BreadcrumbItem[]
   className?: string
+  // Current page path; when set, the trail is also emitted as BreadcrumbList JSON-LD.
+  path?: string
 }
 
 function Chevron() {
@@ -18,9 +22,17 @@ function Chevron() {
   )
 }
 
-export function Breadcrumbs({ items, className = "site-container pt-10" }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className = "site-container pt-10", path }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className={className}>
+      {path ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbJsonLd(items, path)).replace(/</g, "\\u003c"),
+          }}
+        />
+      ) : null}
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.875rem] leading-[1.5] tracking-[0.1em]">
         {items.map((item, index) => {
           const last = index === items.length - 1
@@ -47,7 +59,10 @@ export function Breadcrumbs({ items, className = "site-container pt-10" }: Bread
                   )}
                 </Link>
               ) : (
-                <span aria-current={last ? "page" : undefined} className="font-medium">
+                <span
+                  aria-current={last ? "page" : undefined}
+                  className={last ? "font-medium" : "text-neutral-3"}
+                >
                   {item.label}
                 </span>
               )}

@@ -7,6 +7,7 @@ import { AuthorBio } from "@/components/sections/AuthorBio"
 import type { ArticleMeta } from "@/lib/content/records"
 
 type BlogFeaturedProps = {
+  title: string
   featured: ArticleMeta
   latest: readonly ArticleMeta[]
   latestTitle: string
@@ -38,16 +39,19 @@ function LatestCard({ article }: { article: ArticleMeta }) {
   )
 }
 
-export function BlogFeatured({ featured, latest, latestTitle, readMore }: BlogFeaturedProps) {
+export function BlogFeatured({ title, featured, latest, latestTitle, readMore }: BlogFeaturedProps) {
   return (
     <section className="site-container grid gap-x-4 gap-y-12 pt-6 pb-[var(--size-4rem)] desk:grid-cols-2">
+      <h1 className="text-[length:var(--size-2-5rem)] leading-none font-black tracking-[-0.03em] desk:col-span-2">
+        {title}
+      </h1>
       <article className="group relative flex flex-col gap-4">
         <p className="text-[0.875rem] leading-[1.5] tracking-[0.24em] text-[#a0a1a0] uppercase">
           {featured.category.name}
         </p>
-        <h1 className="text-[length:var(--size-2-5rem)] leading-none font-black tracking-[-0.03em] text-balance">
+        <h2 className="text-[length:var(--size-2-5rem)] leading-none font-black tracking-[-0.03em] text-balance">
           {featured.heading}
-        </h1>
+        </h2>
         <p className="text-base leading-[1.5]">{featured.excerpt}</p>
         <div className="relative aspect-[2/1] overflow-hidden rounded-[1rem]">
           <Image
