@@ -18,5 +18,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/all-articles",
+  matcher: ["/all-articles", "/oliant-form-usa"],
 }

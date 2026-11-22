@@ -22,7 +22,7 @@
   figure img { width: 100%; display: block; }
 </style></head><body>
 <h1>Live vs local comparison</h1>
-<p>Generated 2026-11-22T14:52:50.925Z · 72/72 PASS · live https://www.oliant.io vs local production build (next start).</p>
+<p>Generated 2026-11-22T14:52:50.925Z · 71/71 PASS · live https://www.oliant.io vs local production build (next start).</p>
 <p>Local HTML contains no <code>href="#"</code>.</p>
 <p>Checks per page: normalized visible main-content text (word diff), H1–H3 outline, links (href + text) in main, header and footer, image count and alt text, full-page screenshots at 1440px and 390px, and the header at scroll 0 with no hover (1440px, 390px, 390px with the menu open, and 1440px after client-side navigation from /), where every header link and button must reach 2:1 contrast against the pixels behind it. Allowlisted differences carry their reason from <code>scripts/compare-live.allowlist.ts</code>. Console and network errors are collected on the local production build at 1440px and 390px.</p>
 <h2>Errors</h2>
@@ -149,9 +149,7 @@
         <td><span class="badge pass">PASS</span></td>
         <td>0</td><td>74</td><td>0</td></tr><tr><td><a href="#contact-us">/contact-us</a></td>
         <td><span class="badge pass">PASS</span></td>
-        <td>0</td><td>52</td><td>0</td></tr><tr><td><a href="#oliant-form-usa">/oliant-form-usa</a></td>
-        <td><span class="badge pass">PASS</span></td>
-        <td>0</td><td>5</td><td>0</td></tr><tr><td><a href="#privacy-policy">/privacy-policy</a></td>
+        <td>0</td><td>52</td><td>0</td></tr><tr><td><a href="#privacy-policy">/privacy-policy</a></td>
         <td><span class="badge pass">PASS</span></td>
         <td>0</td><td>66</td><td>0</td></tr><tr><td><a href="#schedule-a-call">/schedule-a-call</a></td>
         <td><span class="badge pass">PASS</span></td>
@@ -18204,60 +18202,6 @@
       <div class="pair w390"><figure><figcaption>live · 390</figcaption><img loading="lazy" src="shots/contact-us-live-390-top.jpg" alt="live /contact-us header, 390"></figure><figure><figcaption>local · 390</figcaption><img loading="lazy" src="shots/contact-us-local-390-top.jpg" alt="local /contact-us header, 390"></figure></div><p class="meta">390-menu: lowest contrast 3.48:1  · &quot;Close menu&quot; 3.48:1 (text rgb(255, 255, 255) on rgb(65, 156, 51))</p>
       <div class="pair w390"><figure><figcaption>local · 390-menu</figcaption><img loading="lazy" src="shots/contact-us-local-390-menu-top.jpg" alt="local /contact-us header, 390-menu"></figure></div><p class="meta">1440-from-home: lowest contrast 3.56:1  · &quot;Schedule a Call&quot; 3.56:1 (text rgb(255, 255, 255) on rgb(65, 154, 51))</p>
       <div class="pair w1440"><figure><figcaption>local · 1440-from-home</figcaption><img loading="lazy" src="shots/contact-us-local-1440-from-home-top.jpg" alt="local /contact-us header, 1440-from-home"></figure></div></details>
-  </section>
-  <section id="oliant-form-usa">
-    <h2><span class="badge pass">PASS</span>
-      <a href="https://www.oliant.io/oliant-form-usa">/oliant-form-usa</a></h2>
-    <p class="meta">HTTP live 200 / local 200 ·
-      images live 1 / local 2 ·
-      0 unexplained, 5 allowlisted</p>
-    
-    
-    <details><summary>Images in main content</summary><table><tr><th>Live (1)</th><th>Local (2)</th></tr>
-      <tr><td>6658806aac5b6e6e5986e49d_4-VARIABLE-2-Horizontal---Desaturation-1080x1080px.webp</td><td>background.jpg<br>logo.webp</td></tr></table></details>
-    <details ><summary>Differences</summary><table class="diffs">
-      <thead><tr><th>Kind</th><th>Difference</th><th>Reason</th></tr></thead>
-      <tbody>
-    <tr class="allowed">
-      <td>link:main</td>
-      <td><del>live only</del> Privacy Policy -&gt; #</td>
-      <td>Placeholder href=&quot;#&quot; replaced with /privacy-policy</td>
-    </tr>
-    <tr class="allowed">
-      <td>link:main</td>
-      <td><ins>local only</ins> (no text) -&gt; /</td>
-      <td>Logo links home (accessible name from the logo alt text); on live the logo is not a link</td>
-    </tr>
-    <tr class="allowed">
-      <td>link:main</td>
-      <td><ins>local only</ins> Privacy Policy -&gt; /privacy-policy</td>
-      <td>Placeholder href=&quot;#&quot; replaced with /privacy-policy</td>
-    </tr>
-    <tr class="allowed">
-      <td>image</td>
-      <td><ins>local only</ins> alt=&quot;Oliant&quot;</td>
-      <td>Alt text added from the CMS &quot;Images Alt text&quot; field; live renders alt=&quot;&quot;</td>
-    </tr>
-    <tr class="allowed">
-      <td>image-count</td>
-      <td><ins>local only</ins> 1 live / 2 local</td>
-      <td>Live paints the left panel with a background video; locally its poster frame is a next/image (background.jpg)</td>
-    </tr></tbody></table></details>
-    <details><summary>Screenshots</summary>
-      <div class="pair w1440">
-        <figure><figcaption>live · 1440px</figcaption><img loading="lazy" src="shots/oliant-form-usa-live-1440.jpg" alt="Live /oliant-form-usa at 1440px"></figure>
-        <figure><figcaption>local · 1440px</figcaption><img loading="lazy" src="shots/oliant-form-usa-local-1440.jpg" alt="Local /oliant-form-usa at 1440px"></figure>
-      </div>
-      <div class="pair w390">
-        <figure><figcaption>live · 390px</figcaption><img loading="lazy" src="shots/oliant-form-usa-live-390.jpg" alt="Live /oliant-form-usa at 390px"></figure>
-        <figure><figcaption>local · 390px</figcaption><img loading="lazy" src="shots/oliant-form-usa-local-390.jpg" alt="Local /oliant-form-usa at 390px"></figure>
-      </div></details>
-    <details><summary>Footer (with the end of the previous section)</summary><p>No screenshots in this run.</p></details>
-    <details><summary>Header at load (scroll 0, no hover)</summary><p class="meta">1440: no visible site header</p>
-      <div class="pair w1440"><figure><figcaption>live · 1440</figcaption><img loading="lazy" src="shots/oliant-form-usa-live-1440-top.jpg" alt="live /oliant-form-usa header, 1440"></figure><figure><figcaption>local · 1440</figcaption><img loading="lazy" src="shots/oliant-form-usa-local-1440-top.jpg" alt="local /oliant-form-usa header, 1440"></figure></div><p class="meta">390: no visible site header</p>
-      <div class="pair w390"><figure><figcaption>live · 390</figcaption><img loading="lazy" src="shots/oliant-form-usa-live-390-top.jpg" alt="live /oliant-form-usa header, 390"></figure><figure><figcaption>local · 390</figcaption><img loading="lazy" src="shots/oliant-form-usa-local-390-top.jpg" alt="local /oliant-form-usa header, 390"></figure></div><p class="meta">390-menu: no visible site header</p>
-      <div class="pair w390"><figure><figcaption>local · 390-menu</figcaption><img loading="lazy" src="shots/oliant-form-usa-local-390-menu-top.jpg" alt="local /oliant-form-usa header, 390-menu"></figure></div><p class="meta">1440-from-home: no visible site header</p>
-      <div class="pair w1440"><figure><figcaption>local · 1440-from-home</figcaption><img loading="lazy" src="shots/oliant-form-usa-local-1440-from-home-top.jpg" alt="local /oliant-form-usa header, 1440-from-home"></figure></div></details>
   </section>
   <section id="privacy-policy">
     <h2><span class="badge pass">PASS</span>

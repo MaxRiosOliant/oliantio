@@ -745,32 +745,4 @@ export const allowlist: AllowEntry[] = [
     match: "H1 Thank you for your interest in Oliant",
     reason: "Live page has no H1; its top heading is an H2. Locally it is the page H1",
   },
-  {
-    kind: "link:main",
-    pages: "/oliant-form-usa",
-    side: "live",
-    match: "Privacy Policy -> #",
-    reason: "Placeholder href=\"#\" replaced with /privacy-policy",
-  },
-  {
-    kind: "link:main",
-    pages: "/oliant-form-usa",
-    side: "local",
-    match: "Privacy Policy -> /privacy-policy",
-    reason: "Placeholder href=\"#\" replaced with /privacy-policy",
-  },
-  {
-    kind: "link:main",
-    pages: "/oliant-form-usa",
-    side: "local",
-    match: "(no text) -> /",
-    reason: "Logo links home (accessible name from the logo alt text); on live the logo is not a link",
-  },
-  {
-    kind: "image-count",
-    pages: "/oliant-form-usa",
-    side: "local",
-    match: "1 live / 2 local",
-    reason: "Live paints the left panel with a background video; locally its poster frame is a next/image (background.jpg)",
-  },
 ]

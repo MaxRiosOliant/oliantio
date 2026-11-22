@@ -8,4 +8,9 @@ export const redirects: {
     destination: "/blog",
     permanent: true,
   },
+  {
+    source: "/oliant-form-usa",
+    destination: "/contact-us",
+    permanent: true,
+  },
 ]

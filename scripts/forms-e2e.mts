@@ -144,7 +144,6 @@ async function waitForSubscriber(email: string) {
 }
 
 const scheduleSubject = `[oliant.io] Schedule a Call — E2E ${token}`
-const usaSubject = `[oliant.io] Oliant Form USA — E2E ${token}`
 
 console.log(`Submitting forms to ${baseUrl} as ${testEmail}`)
 
@@ -154,16 +153,6 @@ await submit("/api/forms/schedule-a-call", {
   message: `Schedule check ${token}`,
   topic: "Other",
 })
-await submit("/api/forms/oliant-form-usa", {
-  employees: "1 - 10",
-  firstName: "E2E",
-  lastName: token,
-  email: testEmail,
-  jobTitle: "Tester",
-  company: "Oliant QA",
-  phone: "",
-  subscribe: false,
-})
 await submit("/api/forms/newsletter", { email: testEmail, terms: true })
 const again = await submit("/api/forms/newsletter", { email: testEmail, terms: true })
 if (!again || (again as { ok?: boolean }).ok !== true) {
@@ -171,19 +160,16 @@ if (!again || (again as { ok?: boolean }).ok !== true) {
 }
 
 const scheduleEmail = await waitForEmail(scheduleSubject)
-const usaEmail = await waitForEmail(usaSubject)
-for (const email of [scheduleEmail, usaEmail]) {
-  if (!email.to.some((address) => address.toLowerCase() === toEmail.toLowerCase())) {
-    throw new Error(`${email.subject} was not addressed to the form inbox`)
-  }
-  if (!email.reply_to?.some((address) => address.toLowerCase() === testEmail.toLowerCase())) {
-    throw new Error(`${email.subject} reply-to was not the submitter`)
-  }
-  if (!email.text?.includes(token) || !email.text.includes("Page:")) {
-    throw new Error(`${email.subject} body is missing the submission`)
-  }
-  console.log(`Delivered ${email.subject} (${email.last_event})`)
+if (!scheduleEmail.to.some((address) => address.toLowerCase() === toEmail.toLowerCase())) {
+  throw new Error(`${scheduleEmail.subject} was not addressed to the form inbox`)
 }
+if (!scheduleEmail.reply_to?.some((address) => address.toLowerCase() === testEmail.toLowerCase())) {
+  throw new Error(`${scheduleEmail.subject} reply-to was not the submitter`)
+}
+if (!scheduleEmail.text?.includes(token) || !scheduleEmail.text.includes("Page:")) {
+  throw new Error(`${scheduleEmail.subject} body is missing the submission`)
+}
+console.log(`Delivered ${scheduleEmail.subject} (${scheduleEmail.last_event})`)
 
 const details = await waitForSubscriber(testEmail)
 const state =

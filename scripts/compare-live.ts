@@ -70,7 +70,6 @@ const requestedPages = [
   "/contact-us",
   "/schedule-a-call",
   "/privacy-policy",
-  "/oliant-form-usa",
   "/blog",
   "/articles/the-hidden-burden-of-building-the-first-startup-team",
   "/articles/git-bash-commonly-used-commands",

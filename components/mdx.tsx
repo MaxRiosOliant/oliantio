@@ -14,7 +14,6 @@ import { ScheduleForm } from "@/components/sections/ScheduleForm"
 import { ServiceCatalog } from "@/components/sections/ServiceCatalog"
 import { ServiceHero } from "@/components/sections/ServiceHero"
 import { ServiceProjects } from "@/components/sections/ServiceProjects"
-import { StandaloneForm } from "@/components/sections/StandaloneForm"
 
 export const mdxComponents = {
   PageIntro,
@@ -24,7 +23,6 @@ export const mdxComponents = {
   ContactSection,
   ScheduleForm,
   ProseSection,
-  StandaloneForm,
   ServiceHero,
   ServiceCatalog,
   ServiceProjects,

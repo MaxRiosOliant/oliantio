@@ -11,7 +11,6 @@ import { handleSchedule } from "./schedule.ts"
 import { RATE_LIMIT, resetRateLimit } from "./spam.ts"
 import { handleNewsletter } from "./subscribe.ts"
 import { contactHrefForPath, contactTopicSlugs } from "./topics.ts"
-import { handleUsa } from "./usa.ts"
 
 const now = Date.parse("2026-11-21T18:00:00.000Z")
 
@@ -331,56 +330,6 @@ describe("contact topic links", () => {
     assert.equal(contactHrefForPath("/services/qa"), "/contact-us?topic=qa-testing")
     assert.equal(contactHrefForPath("/services/development/aws"), "/contact-us?topic=cloud")
     assert.equal(contactHrefForPath("/services/development/react"), "/contact-us?topic=custom-development")
-  })
-})
-
-describe("oliant form usa", () => {
-  it("returns a field error for each missing detail", async () => {
-    const sent: FormEmail[] = []
-    const response = await handleUsa(
-      post("http://local/api/forms/oliant-form-usa", ready({ employees: "1 - 10", email: "a@b.co" })),
-      now,
-      async (message) => {
-        sent.push(message)
-      },
-    )
-    const body = await response.json()
-    assert.equal(response.status, 400)
-    assert.match(body.fieldErrors.firstName, /required/i)
-    assert.match(body.fieldErrors.lastName, /required/i)
-    assert.match(body.fieldErrors.company, /required/i)
-    assert.equal(sent.length, 0)
-  })
-
-  it("emails the full name and every field", async () => {
-    const sent: FormEmail[] = []
-    const response = await handleUsa(
-      post(
-        "http://local/api/forms/oliant-form-usa",
-        ready({
-          employees: "11 - 50",
-          firstName: "Ada",
-          lastName: "Lovelace",
-          email: "ada@example.com",
-          jobTitle: "Founder",
-          company: "Analytical Engines",
-          phone: "",
-          subscribe: true,
-          pageUrl: "https://www.oliant.io/oliant-form-usa",
-        }),
-      ),
-      now,
-      async (message) => {
-        sent.push(message)
-      },
-    )
-    assert.equal(response.status, 200)
-    assert.equal(sent[0].replyTo, "ada@example.com")
-    assert.equal(sent[0].subject, `[oliant.io] ${formNames.usa} — Ada Lovelace`)
-    assert.match(sent[0].text, /Number of Employees: 11 - 50/)
-    assert.match(sent[0].text, /Phone Number: \n/)
-    assert.match(sent[0].text, /marketing emails and newsletters\.: Yes/)
-    assert.match(sent[0].text, /Page: https:\/\/www\.oliant\.io\/oliant-form-usa/)
   })
 })
 

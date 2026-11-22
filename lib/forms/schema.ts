@@ -27,8 +27,6 @@ export const scheduleTopics = [
   "Other",
 ] as const
 
-export const employeeRanges = ["1 - 10", "11 - 50", "51 - 500", "500 +"] as const
-
 export const scheduleSchema = z.object({
   name: optionalText,
   email: emailSchema,
@@ -38,18 +36,6 @@ export const scheduleSchema = z.object({
     .min(1, "This field is required.")
     .max(5000, "Must be 5000 characters or fewer."),
   topic: z.union([z.literal(""), z.enum(scheduleTopics)]).default(""),
-  pageUrl: pageUrlSchema,
-})
-
-export const usaSchema = z.object({
-  employees: z.enum(employeeRanges, { error: "Select the number of employees." }),
-  firstName: requiredText,
-  lastName: requiredText,
-  email: emailSchema,
-  jobTitle: requiredText,
-  company: requiredText,
-  phone: optionalText,
-  subscribe: z.boolean().default(false),
   pageUrl: pageUrlSchema,
 })
 
@@ -74,7 +60,6 @@ export const contactSchema = z.object({
 })
 
 export type ScheduleInput = z.infer<typeof scheduleSchema>
-export type UsaInput = z.infer<typeof usaSchema>
 export type NewsletterInput = z.infer<typeof newsletterSchema>
 export type ContactInput = z.infer<typeof contactSchema>
 
