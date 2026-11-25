@@ -13,13 +13,15 @@ export function Hero() {
       <div className="site-container">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))] items-center gap-4">
           <div className="relative aspect-[6.56/6.24] w-full overflow-hidden">
+            <link rel="preload" as="image" href={hero.image.src} fetchPriority="high" />
             <Image
               src={hero.image.src}
               alt={hero.image.alt}
               fill
-              priority
+              preload
+              fetchPriority="high"
               unoptimized
-              sizes="(min-width: 73rem) 42rem, 100vw"
+              sizes="(min-width: 73rem) 40rem, calc(100vw - 2.5rem)"
               className="object-cover"
             />
           </div>

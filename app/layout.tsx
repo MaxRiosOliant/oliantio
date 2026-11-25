@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
 import { Montserrat, Raleway } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@/components/analytics/Analytics";
 import { site } from "@/config/site";
 import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
   variable: "--font-montserrat",
 });
 
 const raleway = Raleway({
   subsets: ["latin"],
   weight: "900",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
   variable: "--font-raleway",
 });
 
@@ -33,6 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
