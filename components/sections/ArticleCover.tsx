@@ -13,9 +13,10 @@ export function ArticleCover({ article }: ArticleCoverProps) {
         src={article.coverImage.src}
         alt={article.coverImage.alt}
         fill
-        sizes="(min-width: 73rem) 50rem, 100vw"
+        sizes="(min-width: 73rem) 44rem, calc(100vw - 2.5rem)"
         className="object-cover"
         preload
+        fetchPriority="high"
       />
     </div>
   )

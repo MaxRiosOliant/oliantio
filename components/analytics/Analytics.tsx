@@ -11,8 +11,8 @@ export function Analytics() {
     <>
       {process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? (
         <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
-          <Script id="ga4" strategy="afterInteractive">
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="lazyOnload" />
+          <Script id="ga4" strategy="lazyOnload">
             {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
@@ -22,7 +22,7 @@ gtag('config', '${gaId}');`}
           {ahrefsKey ? (
             <Script
               src="https://analytics.ahrefs.com/analytics.js"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
               data-key={ahrefsKey}
             />
           ) : null}

@@ -8,12 +8,14 @@
   "scripts": {
     "postinstall": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-content.mts",
     "dev": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-content.mts --watch",
-    "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-content.mts --production && next build",
+    "build:content": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-content.mts --production",
+    "build": "npm run build:content && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test lib/forms/forms.test.ts"
   },
   "dependencies": {
+    "@vercel/speed-insights": "2.1.0",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",

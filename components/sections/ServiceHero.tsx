@@ -43,13 +43,15 @@ export function ServiceHero({
             </div>
           </div>
           <div className="relative aspect-[5.69/7] w-full overflow-hidden">
+            <link rel="preload" as="image" href={image.src} fetchPriority="high" />
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              priority
+              preload
+              fetchPriority="high"
               unoptimized
-              sizes="(min-width: 50rem) 42rem, 100vw"
+              sizes="(min-width: 64rem) 36rem, calc(100vw - 2.5rem)"
               className="object-cover"
             />
           </div>

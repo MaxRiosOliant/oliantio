@@ -58,8 +58,9 @@ export function BlogFeatured({ title, featured, latest, latestTitle, readMore }:
             src={featured.coverImage.src}
             alt={featured.coverImage.alt}
             fill
-            priority
-            sizes="(min-width: 73rem) 42rem, 100vw"
+            preload
+            fetchPriority="high"
+            sizes="(min-width: 73rem) 36rem, calc(100vw - 2.5rem)"
             className="object-cover"
           />
         </div>

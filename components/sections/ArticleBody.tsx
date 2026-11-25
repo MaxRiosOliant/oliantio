@@ -2,6 +2,7 @@ import type { ComponentProps } from "react"
 import Image from "next/image"
 
 import { mdxComponents, type MdxContent } from "@/components/mdx"
+import { publicImageSize } from "@/lib/images/dimensions"
 
 type ArticleBodyProps = {
   loadBody: () => Promise<{ default: MdxContent }>
@@ -11,13 +12,14 @@ function ArticleImage({ src, alt }: ComponentProps<"img">) {
   if (typeof src !== "string") {
     return null
   }
+  const size = publicImageSize(src)
   return (
     <Image
       src={src}
       alt={alt ?? ""}
-      width={0}
-      height={0}
-      sizes="(min-width: 73rem) 50rem, 100vw"
+      width={size.width}
+      height={size.height}
+      sizes="(min-width: 73rem) 44rem, calc(100vw - 2.5rem)"
       className="my-4 h-auto w-full"
     />
   )
